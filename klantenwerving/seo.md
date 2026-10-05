@@ -26,7 +26,7 @@ De grootste winst voor een lokale zaak. Je doet het samen met de eigenaar, want 
 - QR-code of link maken waarmee klanten makkelijk een review achterlaten (bijv. een kaartje bij de kassa)
 - Zelfde naam, adres en telefoon zetten op Facebook, Instagram en de site
 
-### Extra dienst 2: maandpakket (voorstel €40 per maand, boven op de €15)
+### Extra dienst 2: maandpakket (voorstel €40 per maand, boven op de €25)
 - 2 posts per maand op hun Google-profiel (foto + korte tekst, met Claude 10 min werk)
 - 1 korte blog of nieuwe pagina per maand, bijv. "Fade knippen in Hengelo" of "Wat kost een baardtrim?"
 - Elke maand een screenshot uit Search Console met hoeveel mensen ze vonden
@@ -69,7 +69,7 @@ Doel: ondernemers in Twente vinden jóu als ze "website laten maken Hengelo" goo
    - Website voor kappers en barbershops
    - Website voor restaurants en afhaal
    - Promo-video's voor lokale zaken
-   - Prijzen (€250, €15/mnd, video's)
+   - Prijzen (€250, €25/mnd, video's)
    - Voorbeelden (alleen echte klanten)
 
 ### Stap 2: elke week 1 blog (± 30 min met Claude)
