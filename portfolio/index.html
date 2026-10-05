@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Website laten maken in Hengelo | Efe Webdesign</title>
+<meta name="description" content="Website laten maken in Hengelo? Ik maak snelle websites voor kappers, restaurants en lokale zaken in Twente. Eerst gratis een demo, daarna €250 eenmalig en €15 per maand.">
+<link rel="canonical" href="https://JOUWDOMEIN.nl/">
+<meta property="og:title" content="Website laten maken in Hengelo | Efe Webdesign">
+<meta property="og:description" content="Eerst gratis een demo van jouw zaak. Bevalt hij? Dan staat hij voor €250 online.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Efe Webdesign",
+  "description": "Websites en promo-video's voor lokale zaken in Hengelo en omgeving.",
+  "url": "https://JOUWDOMEIN.nl/",
+  "telephone": "+31600000000",
+  "email": "info@JOUWDOMEIN.nl",
+  "address": { "@type": "PostalAddress", "addressLocality": "Hengelo", "addressRegion": "Overijssel", "addressCountry": "NL" },
+  "areaServed": ["Hengelo", "Enschede", "Borne", "Delden", "Almelo"],
+  "priceRange": "€€",
+  "makesOffer": [
+    { "@type": "Offer", "name": "Website", "price": "250", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "3 promo-video's", "price": "75", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Google-pakket", "price": "75", "priceCurrency": "EUR" }
+  ]
+}
+</script>
+<style>
+/* Layout: one column, phone first. Hero pairs the pitch with a phone showing a demo, the way Efe sells in person. */
+:root {
+  --bg: #f3f5f8;
+  --surface: #ffffff;
+  --ink: #14213d;
+  --muted: #55607a;
+  --line: #d9dee8;
+  --accent: #f2a516;
+  --accent-ink: #14213d;
+  --deep: #14213d;
+  --deep-fg: #f3f5f8;
+  --wa: #1f8f4e;
+  --font-display: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1626; --surface: #16213a; --ink: #e9edf5; --muted: #a3adc4; --line: #2a3654;
+    --accent: #f5b13a; --accent-ink: #14213d; --deep: #1b2847; --deep-fg: #e9edf5; --wa: #35b06a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1626; --surface: #16213a; --ink: #e9edf5; --muted: #a3adc4; --line: #2a3654;
+  --accent: #f5b13a; --accent-ink: #14213d; --deep: #1b2847; --deep-fg: #e9edf5; --wa: #35b06a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.6 var(--font-body); }
+img { max-width: 100%; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 68rem; margin: 0 auto; padding-inline: 1.25rem; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.08; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.3rem, 7vw, 4.2rem); font-weight: 800; }
+h2 { font-size: clamp(1.7rem, 4.5vw, 2.6rem); font-weight: 800; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+p { margin: 0; }
+.eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+section { padding-block: 4rem; }
+.lead { color: var(--muted); max-width: 38rem; }
+
+/* header */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .75rem; }
+.logo { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; text-decoration: none; }
+.logo span { color: var(--accent); }
+.top nav { display: flex; gap: 1.25rem; font-weight: 500; font-size: .95rem; }
+.top nav a { text-decoration: none; color: var(--muted); }
+.top nav a:hover { color: var(--ink); }
+@media (max-width: 640px) { .top nav a:not(.navcta) { display: none; } }
+
+/* buttons */
+.btns { display: flex; flex-wrap: wrap; gap: .75rem; }
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 1.3rem; border-radius: 999px; font-weight: 700; text-decoration: none; border: 2px solid transparent; transition: transform .15s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-main { background: var(--accent); color: var(--accent-ink); }
+.btn-wa { background: var(--wa); color: #fff; }
+.btn-line { border-color: var(--line); background: var(--surface); }
+.navcta { color: var(--ink) !important; font-weight: 700; }
+
+/* hero */
+.hero { padding-block: 3rem 4rem; }
+.hero .wrap { display: grid; gap: 3rem; align-items: center; }
+@media (min-width: 860px) { .hero .wrap { grid-template-columns: 1.25fr 1fr; } }
+.hero-text { display: grid; gap: 1.4rem; min-width: 0; }
+.hero h1 em { font-style: normal; background: linear-gradient(transparent 62%, var(--accent) 62%); }
+.checks { list-style: none; padding: 0; margin: 0; display: grid; gap: .4rem; font-weight: 500; }
+.checks li::before { content: "✓"; color: var(--wa); font-weight: 800; margin-right: .55rem; }
+
+/* phone mockup */
+.phone { justify-self: center; width: min(17rem, 78vw); aspect-ratio: 9 / 18.5; max-width: 100%; border-radius: 2.4rem; background: #0b1220; padding: .7rem; box-shadow: 0 30px 60px -25px rgba(20,33,61,.55); transform: rotate(3deg); }
+.screen { height: 100%; border-radius: 1.8rem; overflow: hidden; background: #1a1a1a; color: #f5efe6; display: flex; flex-direction: column; font-size: .7rem; }
+.screen .notch { height: 1.4rem; display: flex; justify-content: center; align-items: center; }
+.screen .notch i { width: 4.5rem; height: .9rem; background: #000; border-radius: 1rem; }
+.d-hero { padding: 1.4rem 1rem 1rem; background: linear-gradient(160deg, #2a2420, #121212); }
+.d-hero b { display: block; font-family: var(--font-display); font-size: 1.35rem; line-height: 1; letter-spacing: .02em; }
+.d-hero small { display: block; color: #c9a86a; margin-top: .3rem; letter-spacing: .12em; text-transform: uppercase; font-size: .6rem; }
+.d-btn { display: inline-block; margin-top: .9rem; background: #c9a86a; color: #1a1a1a; padding: .4rem .8rem; border-radius: 99px; font-weight: 700; }
+.d-list { padding: .8rem 1rem; display: grid; gap: .45rem; }
+.d-list div { display: flex; justify-content: space-between; border-bottom: 1px solid #333; padding-bottom: .35rem; }
+.d-list span:last-child { color: #c9a86a; font-variant-numeric: tabular-nums; }
+.d-foot { margin-top: auto; padding: .8rem 1rem 1rem; background: #222; color: #bbb; line-height: 1.5; }
+.phone-cap { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 1rem; }
+
+/* diensten */
+.grid { display: grid; gap: 1rem; margin-top: 2rem; }
+@media (min-width: 720px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 1.1rem; padding: 1.5rem; display: grid; gap: .8rem; align-content: start; min-width: 0; }
+.card.feature { border: 2px solid var(--accent); }
+.price { font-family: var(--font-display); font-weight: 800; font-size: 2.4rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.price small { font-family: var(--font-body); font-size: 1rem; font-weight: 500; color: var(--muted); }
+.card ul { margin: 0; padding-left: 1.1rem; color: var(--muted); display: grid; gap: .25rem; }
+.tag { justify-self: start; background: var(--accent); color: var(--accent-ink); font-size: .75rem; font-weight: 700; padding: .2rem .6rem; border-radius: 99px; }
+.extras { margin-top: 1rem; display: grid; gap: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 1.1rem; }
+.extras div { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 1.5rem; border-top: 1px solid var(--line); }
+.extras div:first-child { border-top: 0; }
+.extras b { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.extras p { color: var(--muted); font-size: .92rem; }
+
+/* werk */
+.work { background: var(--deep); color: var(--deep-fg); }
+.work .lead { color: color-mix(in srgb, var(--deep-fg) 75%, transparent); }
+.work-item { margin-top: 2rem; display: grid; gap: 1.5rem; background: color-mix(in srgb, var(--deep-fg) 7%, transparent); border-radius: 1.1rem; padding: 1.5rem; }
+@media (min-width: 720px) { .work-item { grid-template-columns: 1fr 1.3fr; align-items: center; } }
+.shot { aspect-ratio: 4 / 3; max-width: 100%; border-radius: .8rem; background: linear-gradient(160deg, #2a2420, #121212); display: grid; place-items: center; text-align: center; color: #f5efe6; padding: 1rem; }
+.shot b { font-family: var(--font-display); font-size: 1.6rem; display: block; }
+.shot small { color: #c9a86a; letter-spacing: .12em; text-transform: uppercase; font-size: .7rem; }
+.work-item .btn-line { background: transparent; border-color: color-mix(in srgb, var(--deep-fg) 35%, transparent); color: var(--deep-fg); }
+.work-txt { display: grid; gap: .8rem; min-width: 0; }
+.soon { margin-top: 1rem; border: 2px dashed color-mix(in srgb, var(--deep-fg) 30%, transparent); border-radius: 1.1rem; padding: 1.25rem 1.5rem; color: color-mix(in srgb, var(--deep-fg) 75%, transparent); }
+
+/* werkwijze */
+.steps { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 1rem; counter-reset: s; }
+@media (min-width: 720px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+.steps li { counter-increment: s; display: grid; gap: .4rem; align-content: start; padding-top: 1rem; border-top: 3px solid var(--ink); }
+.steps li::before { content: counter(s); font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: var(--accent); line-height: 1; }
+.steps p { color: var(--muted); font-size: .95rem; }
+
+/* faq */
+.faq { margin-top: 2rem; display: grid; gap: .6rem; max-width: 46rem; }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: .8rem; padding: 1rem 1.25rem; }
+summary { font-weight: 700; cursor: pointer; }
+details p { color: var(--muted); margin-top: .6rem; }
+
+/* contact */
+.contact { text-align: left; }
+.contact-box { background: var(--accent); color: var(--accent-ink); border-radius: 1.5rem; padding: 2.25rem 1.5rem; display: grid; gap: 1.2rem; }
+.contact-box .lead { color: var(--accent-ink); opacity: .85; }
+.contact-box .btn-line { background: transparent; border-color: var(--accent-ink); color: var(--accent-ink); }
+.contact-lines { display: grid; gap: .2rem; font-weight: 500; }
+footer { padding-block: 2rem 3rem; color: var(--muted); font-size: .9rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">Efe<span>.</span>webdesign</a>
+    <nav aria-label="Menu">
+      <a href="#diensten">Prijzen</a>
+      <a href="#werk">Werk</a>
+      <a href="#werkwijze">Werkwijze</a>
+      <a class="navcta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <p class="eyebrow">Webdesigner in Hengelo</p>
+        <h1>Website laten maken in Hengelo? Je ziet hem <em>eerst gratis</em>.</h1>
+        <p class="lead">Ik maak websites en promo-video's voor kappers, restaurants en andere zaken in Twente. Ik bouw eerst een demo van jouw zaak. Vind je hem goed, dan staat hij voor €250 online.</p>
+        <ul class="checks">
+          <li>Werkt snel en goed op de telefoon</li>
+          <li>Te vinden op Google, met adres en route</li>
+          <li>Eén vast aanspreekpunt uit de buurt</li>
+        </ul>
+        <div class="btns">
+          <a class="btn btn-wa" href="https://wa.me/31600000000?text=Hoi%20Efe%2C%20ik%20wil%20graag%20een%20demo%20van%20mijn%20zaak." target="_blank" rel="noopener">App me op WhatsApp</a>
+          <a class="btn btn-line" href="#diensten">Bekijk prijzen</a>
+        </div>
+      </div>
+      <div>
+        <div class="phone" aria-hidden="true">
+          <div class="screen">
+            <div class="notch"><i></i></div>
+            <div class="d-hero">
+              <b>BARBERSHOP<br>FRANKO</b>
+              <small>Drienerstraat 13 · Hengelo</small>
+              <span class="d-btn">Bel nu</span>
+            </div>
+            <div class="d-list">
+              <div><span>Knippen</span><span>€ ··</span></div>
+              <div><span>Fade</span><span>€ ··</span></div>
+              <div><span>Baard trimmen</span><span>€ ··</span></div>
+              <div><span>Knippen + baard</span><span>€ ··</span></div>
+            </div>
+            <div class="d-foot">Openingstijden<br>Route plannen</div>
+          </div>
+        </div>
+        <p class="phone-cap">Zo laat ik het zien: jouw zaak, op mijn telefoon.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="diensten">
+    <div class="wrap">
+      <p class="eyebrow">Diensten en prijzen</p>
+      <h2>Duidelijke prijzen, geen verrassingen</h2>
+      <div class="grid grid-2">
+        <article class="card feature">
+          <span class="tag">Meest gekozen</span>
+          <h3>Website</h3>
+          <p class="price">€250 <small>eenmalig</small></p>
+          <p class="price" style="font-size:1.5rem">+ €15 <small>per maand</small></p>
+          <ul>
+            <li>Helft vooraf, rest als hij live staat</li>
+            <li>Diensten, prijzen, openingstijden, route en bel-knop</li>
+            <li>Basis-SEO: goed te vinden op "jouw dienst + Hengelo"</li>
+            <li>Hosting, aanpassingen en onderhoud zitten in de €15</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Promo-video's</h3>
+          <p class="price">€75 <small>voor 3 video's</small></p>
+          <p class="price" style="font-size:1.5rem">€50 <small>samen met een site</small></p>
+          <ul>
+            <li>Korte video's voor Instagram en TikTok</li>
+            <li>Ik film bij jou in de zaak en edit alles</li>
+            <li>Ook te gebruiken op je website en Google</li>
+          </ul>
+        </article>
+      </div>
+      <div class="extras">
+        <div><div><h3>Google-pakket</h3><p>Google Bedrijfsprofiel goed instellen, foto's, openingstijden en een QR-code voor reviews.</p></div><b>€75 eenmalig</b></div>
+        <div><div><h3>Maandpakket Google</h3><p>2 posts per maand op Google, 1 nieuwe pagina of blog, en elke maand je cijfers via WhatsApp.</p></div><b>€40 / maand</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="werk" class="work">
+    <div class="wrap">
+      <p class="eyebrow" style="color:inherit;opacity:.7">Werk</p>
+      <h2>Demo's van zaken in Hengelo</h2>
+      <p class="lead" style="margin-top:.8rem">Ik ben net begonnen. Hier zie je wat ik al gemaakt heb.</p>
+      <div class="work-item">
+        <div class="shot"><div><b>Barbershop Franko</b><small>Demo · Hengelo</small></div></div>
+        <div class="work-txt">
+          <h3>Barbershop Franko</h3>
+          <p>Een demo-website voor een barbershop aan de Drienerstraat. Met prijslijst, openingstijden, bel-knop en route. Gemaakt om op de telefoon te laten zien.</p>
+          <div class="btns"><a class="btn btn-line" href="https://DEMO-LINK.pages.dev" target="_blank" rel="noopener">Bekijk de demo</a></div>
+        </div>
+      </div>
+      <p class="soon">Hier komt jouw zaak. Ik maak de eerste demo gratis.</p>
+    </div>
+  </section>
+
+  <section id="werkwijze">
+    <div class="wrap">
+      <p class="eyebrow">Werkwijze</p>
+      <h2>Zo werkt het</h2>
+      <ol class="steps">
+        <li><h3>Gratis demo</h3><p>Ik maak een voorbeeld met jouw naam, foto's en openingstijden.</p></li>
+        <li><h3>Jij kijkt</h3><p>Ik laat hem zien in je zaak of stuur de link. Geen verplichting.</p></li>
+        <li><h3>Live</h3><p>Ja? Je betaalt de helft, ik pas hem aan en zet hem online.</p></li>
+        <li><h3>Ik regel de rest</h3><p>Voor €15 per maand houd ik hem bij en pas ik dingen aan.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="vragen">
+    <div class="wrap">
+      <p class="eyebrow">Vragen</p>
+      <h2>Veelgestelde vragen</h2>
+      <div class="faq">
+        <details><summary>Wat kost een website laten maken?</summary><p>€250 eenmalig en €15 per maand. Daarin zitten hosting, kleine aanpassingen en de basis voor Google.</p></details>
+        <details><summary>Heb ik een website nodig als ik al Instagram heb?</summary><p>Met een website vinden mensen je op Google als ze zoeken op bijvoorbeeld "kapper Hengelo". Instagram doet dat niet. Ze werken goed samen.</p></details>
+        <details><summary>Kom ik bovenaan in Google?</summary><p>Dat kan niemand beloven. Ik zorg dat je goed vindbaar bent en je ziet elke maand hoeveel mensen je vinden. Resultaat duurt meestal 1 tot 3 maanden.</p></details>
+        <details><summary>Werk je ook buiten Hengelo?</summary><p>Ja, ook in Enschede, Borne, Delden en Almelo.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <h2>Benieuwd hoe jouw zaak eruitziet?</h2>
+        <p class="lead">Stuur me de naam van je zaak. Binnen een paar dagen heb je een gratis demo.</p>
+        <div class="btns">
+          <a class="btn btn-wa" href="https://wa.me/31600000000?text=Hoi%20Efe%2C%20ik%20wil%20graag%20een%20demo%20van%20mijn%20zaak." target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-line" href="mailto:info@JOUWDOMEIN.nl">Mail me</a>
+        </div>
+        <div class="contact-lines">
+          <span>Efe [achternaam] · 06 00 00 00 00</span>
+          <span>info@JOUWDOMEIN.nl</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Efe Webdesign · Hengelo</span>
+    <span>KvK 00000000</span>
+  </div>
+</footer>
+</body>
+</html>
