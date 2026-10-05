@@ -212,6 +212,40 @@ section { padding-block: 5rem; }
 .about-text { display: grid; gap: 1rem; max-width: 36rem; font-size: 1.15rem; }
 .about-text p:last-child { color: var(--muted); }
 
+/* ---------- live kaart in de hero ---------- */
+.hero-copy, .hero-phone { position: relative; z-index: 2; }
+#map { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; cursor: crosshair; touch-action: manipulation; }
+#map { -webkit-mask: linear-gradient(100deg, rgba(0,0,0,.18) 0 34%, #000 62%); mask: linear-gradient(100deg, rgba(0,0,0,.18) 0 34%, #000 62%); }
+@media (max-width: 899px) { #map { -webkit-mask: linear-gradient(180deg, rgba(0,0,0,.25) 0 62%, #000 82%); mask: linear-gradient(180deg, rgba(0,0,0,.25) 0 62%, #000 82%); } }
+.hud { position: absolute; z-index: 3; right: 1.25rem; top: 1rem; display: flex; flex-wrap: wrap; gap: .4rem 1rem; justify-content: flex-end; font-family: var(--font-till); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--soft); pointer-events: none; }
+.hud b { color: var(--white); font-weight: 700; }
+.hud .ja b { color: var(--signal); }
+.hint { position: absolute; z-index: 3; left: 1.25rem; bottom: .9rem; font-family: var(--font-till); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--soft); pointer-events: none; }
+@media (max-width: 899px) { .hint { display: none; } .hud { top: .6rem; } }
+
+/* ---------- voor / na ---------- */
+.vs { position: relative; border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); overflow: hidden; aspect-ratio: 16 / 9; max-width: 100%; margin-bottom: 1.25rem; background: #fff; user-select: none; }
+@media (max-width: 620px) { .vs { aspect-ratio: 4 / 5; } }
+.vs-pane { position: absolute; inset: 0; display: grid; align-content: center; justify-items: start; gap: .8rem; padding: clamp(1.2rem, 5vw, 3.5rem); }
+.vs-before { background: #f1f1ee; color: #3c3f4a; font-family: Arial, Helvetica, sans-serif; }
+.g-search { width: min(100%, 30rem); border: 1px solid #d6d6d0; border-radius: 99px; padding: .6rem 1.1rem; background: #fff; font-size: .95rem; color: #202124; }
+.g-res { width: min(100%, 30rem); display: grid; gap: .15rem; }
+.g-res small { color: #4d5156; font-size: .78rem; }
+.g-res a { color: #1a0dab; font-size: 1.1rem; text-decoration: none; }
+.g-res p { font-size: .85rem; color: #4d5156; }
+.g-res + .g-res { opacity: .55; }
+.vs-tag { position: absolute; top: 1rem; font-family: var(--font-till); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; padding: .3rem .6rem; background: var(--ink); color: var(--white); }
+.vs-before .vs-tag { left: 1rem; }
+.vs-after .vs-tag { right: 1rem; background: var(--signal); }
+.vs-after { background: radial-gradient(120% 90% at 80% 0%, #3b3029, #161412 70%); color: #f2ebe0; clip-path: inset(0 0 0 var(--cut, 40%)); justify-items: end; text-align: right; }
+.vs-after b { font-family: var(--font-sign); font-weight: 400; font-size: clamp(2.2rem, 6vw, 4.5rem); line-height: .9; }
+.vs-after em { font-style: normal; font-family: var(--font-till); color: #d4ad6a; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
+.vs-after .d-btns span { font-size: .9rem; padding: .5rem 1rem; }
+.vs-line { position: absolute; top: 0; bottom: 0; left: var(--cut, 40%); width: 3px; margin-left: -1.5px; background: var(--signal); pointer-events: none; }
+.vs-line::after { content: "⟷"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2.6rem; height: 2.6rem; border-radius: 50%; background: var(--signal); color: var(--white); display: grid; place-items: center; font-size: 1.2rem; box-shadow: 3px 3px 0 var(--ink); }
+.vs input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+.vs input:focus-visible + .vs-line { outline: 3px solid var(--ink); }
+
 /* ---------- vragen ---------- */
 .faq-sec { background: var(--white); border-top: 3px solid var(--ink); }
 .faq { display: grid; max-width: 50rem; border-top: 3px solid var(--ink); }
@@ -239,6 +273,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .vs-line::after { transition: none; }
   .ticker-track { animation: none; }
   .btn, summary::after { transition: none; }
 }
@@ -259,7 +294,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 </header>
 
 <main id="top">
-  <section class="hero">
+  <section class="hero" id="hero">
+    <canvas id="map" aria-hidden="true"></canvas>
+    <div class="hud" aria-live="polite"><span><b id="n-zaken">70</b> zaken zonder site</span><span class="ja"><b id="n-ja">0</b> binnengelopen</span></div>
+    <p class="hint">Tik op de kaart · ik loop binnen</p>
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="label">Webdesign · Promo-video's · Hengelo</p>
@@ -411,6 +449,22 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <h2 class="sign">Gemaakt in<br>Hengelo.</h2>
         <p>Ik ben net begonnen. Dit heb ik al gemaakt.</p>
       </div>
+      <div class="vs" id="vs">
+        <div class="vs-pane vs-before">
+          <span class="vs-tag">Nu</span>
+          <div class="g-search">kapper hengelo</div>
+          <div class="g-res"><small>facebook.com › barbershop</small><a>Barbershop Hengelo | Facebook</a><p>Laatste bericht: 2022. Openingstijden onbekend.</p></div>
+          <div class="g-res"><small>gidsvoornederland.nl</small><a>Barbershop Hengelo, Oud adres</a><p>Telefoonnummer niet beschikbaar.</p></div>
+        </div>
+        <div class="vs-pane vs-after">
+          <span class="vs-tag">Met Efe</span>
+          <em>Voorbeeld · Hengelo</em>
+          <b>BARBERSHOP<br>HENGELO</b>
+          <div class="d-btns"><span>Bel nu</span><span>Route</span></div>
+        </div>
+        <input type="range" id="vs-range" min="0" max="100" value="40" aria-label="Schuif tussen nu en met een site">
+        <span class="vs-line"></span>
+      </div>
       <div class="work-grid">
         <article class="case">
           <div class="case-visual"><em>Voorbeeld-demo</em><b>BARBERSHOP<br>HENGELO</b></div>
@@ -476,5 +530,92 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <span>KvK 00000000</span>
   </div>
 </footer>
+<script>
+(() => {
+  // Voor / na
+  const vs = document.getElementById('vs'), r = document.getElementById('vs-range');
+  const set = () => vs.style.setProperty('--cut', r.value + '%');
+  r.addEventListener('input', set); set();
+
+  // Live kaart: straten, zaken zonder site, en een route die binnenloopt
+  const hero = document.getElementById('hero'), cv = document.getElementById('map'), ctx = cv.getContext('2d');
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const COL = { line: 'rgba(255,255,255,.13)', dot: 'rgba(199,207,255,.45)', ring: '#ffffff', route: '#ffffff', sig: '#ff5a1f', fill: '#1f3bff' };
+  let W, H, dpr, streets = [], all = [], leads = [], walker, path = [], visited = 0, hover = null, t0 = 0;
+  let seed = 29092026; const R = () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296;
+
+  function build() {
+    dpr = Math.min(devicePixelRatio || 1, 2); W = hero.clientWidth; H = hero.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    seed = 29092026; streets = []; all = []; leads = [];
+    const cx = W * .68, cy = H * .5;
+    for (let i = 0; i < 16; i++) { const a = R() * Math.PI; streets.push([cx + (R() - .5) * W * .6, cy + (R() - .5) * H * .9, Math.cos(a), Math.sin(a), i < 4 ? 2 : 1]); }
+    const D = Math.hypot(W, H);
+    for (let n = 0; all.length < Math.min(420, W * H / 1800) && n < 15000; n++) {
+      const s = streets[Math.floor(R() * streets.length)], t = (R() - .5) * D, x = s[0] + s[2] * t + (R() - .5) * 10, y = s[1] + s[3] * t + (R() - .5) * 10;
+      if (x > 8 && x < W - 8 && y > 8 && y < H - 8 && all.every(p => Math.hypot(p.x - x, p.y - y) > 9)) all.push({ x, y });
+    }
+    all.forEach(p => { if (leads.length < 70 && R() < .3 && leads.every(q => Math.hypot(q.x - p.x, q.y - p.y) > 24)) { p.lead = true; leads.push(p); } });
+    document.getElementById('n-zaken').textContent = leads.length - visited;
+    walker = { x: cx, y: cy }; path = [{ x: cx, y: cy }]; 
+  }
+
+  function nearest(x, y) { let b = null, d = 1e9; leads.forEach(p => { if (p.ja) return; const k = Math.hypot(p.x - x, p.y - y); if (k < d) { d = k; b = p; } }); return b; }
+
+  let target = null;
+  function walkTo(p) { if (!p) return; target = p; }
+
+  function draw(now) {
+    ctx.clearRect(0, 0, W, H);
+    const D = Math.hypot(W, H);
+    streets.forEach(s => { ctx.strokeStyle = COL.line; ctx.lineWidth = s[4]; ctx.beginPath(); ctx.moveTo(s[0] - s[2] * D, s[1] - s[3] * D); ctx.lineTo(s[0] + s[2] * D, s[1] + s[3] * D); ctx.stroke(); });
+    ctx.setLineDash([2, 7]); ctx.strokeStyle = 'rgba(255,255,255,.22)'; ctx.lineWidth = 1;
+    [.18, .34, .55].forEach(f => { ctx.beginPath(); ctx.arc(path[0].x, path[0].y, D * f, 0, 7); ctx.stroke(); });
+    ctx.setLineDash([]);
+    all.forEach(p => { if (p.lead) return; ctx.fillStyle = COL.dot; ctx.beginPath(); ctx.arc(p.x, p.y, 1.4, 0, 7); ctx.fill(); });
+    // route
+    if (target) {
+      const dx = target.x - walker.x, dy = target.y - walker.y, d = Math.hypot(dx, dy), step = still ? d : Math.max(3, d * .08);
+      if (d <= step) { walker.x = target.x; walker.y = target.y; path.push({ x: target.x, y: target.y }); target.ja = true; target.at = now; target = null; visited++;
+        document.getElementById('n-ja').textContent = visited; document.getElementById('n-zaken').textContent = leads.length - visited; }
+      else { walker.x += dx / d * step; walker.y += dy / d * step; }
+    }
+    ctx.strokeStyle = COL.route; ctx.lineWidth = 1.6; ctx.setLineDash([7, 6]); ctx.lineDashOffset = still ? 0 : -now / 60;
+    ctx.beginPath(); path.forEach((p, i) => i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y)); ctx.lineTo(walker.x, walker.y); ctx.stroke(); ctx.setLineDash([]);
+    leads.forEach(p => {
+      ctx.lineWidth = 1.4;
+      if (p.ja) {
+        const age = (now - p.at) / 1000;
+        ctx.fillStyle = COL.sig; ctx.beginPath(); ctx.arc(p.x, p.y, 6, 0, 7); ctx.fill();
+        if (!still) { const k = age % 1.6 / 1.6; ctx.strokeStyle = `rgba(255,90,31,${1 - k})`; ctx.beginPath(); ctx.arc(p.x, p.y, 8 + k * 30, 0, 7); ctx.stroke(); }
+        if (age < 2.2) { ctx.fillStyle = COL.sig; ctx.font = '400 26px Anton, Impact, sans-serif'; ctx.fillText('JA.', p.x + 12, p.y - 10); }
+      } else {
+        const h = p === hover; ctx.fillStyle = h ? COL.ring : COL.fill; ctx.strokeStyle = COL.ring;
+        ctx.beginPath(); ctx.arc(p.x, p.y, h ? 8 : 5.5, 0, 7); ctx.fill(); ctx.stroke();
+      }
+    });
+    // wandelaar
+    ctx.fillStyle = COL.ring; ctx.beginPath(); ctx.arc(walker.x, walker.y, 4, 0, 7); ctx.fill();
+    if (hover && !hover.ja) {
+      const km = (Math.hypot(hover.x - walker.x, hover.y - walker.y) / 160).toFixed(1).replace('.', ',');
+      const label = `ZAAK ZONDER SITE · ${km} KM`; ctx.font = '700 11px "Space Mono", monospace';
+      const w = ctx.measureText(label).width + 16, lx = Math.min(hover.x + 14, W - w - 8), ly = hover.y - 30 < 8 ? hover.y + 14 : hover.y - 30;
+      ctx.fillStyle = '#0b1030'; ctx.fillRect(lx, ly, w, 22); ctx.fillStyle = '#fff'; ctx.fillText(label, lx + 8, ly + 15);
+    }
+    if (!still || target) requestAnimationFrame(draw);
+  }
+
+  hero.addEventListener('pointermove', e => { if (e.target.closest('a,.hero-phone')) { hover = null; return; } const b = cv.getBoundingClientRect(), n = nearest(e.clientX - b.left, e.clientY - b.top); hover = n && Math.hypot(n.x - (e.clientX - b.left), n.y - (e.clientY - b.top)) < 60 ? n : null; if (still) requestAnimationFrame(draw); });
+  hero.addEventListener('pointerleave', () => { hover = null; });
+  hero.addEventListener('click', e => { if (e.target.closest('a')) return; const b = cv.getBoundingClientRect(); walkTo(nearest(e.clientX - b.left, e.clientY - b.top)); if (still) requestAnimationFrame(draw); });
+
+  build();
+  // Openingsmoment: de eerste drie deuren lopen vanzelf
+  if (!still) { let k = 0; const auto = setInterval(() => { if (k++ >= 3 || visited >= 3) return clearInterval(auto); if (!target) walkTo(nearest(walker.x + 60, walker.y + 40)); }, 900); }
+  else { for (let i = 0; i < 3; i++) { const p = nearest(walker.x + 90, walker.y - 20); p.ja = true; p.at = -1e9; path.push({ x: p.x, y: p.y }); walker = { x: p.x, y: p.y }; visited++; } document.getElementById('n-ja').textContent = visited; document.getElementById('n-zaken').textContent = leads.length - visited; }
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { const v = visited; build(); visited = 0; document.getElementById('n-ja').textContent = 0; requestAnimationFrame(draw); }, 200); });
+  requestAnimationFrame(draw);
+})();
+</script>
 </body>
 </html>
