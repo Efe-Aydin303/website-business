@@ -1,0 +1,17 @@
+# Portfolio-site van Efe
+
+Eén pagina, geen build nodig. Open `index.html` in je browser om te kijken.
+
+## Nog invullen (zoek op deze woorden)
+- `JOUWDOMEIN.nl`: je domein (of eerst `efe-webdesign.pages.dev`)
+- `31600000000` en `06 00 00 00 00`: je telefoonnummer / WhatsApp
+- `info@JOUWDOMEIN.nl`: je mailadres
+- `[achternaam]` en `KvK 00000000`
+- `DEMO-LINK.pages.dev`: link naar de demo van Barbershop Franko
+- `Efe Webdesign`: als je een andere naam wil
+
+## Online zetten (gratis, Cloudflare Pages)
+1. dash.cloudflare.com → Workers & Pages → Create → Pages → Connect to Git.
+2. Kies de repo `website-business`.
+3. Build command: leeg laten. Build output directory: `portfolio`.
+4. Deploy. Daarna site aanmelden bij Google Search Console.
