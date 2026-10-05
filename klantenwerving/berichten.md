@@ -1,7 +1,7 @@
 # Berichtsjablonen
 
 Vul de [haakjes] in. De **openingszin** uit je leads-CSV kun je direct plakken op de plek van [openingszin].
-Prijzen zijn je huidige: site €250 (helft vooraf), onderhoud €15 per maand.
+Prijzen zijn je huidige: site €250 (helft vooraf), onderhoud €25 per maand.
 
 Gouden regel: stuur pas een bericht als je al een **demo van hun zaak** hebt gemaakt. "Ik heb al iets voor jullie gemaakt" werkt veel beter dan "zal ik iets maken?".
 
@@ -20,7 +20,7 @@ Gouden regel: stuur pas een bericht als je al een **demo van hun zaak** hebt gem
 
 *(telefoon laten zien, laten scrollen)*
 
-> "Als je hem wil hebben zet ik hem online voor €250. Je betaalt de helft nu en de rest als hij live staat. Daarna €15 per maand en dan regel ik alles: aanpassingen, hosting, dat hij op Google komt."
+> "Als je hem wil hebben zet ik hem online voor €250. Je betaalt de helft nu en de rest als hij live staat. Daarna €25 per maand en dan regel ik alles: aanpassingen, hosting, dat hij op Google komt."
 
 Geen tijd? → *"Geen probleem, mag ik de link sturen via WhatsApp of Instagram?"*
 
