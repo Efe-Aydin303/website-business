@@ -7,7 +7,8 @@ Eén pagina, geen build nodig. Open `index.html` in je browser om te kijken.
 - `31600000000` en `06 00 00 00 00`: je telefoonnummer / WhatsApp
 - `info@JOUWDOMEIN.nl`: je mailadres
 - `[achternaam]` en `KvK 00000000`
-- `DEMO-LINK.pages.dev`: link naar de demo van Barbershop Franko
+- `DEMO-LINK.pages.dev`: link naar een voorbeeld-demo (geen echte zaak zonder toestemming)
+- Foto van jezelf: vervang het vak "Foto van Efe komt hier" in de sectie Wie ben ik
 - `Efe Webdesign`: als je een andere naam wil
 
 ## Online zetten (gratis, Cloudflare Pages)

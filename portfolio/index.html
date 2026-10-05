@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Website laten maken in Hengelo | Efe Webdesign</title>
-<meta name="description" content="Website laten maken in Hengelo? Ik maak snelle websites en promo-video's voor kappers, restaurants en lokale zaken in Twente. Eerst gratis een demo, daarna €250 eenmalig en €15 per maand.">
+<meta name="description" content="Website laten maken in Hengelo? Ik maak snelle websites en promo-video's voor kappers, restaurants en lokale zaken in Twente. Eerst gratis een demo, daarna €250 eenmalig en €25 per maand.">
 <link rel="canonical" href="https://JOUWDOMEIN.nl/">
 <meta property="og:title" content="Website laten maken in Hengelo | Efe Webdesign">
 <meta property="og:description" content="Eerst gratis een demo van jouw zaak. Bevalt hij? Dan staat hij voor €250 online.">
@@ -204,6 +204,14 @@ section { padding-block: 5rem; }
 .slot b { font-family: var(--font-sign); font-weight: 400; font-size: 2.6rem; line-height: .95; text-transform: uppercase; }
 .slot p { color: var(--muted); }
 
+/* ---------- wie ben ik ---------- */
+.about { display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 820px) { .about { grid-template-columns: 18rem 1fr; } }
+.about > * { min-width: 0; }
+.photo { aspect-ratio: 4 / 5; width: min(18rem, 100%); border: 3px dashed var(--ink); background: var(--white); display: grid; place-items: center; text-align: center; padding: 1rem; color: var(--muted); box-shadow: 6px 6px 0 var(--cobalt); }
+.about-text { display: grid; gap: 1rem; max-width: 36rem; font-size: 1.15rem; }
+.about-text p:last-child { color: var(--muted); }
+
 /* ---------- vragen ---------- */
 .faq-sec { background: var(--white); border-top: 3px solid var(--ink); }
 .faq { display: grid; max-width: 50rem; border-top: 3px solid var(--ink); }
@@ -237,7 +245,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 </style>
 </head>
 <body>
-
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#top">EFE<b>WEB</b></a>
@@ -269,8 +276,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <div class="screen">
             <div class="notch"><i></i></div>
             <div class="d-hero">
-              <b>BARBERSHOP<br>FRANKO</b>
-              <em>Drienerstraat 13 · Hengelo</em>
+              <b>BARBERSHOP<br>HENGELO</b>
+              <em>Voorbeeld · Hengelo</em>
               <div class="d-btns"><span>Bel nu</span><span>Route</span></div>
             </div>
             <div class="d-list">
@@ -317,7 +324,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <p class="label">Google</p>
           <h3>Gevonden worden</h3>
           <p>Ik zet je goed op Google, zodat mensen je vinden als ze zoeken op "kapper Hengelo".</p>
-          <ul><li>Google Bedrijfsprofiel</li><li>Meer reviews</li><li>Elke maand je cijfers</li></ul>
+          <ul><li>Google Bedrijfsprofiel</li><li>Meer reviews</li><li>Elke maand je cijfers (maandpakket)</li></ul>
         </article>
       </div>
     </div>
@@ -348,11 +355,11 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <div class="price-grid">
         <div class="receipt-wrap">
           <div class="receipt" role="table" aria-label="Prijslijst">
-            <div class="r-head"><b>EFE WEB</b><span>HENGELO</span><span>05-10-2026</span></div>
+            <div class="r-head"><b>EFE WEB</b><span>HENGELO</span></div>
             <div class="r-block">
               <div class="r-row r-cat"><span>WEBSITE</span><span>€ 250,00</span></div>
               <div class="r-sub">helft vooraf, rest bij livegang</div>
-              <div class="r-row"><span>Onderhoud p/mnd</span><span>€ 15,00</span></div>
+              <div class="r-row"><span>Onderhoud p/mnd</span><span>€ 25,00</span></div>
               <div class="r-sub">hosting + aanpassingen</div>
             </div>
             <div class="r-block">
@@ -363,7 +370,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
               <div class="r-row r-cat"><span>GOOGLE-PAKKET</span><span>€ 75,00</span></div>
               <div class="r-sub">eenmalig</div>
               <div class="r-row"><span>Maandpakket Google</span><span>€ 40,00</span></div>
-              <div class="r-sub">per maand</div>
+              <div class="r-sub">per maand, bovenop de € 25</div>
             </div>
             <div class="r-block">
               <div class="r-row"><span>Voorbeeld: site + video's</span><span>€ 300,00</span></div>
@@ -378,20 +385,19 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         </div>
         <div class="deals">
           <article class="deal hot">
-            <p class="label">Meest gekozen</p>
             <h3>Website</h3>
-            <p class="amt">€250 <small>+ €15 per maand</small></p>
+            <p class="amt">€250 <small>+ €25 per maand</small></p>
             <p>Complete site met basis-SEO voor Google. Ik regel hosting en aanpassingen.</p>
           </article>
           <article class="deal">
             <h3>Site + promo-video's</h3>
-            <p class="amt">€300 <small>+ €15 per maand</small></p>
+            <p class="amt">€300 <small>+ €25 per maand</small></p>
             <p>Website met 3 korte video's erbij voor €50 extra in plaats van €75.</p>
           </article>
           <article class="deal">
             <h3>Google-extra's</h3>
-            <p class="amt">€75 <small>eenmalig · of €40 p/mnd</small></p>
-            <p>Bedrijfsprofiel goed ingesteld, of elke maand posts, een nieuwe pagina en je cijfers.</p>
+            <p class="amt">€75 <small>eenmalig · of €40 p/mnd extra</small></p>
+            <p>Eenmalig: je Bedrijfsprofiel goed ingesteld plus een review-QR. Maandpakket: elke maand posts, een nieuwe pagina en je cijfers. Komt bovenop de €25 onderhoud.</p>
           </article>
         </div>
       </div>
@@ -407,7 +413,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       </div>
       <div class="work-grid">
         <article class="case">
-          <div class="case-visual"><em>Demo · Drienerstraat</em><b>BARBERSHOP<br>FRANKO</b></div>
+          <div class="case-visual"><em>Voorbeeld-demo</em><b>BARBERSHOP<br>HENGELO</b></div>
           <div class="case-info">
             <p class="label">Website-demo</p>
             <p>Een site voor een barbershop in Hengelo, met prijslijst, openingstijden, bel-knop en route. Gemaakt om in de zaak op de telefoon te laten zien.</p>
@@ -422,14 +428,25 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
+  <section id="wie">
+    <div class="wrap about">
+      <div class="photo label">Foto van Efe<br>komt hier</div>
+      <div class="about-text">
+        <p class="label">05 · Wie ben ik</p>
+        <h2 class="sign" style="font-size:clamp(3rem,10vw,6rem)">Hoi, ik ben Efe.</h2>
+        <p>Ik woon in Hengelo en maak websites en video's voor zaken hier in de buurt. Geen bureau, gewoon één persoon die je kunt appen en die langskomt.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="faq-sec" id="vragen">
     <div class="wrap">
       <div class="head">
-        <p class="label">05 · Vragen</p>
+        <p class="label">06 · Vragen</p>
         <h2 class="sign">Goede vraag.</h2>
       </div>
       <div class="faq">
-        <details><summary>Wat kost een website laten maken in Hengelo?</summary><p>Bij mij €250 eenmalig en €15 per maand. Daarin zitten hosting, kleine aanpassingen en de basis voor Google.</p></details>
+        <details><summary>Wat kost een website laten maken in Hengelo?</summary><p>Bij mij €250 eenmalig en €25 per maand. Daarin zitten hosting, kleine aanpassingen en de basis voor Google.</p></details>
         <details><summary>Heb ik een website nodig als ik al Instagram heb?</summary><p>Met een website vinden mensen je op Google als ze zoeken op bijvoorbeeld "kapper Hengelo". Instagram doet dat niet. Ze werken goed samen.</p></details>
         <details><summary>Kom ik bovenaan in Google?</summary><p>Dat kan niemand beloven. Ik zorg dat je goed vindbaar bent en je ziet elke maand hoeveel mensen je vinden. Resultaat duurt meestal 1 tot 3 maanden.</p></details>
         <details><summary>Werk je ook buiten Hengelo?</summary><p>Ja, ook in Enschede, Borne, Delden en Almelo.</p></details>
@@ -439,7 +456,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
   <section id="contact" class="contact">
     <div class="wrap">
-      <p class="label">06 · Contact</p>
+      <p class="label">07 · Contact</p>
       <h2 class="sign">App <span>me.</span></h2>
       <div class="contact-row">
         <p>Stuur de naam van je zaak. Ik maak een gratis demo en laat hem zien wanneer het jou uitkomt.</p>
