@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kapper Hengelo | Salon Sri Janki, Precision Haircutting</title>
+<meta name="description" content="Salon Sri Janki aan de Drienerstraat 23 in Hengelo. Precision haircutting voor dames, heren en kinderen. Bekijk prijzen, openingstijden en route.">
+<link rel="canonical" href="https://sri-janki-hengelo.pages.dev/">
+<meta name="theme-color" content="#16213e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Salon Sri Janki, Precision Haircutting",
+  "url": "https://sri-janki-hengelo.pages.dev/",
+  "address": { "@type": "PostalAddress", "streetAddress": "Drienerstraat 23", "addressLocality": "Hengelo", "addressRegion": "Overijssel", "addressCountry": "NL" },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Salon+Sri+Janki+Drienerstraat+23+Hengelo"
+}
+</script>
+<style>
+/* Concept: knippen op de millimeter. Millimeterpapier, een liniaal onder de naam, een knipstreep met een schaar
+   die erlangs loopt, en de prijslijst als een technisch specblad. Inkt-indigo met saffraan. */
+:root {
+  --paper: #eef1f5;
+  --line: #d5dce6;
+  --line-2: #bcc7d6;
+  --ink: #16213e;
+  --ink-2: #26345e;
+  --saffron: #e8921b;
+  --saffron-soft: #fbe3c0;
+  --muted: #56617a;
+  --display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body: "Figtree", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); font: 400 1.05rem/1.6 var(--body); overflow-x: hidden;
+  background-color: var(--paper);
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px),
+                    linear-gradient(rgba(188,199,214,.35) 1px, transparent 1px), linear-gradient(90deg, rgba(188,199,214,.35) 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+.wrap { max-width: 66rem; margin: 0 auto; padding-inline: 1.25rem; }
+section { padding-block: 4.5rem; }
+.mono { font-family: var(--mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
+.mono.s { color: var(--saffron); font-weight: 700; }
+h2 { font: 800 clamp(2.4rem, 10vw, 4.4rem)/.95 var(--display); letter-spacing: -.02em; margin-top: .7rem; text-wrap: balance; }
+h2 em { font-style: normal; color: var(--saffron); }
+
+.top { position: sticky; top: 0; z-index: 20; background: var(--ink); color: #fff; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; padding-block: .75rem; }
+.logo { font: 800 1.3rem/1 var(--display); text-decoration: none; letter-spacing: -.01em; }
+.logo span { color: var(--saffron); }
+.call { background: var(--saffron); color: var(--ink); text-decoration: none; font-weight: 700; padding: .55rem 1.1rem; border-radius: 4px; font-size: .95rem; }
+
+/* hero */
+.hero { padding-block: 3.2rem 3rem; }
+.hero .meta { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; color: var(--muted); }
+.hero h1 { font: 800 clamp(4rem, 21vw, 10.5rem)/.82 var(--display); letter-spacing: -.03em; margin-top: 1.4rem; }
+.hero h1 span { display: block; }
+.hero h1 .j { color: var(--saffron); }
+.ruler { position: relative; overflow: hidden; height: 46px; margin-top: 1.2rem; border-top: 2px solid var(--ink);
+  background-image:
+    linear-gradient(90deg, var(--ink) 2px, transparent 2px),
+    linear-gradient(90deg, var(--ink) 1px, transparent 1px),
+    linear-gradient(90deg, var(--ink) 1px, transparent 1px);
+  background-size: 100px 22px, 50px 14px, 10px 8px; background-repeat: repeat-x; }
+.ruler span { position: absolute; top: 24px; font: 400 .65rem/1 var(--mono); color: var(--muted); transform: translateX(-50%); }
+.sub { display: grid; gap: 1.6rem; margin-top: 1.8rem; }
+@media (min-width: 820px) { .sub { grid-template-columns: 1.3fr 1fr; align-items: end; } }
+.sub p { font-size: 1.2rem; max-width: 30rem; }
+.cta { display: flex; flex-wrap: wrap; gap: .7rem; }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: .95rem 1.4rem; border-radius: 4px; font-weight: 700; text-decoration: none; }
+.btn.ink { background: var(--ink); color: #fff; box-shadow: 4px 4px 0 var(--saffron); }
+.btn.out { border: 2px solid var(--ink); }
+
+/* knipstreep */
+.cut { position: relative; margin-block: 2.6rem 0; border-top: 2px dashed var(--ink-2); height: 0; }
+.cut svg { position: absolute; top: -14px; left: 0; width: 28px; height: 28px; color: var(--ink); background: var(--paper); animation: snip 4s cubic-bezier(.6,.05,.3,1) .4s 1 both; }
+@keyframes snip { from { left: 0; } to { left: calc(100% - 28px); } }
+@media (prefers-reduced-motion: reduce) { .cut svg { animation: none; left: calc(100% - 28px); } }
+.cut small { position: absolute; left: 0; top: .5rem; font: 400 .65rem/1 var(--mono); letter-spacing: .14em; color: var(--muted); }
+
+/* specblad */
+.sheet { margin-top: 2.2rem; background: #fff; border: 2px solid var(--ink); border-radius: 6px; overflow: hidden; }
+.sheet-head, .spec { display: grid; grid-template-columns: 1fr auto auto; gap: 1rem; align-items: baseline; padding: .95rem 1.2rem; }
+.sheet-head { background: var(--ink); color: #fff; font: 700 .7rem/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+.spec { border-top: 1px solid var(--line); }
+.spec b { font: 800 1.25rem/1.2 var(--display); display: block; }
+.spec small { color: var(--muted); font-size: .9rem; }
+.spec .t, .spec .p { font: 700 .95rem/1 var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.spec .t { color: var(--muted); }
+.spec .p { color: var(--ink); background: var(--saffron-soft); padding: .3rem .5rem; border-radius: 3px; }
+.sheet .foot { padding: .8rem 1.2rem; font: 400 .7rem/1.4 var(--mono); letter-spacing: .08em; color: var(--muted); border-top: 1px dashed var(--line-2); text-transform: uppercase; }
+@media (max-width: 460px) { .sheet-head .h-t, .spec .t { display: none; } .sheet-head, .spec { grid-template-columns: 1fr auto; } }
+
+/* werkwijze */
+.method { background: var(--ink); color: #fff; }
+.method h2 { color: #fff; }
+.flow { display: grid; gap: 1px; margin-top: 2.2rem; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.18); }
+@media (min-width: 760px) { .flow { grid-template-columns: repeat(4, 1fr); } }
+.flow div { background: var(--ink); padding: 1.5rem 1.3rem; }
+.flow .mono { color: var(--saffron); }
+.flow h3 { font: 800 1.45rem/1.1 var(--display); margin: .7rem 0 .4rem; }
+.flow p { color: #b9c2d8; font-size: .97rem; }
+
+/* werk */
+.frames { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; margin-top: 2rem; }
+.frames div { aspect-ratio: 3/4; max-width: 100%; background: #fff; border: 2px solid var(--ink); position: relative; display: grid; place-items: center; color: var(--muted); }
+.frames div::before, .frames div::after { content: ""; position: absolute; width: 14px; height: 14px; border: 2px solid var(--saffron); }
+.frames div::before { top: 6px; left: 6px; border-right: 0; border-bottom: 0; }
+.frames div::after { bottom: 6px; right: 6px; border-left: 0; border-top: 0; }
+.frames span { font: 400 .65rem/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; text-align: center; }
+@media (min-width: 760px) { .frames div { aspect-ratio: 4/3; } }
+.small { margin-top: .9rem; color: var(--muted); font-size: .85rem; }
+
+/* bezoek */
+.visit { display: grid; gap: 1rem; margin-top: 2.2rem; }
+@media (min-width: 760px) { .visit { grid-template-columns: 1fr 1fr; } }
+.panel { background: #fff; border: 2px solid var(--ink); border-radius: 6px; padding: 1.5rem; min-width: 0; }
+.panel h3 { font: 800 1.5rem/1 var(--display); margin-bottom: 1rem; }
+.addr { font: 800 2.2rem/1 var(--display); letter-spacing: -.02em; }
+.coords { margin-top: .6rem; color: var(--muted); }
+.hours div { display: flex; justify-content: space-between; padding: .5rem 0; border-bottom: 1px dashed var(--line-2); font-variant-numeric: tabular-nums; }
+.hours div:last-of-type { border: 0; }
+.hours div span:last-child { font-family: var(--mono); font-size: .92rem; }
+.panel .btn { margin-top: 1.2rem; }
+
+footer { background: var(--ink); color: #9aa5c0; text-align: center; padding: 2.5rem 1.25rem 6.5rem; font-size: .85rem; }
+footer b { display: block; font: 800 1.4rem/1 var(--display); color: #fff; margin-bottom: .4rem; }
+footer b span { color: var(--saffron); }
+.bar { position: fixed; inset: auto 0 0 0; z-index: 30; display: flex; gap: .5rem; padding: .7rem 1rem calc(.7rem + env(safe-area-inset-bottom)); background: var(--ink); }
+.bar a { flex: 1; }
+.bar .btn.out { border-color: #fff; color: #fff; }
+.bar .btn.ink { background: var(--saffron); color: var(--ink); box-shadow: none; }
+@media (min-width: 760px) { .bar { display: none; } footer { padding-bottom: 2.5rem; } }
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="logo" href="#">Sri <span>Janki</span></a>
+  <a class="call" href="tel:">Bel</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div class="meta mono"><span>Precision Haircutting</span><span>Drienerstraat 23 · Hengelo</span></div>
+  <h1><span>Sri</span><span class="j">Janki.</span></h1>
+  <div class="ruler" aria-hidden="true">
+    <span style="left:0;transform:none">0</span><span style="left:100px">1 cm</span><span style="left:200px">2</span><span style="left:300px">3</span><span style="left:400px">4</span><span style="left:500px">5</span><span style="left:600px">6</span><span style="left:700px">7</span><span style="left:800px">8</span><span style="left:900px">9</span>
+  </div>
+  <div class="sub">
+    <p>Knippen op de millimeter. Voor dames, heren en kinderen, aan de Drienerstraat in Hengelo.</p>
+    <div class="cta">
+      <a class="btn ink" href="tel:">Maak een afspraak</a>
+      <a class="btn out" href="#prijzen">Prijzen</a>
+    </div>
+  </div>
+  <div class="cut" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg>
+    <small>KNIP HIER</small>
+  </div>
+</div></section>
+
+<section id="prijzen" style="padding-top:1.5rem"><div class="wrap">
+  <div class="mono s">Prijslijst</div>
+  <h2>Precies wat je <em>vraagt.</em></h2>
+  <div class="sheet">
+    <div class="sheet-head"><span>Behandeling</span><span class="h-t">Tijd</span><span>Prijs</span></div>
+    <div class="spec"><div><b>Knippen dames</b><small>Wassen, knippen, föhnen</small></div><span class="t">45 min</span><span class="p">€ 32</span></div>
+    <div class="spec"><div><b>Knippen heren</b><small>Schaar en tondeuse</small></div><span class="t">30 min</span><span class="p">€ 20</span></div>
+    <div class="spec"><div><b>Kinderen t/m 12</b><small>Rustig en snel</small></div><span class="t">20 min</span><span class="p">€ 15</span></div>
+    <div class="spec"><div><b>Wassen &amp; föhnen</b><small>Voor een feest of gewoon voor jezelf</small></div><span class="t">30 min</span><span class="p">€ 22</span></div>
+    <div class="foot">Voorbeeldprijzen en -tijden · pas ik aan naar jouw lijst</div>
+  </div>
+</div></section>
+
+<section class="method"><div class="wrap">
+  <div class="mono s">Werkwijze</div>
+  <h2>Eerst kijken, <em>dan knippen.</em></h2>
+  <div class="flow">
+    <div><span class="mono">Stap 1</span><h3>Bespreken</h3><p>Wat wil je, hoe valt je haar, hoeveel tijd heb je 's ochtends?</p></div>
+    <div><span class="mono">Stap 2</span><h3>Meten</h3><p>Lengte, lijnen en scheiding bepalen voordat de schaar erin gaat.</p></div>
+    <div><span class="mono">Stap 3</span><h3>Knippen</h3><p>Rustig en precies, laag voor laag.</p></div>
+    <div><span class="mono">Stap 4</span><h3>Afwerken</h3><p>Föhnen, controleren in de spiegel, klaar.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="mono s">Werk</div>
+  <h2>Strakke <em>lijnen.</em></h2>
+  <div class="frames"><div><span>Foto<br>dames</span></div><div><span>Foto<br>heren</span></div><div><span>Foto<br>salon</span></div></div>
+  <p class="small">Hier komen jullie eigen foto's.</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="mono s">Bezoek</div>
+  <h2>Drienerstraat <em>23.</em></h2>
+  <div class="visit">
+    <div class="panel hours"><h3>Openingstijden</h3>
+      <div><span>Maandag</span><span>gesloten</span></div>
+      <div><span>Dinsdag – vrijdag</span><span>09:00–18:00</span></div>
+      <div><span>Zaterdag</span><span>09:00–16:00</span></div>
+      <div><span>Zondag</span><span>gesloten</span></div>
+      <p class="small">Voorbeeldtijden · pas ik aan.</p></div>
+    <div class="panel"><h3>Adres</h3><div class="addr">Drienerstraat 23</div><div class="coords">Hengelo (Ov.)</div>
+      <a class="btn ink" href="https://www.google.com/maps/search/?api=1&amp;query=Salon+Sri+Janki+Drienerstraat+23+Hengelo" target="_blank" rel="noopener">Route in Google Maps</a></div>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <b>Sri <span>Janki</span></b>
+  Precision Haircutting · Drienerstraat 23, Hengelo<br>
+  <span style="opacity:.6">Voorbeeldsite door Efe Webdesign</span>
+</footer>
+
+<nav class="bar">
+  <a class="btn ink" href="tel:">Bel</a>
+  <a class="btn out" href="https://www.google.com/maps/search/?api=1&amp;query=Salon+Sri+Janki+Drienerstraat+23+Hengelo" target="_blank" rel="noopener">Route</a>
+</nav>
+</body>
+</html>

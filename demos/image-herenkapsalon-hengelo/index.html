@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Herenkapper Hengelo | Image Herenkapsalon, Deldenerstraat 39</title>
+<meta name="description" content="Image Herenkapsalon is de herenkapper aan de Deldenerstraat 39 in Hengelo. Knippen, tondeuse, fades en baard. Binnenlopen of even bellen.">
+<link rel="canonical" href="https://image-herenkapsalon-hengelo.pages.dev/">
+<meta name="theme-color" content="#123528">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,800;1,6..96,500&family=Archivo:wght@400;500;700;800&family=Courier+Prime:wght@400;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Image Herenkapsalon",
+  "url": "https://image-herenkapsalon-hengelo.pages.dev/",
+  "address": { "@type": "PostalAddress", "streetAddress": "Deldenerstraat 39", "addressLocality": "Hengelo", "addressRegion": "Overijssel", "addressCountry": "NL" },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Image+Herenkapsalon+Deldenerstraat+39+Hengelo"
+}
+</script>
+<style>
+/* Concept: de klassieke herenkapper. Flessengroen en messing, een vilten letterbord met de prijzen,
+   en een wachtnummer-kaartje "binnenlopen mag". */
+:root {
+  --green: #123528;
+  --green-2: #1b4a39;
+  --brass: #c9a24a;
+  --brass-2: #e7cd8a;
+  --cream: #e9efe9;
+  --ink: #101511;
+  --felt: #1a1a1a;
+  --muted: #5d6a61;
+  --serif: "Bodoni Moda", Didot, Georgia, serif;
+  --sans: "Archivo", system-ui, sans-serif;
+  --mono: "Courier Prime", "Courier New", monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--cream); color: var(--ink); font: 400 1.05rem/1.6 var(--sans); overflow-x: hidden; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+.wrap { max-width: 68rem; margin: 0 auto; padding-inline: 1.25rem; }
+section { padding-block: 4.5rem; }
+.eyebrow { font: 700 .75rem/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--brass); }
+
+/* top */
+.top { position: sticky; top: 0; z-index: 20; background: var(--green); color: var(--cream); border-bottom: 3px solid var(--brass); }
+.top .wrap { display: flex; justify-content: space-between; align-items: center; padding-block: .75rem; }
+.logo { font: 1.6rem/1 var(--serif); text-decoration: none; letter-spacing: .02em; }
+.logo i { color: var(--brass-2); }
+.call { font-weight: 800; text-decoration: none; background: var(--brass); color: var(--green); padding: .55rem 1.1rem; border-radius: 99px; font-size: .95rem; }
+
+/* hero */
+.hero { background: var(--green); color: var(--cream); padding-block: 3.5rem 0; position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: 0; background:
+  repeating-linear-gradient(90deg, transparent 0 46px, rgba(255,255,255,.035) 46px 48px); pointer-events: none; }
+.hero-grid { position: relative; display: grid; gap: 2.5rem; }
+@media (min-width: 860px) { .hero-grid { grid-template-columns: 1.3fr 1fr; align-items: end; } }
+.hero h1 { font: 400 clamp(4.2rem, 19vw, 9.5rem)/.85 var(--serif); letter-spacing: -.01em; }
+.hero h1 em { display: block; font-style: italic; color: var(--brass-2); font-size: .42em; letter-spacing: .01em; margin-top: .35rem; }
+.hero p.lead { margin-top: 1.4rem; max-width: 30rem; font-size: 1.15rem; color: #cfd8d1; }
+.hero .cta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.8rem; }
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .95rem 1.4rem; border-radius: 99px; font-weight: 800; text-decoration: none; }
+.btn.brass { background: var(--brass); color: var(--green); box-shadow: 0 4px 0 #8a6c24; }
+.btn.line { border: 2px solid var(--brass); color: var(--cream); }
+.score { display: inline-flex; align-items: center; gap: .7rem; margin-top: 2rem; padding: .6rem 1rem; border: 1px solid rgba(231,205,138,.4); border-radius: 12px; font-size: .9rem; color: #cfd8d1; }
+.score b { font: 2rem/1 var(--serif); color: var(--brass-2); }
+
+/* wachtnummer ticket */
+.ticket { justify-self: center; width: min(17rem, 80vw); background: var(--cream); color: var(--ink); padding: 1.4rem 1.4rem 1.2rem; border-radius: 6px 6px 0 0; transform: rotate(3deg); position: relative; margin-bottom: -1px;
+  -webkit-mask: radial-gradient(circle at 0 62%, transparent 10px, #000 11px) left / 51% 100% no-repeat, radial-gradient(circle at 100% 62%, transparent 10px, #000 11px) right / 51% 100% no-repeat;
+          mask: radial-gradient(circle at 0 62%, transparent 10px, #000 11px) left / 51% 100% no-repeat, radial-gradient(circle at 100% 62%, transparent 10px, #000 11px) right / 51% 100% no-repeat; }
+.ticket small { font: 700 .7rem/1 var(--mono); letter-spacing: .15em; text-transform: uppercase; color: var(--muted); }
+.ticket .num { font: 400 6.5rem/.9 var(--serif); color: var(--green); margin: .4rem 0 .2rem; }
+.ticket .walk { font: 800 1.05rem/1.2 var(--sans); text-transform: uppercase; letter-spacing: .04em; }
+.ticket hr { border: 0; border-top: 2px dashed #b9c6bc; margin: 1.1rem 0 .9rem; }
+.ticket .addr { font: .82rem/1.5 var(--mono); }
+
+/* stripe divider */
+.pole { height: 14px; background: repeating-linear-gradient(-45deg, var(--brass) 0 14px, var(--cream) 14px 28px, var(--green) 28px 42px, var(--cream) 42px 56px); }
+
+/* letterbord prijzen */
+.prices-grid { display: grid; gap: 2.5rem; }
+@media (min-width: 860px) { .prices-grid { grid-template-columns: 1fr 1.25fr; align-items: center; } }
+h2 { font: 400 clamp(2.6rem, 9vw, 4.4rem)/.95 var(--serif); margin-top: .6rem; }
+h2 em { color: var(--green-2); }
+.intro { margin-top: 1rem; color: var(--muted); max-width: 28rem; }
+.board { background: var(--felt); border: 12px solid #6b4a2b; border-radius: 8px; padding: 1.4rem 1.2rem; box-shadow: inset 0 0 0 2px #4d341e, 0 18px 30px -16px rgba(0,0,0,.6);
+  background-image: repeating-linear-gradient(0deg, #1a1a1a 0 9px, #141414 9px 11px); }
+.board h3 { font: 700 1.05rem/1 var(--mono); color: #f5f5f0; text-align: center; letter-spacing: .3em; margin-bottom: 1.1rem; }
+.row { display: flex; justify-content: space-between; gap: 1rem; font: 700 1rem/2.1 var(--mono); color: #f5f5f0; text-transform: uppercase; letter-spacing: .08em; }
+.row span:last-child { color: var(--brass-2); }
+.board .small { margin-top: .9rem; text-align: center; font: .7rem/1.4 var(--mono); color: #8d8d86; letter-spacing: .1em; text-transform: uppercase; }
+
+/* waarom */
+.why { background: var(--green); color: var(--cream); }
+.cards { display: grid; gap: 1rem; margin-top: 2.2rem; }
+@media (min-width: 760px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+.card { border: 1px solid rgba(231,205,138,.35); border-radius: 14px; padding: 1.5rem; }
+.card .n { font: 400 2rem/1 var(--sans); color: var(--brass); }
+.card h3 { font: 800 1.15rem/1.3 var(--sans); margin: .6rem 0 .35rem; }
+.card p { color: #c2ccc5; font-size: .98rem; }
+.why h2 em { color: var(--brass-2); }
+
+/* werk */
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-top: 2rem; }
+.gallery div { aspect-ratio: 4/5; border-radius: 10px; display: grid; place-items: center; color: rgba(244,236,220,.75); font: 700 .7rem/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; text-align: center; padding: .5rem;
+  background: linear-gradient(160deg, var(--green-2), var(--green)); }
+.gallery div:nth-child(2n) { background: linear-gradient(160deg, #2a2a2a, #111); }
+.gallery svg { width: 2.2rem; height: 2.2rem; display: block; margin: 0 auto .5rem; opacity: .8; }
+
+@media (min-width: 760px) { .gallery div { aspect-ratio: 4/3; } }
+/* bezoek */
+.visit { display: grid; gap: 1.5rem; margin-top: 2rem; }
+@media (min-width: 760px) { .visit { grid-template-columns: 1fr 1fr; } }
+.panel { background: #fff; border-radius: 16px; padding: 1.6rem; box-shadow: 0 1px 0 #cfdbd2; }
+.panel h3 { font: 400 1.7rem/1 var(--serif); margin-bottom: 1rem; }
+.hours div { display: flex; justify-content: space-between; padding: .55rem 0; border-bottom: 1px dashed #c5d2c8; }
+.hours div:last-child { border: 0; }
+.hours .today { font-weight: 800; color: var(--green-2); }
+.addr-big { font: 400 2rem/1.1 var(--serif); }
+.panel .btn { margin-top: 1.3rem; }
+.panel .btn.dark { background: var(--green); color: var(--cream); }
+.note { margin-top: .8rem; font-size: .8rem; color: var(--muted); }
+
+footer { background: var(--ink); color: #9aa59d; text-align: center; padding: 2.5rem 1.25rem 6.5rem; font-size: .85rem; }
+footer b { color: var(--cream); font: 400 1.4rem/1 var(--serif); display: block; margin-bottom: .5rem; }
+.bar { position: fixed; inset: auto 0 0 0; z-index: 30; display: flex; gap: .5rem; padding: .7rem 1rem calc(.7rem + env(safe-area-inset-bottom)); background: var(--green); border-top: 2px solid var(--brass); }
+.bar a { flex: 1; justify-content: center; }
+@media (min-width: 760px) { .bar { display: none; } footer { padding-bottom: 2.5rem; } }
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="logo" href="#">Image <i>Heren</i></a>
+  <a class="call" href="tel:">Bel ons</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <div class="eyebrow">Herenkapper · Deldenerstraat 39 · Hengelo</div>
+    <h1 style="margin-top:1rem">Image<em>Herenkapsalon</em></h1>
+    <p class="lead">Een vaste kapper vlak bij het centrum. Strak geknipt, netjes afgewerkt, en zonder gedoe weer buiten.</p>
+    <div class="cta">
+      <a class="btn brass" href="tel:">Bel voor een afspraak</a>
+      <a class="btn line" href="#bezoek">Route &amp; tijden</a>
+    </div>
+    <div class="score"><b>8,3</b> beoordeling van klanten op Telefoonboek</div>
+  </div>
+  <div class="ticket" aria-hidden="true">
+    <small>Uw nummer</small>
+    <div class="num">39</div>
+    <div class="walk">Binnenlopen mag</div>
+    <hr>
+    <div class="addr">Deldenerstraat 39<br>7551 Hengelo</div>
+  </div>
+</div></section>
+<div class="pole" aria-hidden="true"></div>
+
+<section id="prijzen"><div class="wrap prices-grid">
+  <div>
+    <div class="eyebrow">Prijzen</div>
+    <h2>Eerlijke prijzen, <em>geen verrassingen.</em></h2>
+    <p class="intro">Je weet vooraf wat je betaalt. Geen pakketjes of extra's die je niet wilt.</p>
+  </div>
+  <div class="board">
+    <h3>— IMAGE —</h3>
+    <div class="row"><span>Knippen heren</span><span>€ 18</span></div>
+    <div class="row"><span>Tondeuse / fade</span><span>€ 18</span></div>
+    <div class="row"><span>Baard trimmen</span><span>€ 10</span></div>
+    <div class="row"><span>Knippen + baard</span><span>€ 25</span></div>
+    <div class="row"><span>Kinderen t/m 12</span><span>€ 15</span></div>
+    <div class="small">Voorbeeldprijzen · pas ik aan naar jullie lijst</div>
+  </div>
+</div></section>
+
+<section class="why"><div class="wrap">
+  <div class="eyebrow">Waarom Image</div>
+  <h2>Al jaren <em>de vaste stoel</em> aan de Deldenerstraat.</h2>
+  <div class="cards">
+    <div class="card"><div class="n">✂</div><h3>Vakwerk</h3><p>Klassiek of modern, met schaar of tondeuse. Je zegt wat je wil, wij zorgen dat het klopt.</p></div>
+    <div class="card"><div class="n">→</div><h3>Binnenlopen</h3><p>Geen app, geen account. Gewoon langskomen of even bellen.</p></div>
+    <div class="card"><div class="n">⌖</div><h3>Vlak bij het centrum</h3><p>Op een paar minuten lopen van de Markt. Makkelijk te vinden, makkelijk te parkeren.</p></div>
+  </div>
+</div></section>
+
+<section id="werk"><div class="wrap">
+  <div class="eyebrow">Ons werk</div>
+  <h2>Vers uit <em>de stoel.</em></h2>
+  <div class="gallery">
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg>Foto 1</div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg>Foto 2</div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg>Foto 3</div>
+  </div>
+  <p class="note">Hier komen jullie eigen foto's van coupes en de zaak.</p>
+</div></section>
+
+<section id="bezoek" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Langskomen</div>
+  <h2>Kom <em>gewoon binnen.</em></h2>
+  <div class="visit">
+    <div class="panel hours">
+      <h3>Openingstijden</h3>
+      <div><span>Maandag</span><span>Gesloten</span></div>
+      <div><span>Dinsdag – vrijdag</span><span>09:00 – 18:00</span></div>
+      <div class="today"><span>Donderdag</span><span>09:00 – 18:00</span></div>
+      <div><span>Zaterdag</span><span>08:30 – 16:00</span></div>
+      <div><span>Zondag</span><span>Gesloten</span></div>
+      <p class="note">Voorbeeldtijden · pas ik aan.</p>
+    </div>
+    <div class="panel">
+      <h3>Adres</h3>
+      <div class="addr-big">Deldenerstraat 39<br>Hengelo</div>
+      <a class="btn dark" href="https://www.google.com/maps/search/?api=1&amp;query=Image+Herenkapsalon+Deldenerstraat+39+Hengelo" target="_blank" rel="noopener">Open in Google Maps</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <b>Image Herenkapsalon</b>
+  Deldenerstraat 39, Hengelo<br>
+  <span style="opacity:.6">Voorbeeldsite door Efe Webdesign</span>
+</footer>
+
+<nav class="bar">
+  <a class="btn brass" href="tel:">Bel</a>
+  <a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=Image+Herenkapsalon+Deldenerstraat+39+Hengelo" target="_blank" rel="noopener">Route</a>
+</nav>
+</body>
+</html>
