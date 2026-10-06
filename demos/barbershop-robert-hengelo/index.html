@@ -105,6 +105,8 @@ h2 span { color: var(--red); }
 .item small { grid-column: 1 / -1; color: #aab4cc; font-size: .9rem; }
 .menu .note { margin-top: .8rem; font-size: .78rem; color: #8e99b4; letter-spacing: .06em; text-transform: uppercase; }
 
+.price-intro { margin-top: 1.2rem; color: var(--muted); max-width: 24rem; }
+@media (min-width: 860px) { .price-wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 3rem; align-items: center; } .price-wrap .menu { margin-top: 0; } }
 /* zo gaat het */
 .steps { display: grid; gap: 1rem; margin-top: 2.2rem; counter-reset: s; }
 @media (min-width: 760px) { .steps { grid-template-columns: repeat(4, 1fr); } }
@@ -170,9 +172,10 @@ footer b { display: block; font: 400 1.8rem/1 var(--sign); color: var(--gold); m
   <span>Skin fade</span><span>Klassiek knippen</span><span>Baard</span><span>Kids cuts</span><span>Centrum Hengelo</span><span>Binnenlopen mag</span>
 </div></div>
 
-<section class="tiles" id="prijzen"><div class="wrap">
-  <div class="tag">Prijzen</div>
+<section class="tiles" id="prijzen"><div class="wrap price-wrap">
+  <div><div class="tag">Prijzen</div>
   <h2 class="cond">Wat kost <span>een knipbeurt?</span></h2>
+  <p class="price-intro">Geen verrassingen aan de kassa. Je ziet hier precies wat je betaalt, voordat je in de stoel zit.</p></div>
   <div class="menu">
     <div class="item"><b>Knippen</b><span class="p">€ 20</span><small>Schaar of tondeuse, inclusief wassen en stylen</small></div>
     <div class="item"><b>Skin fade</b><span class="p">€ 23</span><small>Strak uitgedund tot op de huid</small></div>
