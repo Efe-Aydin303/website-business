@@ -20,7 +20,7 @@ Zet de 5 demo's online op Cloudflare Pages (Workers & Pages → Create → Pages
 | 2 | Barbershop Robert | `barbershop-robert-hengelo.pages.dev` |
 | 3 | Luxurylooksbymerai | `luxurylooksbymerai.pages.dev` |
 | 4 | Salon Sri Janki | `sri-janki-hengelo.pages.dev` |
-| 5 | The Corner | `the-corner-hengelo.pages.dev` (map met flyer.jpg) |
+| 5 | The Corner | `the-corner-hengelo.pages.dev` |
 
 Open ze daarna alle 5 op je telefoon in losse tabbladen.
 
