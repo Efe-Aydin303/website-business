@@ -1,10 +1,10 @@
 # Binnenlopen donderdag 8 oktober (vanaf 15:15)
 
-5 zaken, allemaal zonder eigen website. 4 in/rond het centrum, The Corner als laatste op de fiets.
-Reken op ±20 minuten per stop (fietsen + praten). Klaar rond 17:00.
+5 zaken, allemaal zonder eigen website. 4 in/rond het centrum, The Corner als laatste stop.
+Reken op ±20 minuten per stop (rijden, parkeren + praten). Klaar rond 17:00.
 
-**Route in Google Maps (fiets):**
-https://www.google.com/maps/dir/?api=1&travelmode=bicycling&origin=Deldenerstraat+39%2C+Hengelo&destination=Dennenbosweg+92%2C+Hengelo&waypoints=Marktstraat%2025A%2C%20Hengelo%7CWilderinksstraat%205%2C%20Hengelo%7CDrienerstraat%2023%2C%20Hengelo
+**Route in Google Maps (auto):**
+https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=Deldenerstraat+39%2C+Hengelo&destination=Dennenbosweg+92%2C+Hengelo&waypoints=Marktstraat%2025A%2C%20Hengelo%7CWilderinksstraat%205%2C%20Hengelo%7CDrienerstraat%2023%2C%20Hengelo
 
 Check de dag zelf even de openingstijden in Google. Kappers zijn vaak tot 17:30 of 18:00 open, dus begin bij de kappers.
 
