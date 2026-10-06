@@ -16,7 +16,8 @@ Vraag alleen wat ontbreekt, in één bericht:
 - adres, telefoon, openingstijden
 - diensten met prijzen
 - Google-score en aantal reviews
-- foto's (links of uploads van Google Maps of Instagram)
+- **3 tot 6 echte foto's** van de zaak: gevel/uithangbord, interieur, hun werk (screenshots van Google Maps, Instagram of Knipklok zijn goed). Dit is het belangrijkste wat je vraagt: echte foto's maken een site persoonlijk, getekende plaatjes maken hem AI-achtig.
+- 1 of 2 echte reviewzinnen (letterlijk overgenomen) en iets wat alleen deze zaak heeft (verhuisd, familiezaak, lang open, koffie erbij, spreekt Turks/Arabisch)
 - Instagram/Facebook/boekingslink (bijv. Knipklok, Fresha, Treatwell)
 - tweetalig TR/NL? (vaak handig bij Turkse eigenaren; vraag het)
 
@@ -24,56 +25,66 @@ Staat de zaak in `klantenwerving/leads-*.xlsx`, haal daar adres, score, "wat ze 
 
 **Nooit verzinnen.** Geen nep-prijzen, nep-reviews, nep-telefoonnummers of nep-openingstijden. Wat je niet weet wordt een zichtbare lege plek: `€ ··`, `06 ·· ·· ·· ··`, `Openingstijden volgen`. Een eigenaar die zijn eigen prijzen fout ziet staan, haakt af. Reviewcijfers alleen als ze echt bekend zijn, met de bron erbij ("4,9 uit 724 reviews op Knipklok").
 
-## Stap 2: stijl kiezen per branche
+## Stap 2: een eigen identiteit, geen sjabloon
 
-Kies de stijl van de branche. Pas kleuren aan als de zaak een eigen logo/kleur heeft (zie foto's). Elke stijl gebruikt Google Fonts en CSS-variabelen op `:root`.
+Waarom: als elke demo dezelfde fonts, kleuren en trucjes krijgt, lijken ze op elkaar en voelt het als AI. (Efe, 2026-10-06: "het is nog steeds AI-achtig en de sites lijken op elkaar".) Daarom kies je per zaak opnieuw, uit wat **deze zaak** heeft.
 
-| Branche | Gevoel | Kleuren | Fonts | Wat centraal staat |
-|---|---|---|---|---|
-| Kapper / barbershop | donker, stoer, premium | bg `#161412`, tekst `#f2ebe0`, goud `#d4ad6a`, lijnen `#3a332e` | Anton (koppen), Instrument Sans, Space Mono (prijzen/labels) | prijslijst, "Bel nu" / "Afspraak maken", openingstijden, foto's van fades |
-| Dameskapper / salon / nagelstudio | licht, zacht, verzorgd | bg `#fbf7f4`, tekst `#2b2321`, accent oud-roze `#c98b83`, zacht `#f1e4de` | Cormorant Garamond (koppen), DM Sans | behandelingen met prijzen, foto's van werk, afspraakknop |
-| Snackbar / cafetaria / afhaal | warm, vrolijk, hongerig | bg `#fff8ec`, tekst `#2a1608`, rood `#d62828`, geel `#fcbf49` | Bowlby One SC (koppen), Nunito | menukaart met prijzen, "Bel om te bestellen", bezorgen/afhalen, openingstijden |
-| Schilder / klusbedrijf | strak, betrouwbaar | bg `#ffffff`, tekst `#14213d`, accent `#1f6feb`, vlak `#eef3fb` | Archivo (koppen), Inter | diensten, voor/na-schuif, werkgebied, "Vraag een offerte" |
-| Garage / autobedrijf | industrieel, sterk | bg `#121417`, tekst `#e9ecef`, oranje `#ff7a1a`, staal `#2a2f36` | Oswald (koppen), Inter, JetBrains Mono (labels) | APK/onderhoud/reparatie, merken, "Plan je afspraak", openingstijden |
-| Standaard (vereniging, winkel, overig) | net, rustig | bg `#faf7f2`, tekst `#16151a`, accent `#c8102e` of eigen kleur | Playfair Display (koppen), Inter | wat ze doen, activiteiten/aanbod, contact |
+1. **Kleuren uit de zaak zelf.** Haal 2-3 kleuren uit hun uithangbord, logo, interieur of foto's (in de Code-tab: `python -c` met Pillow om de meest voorkomende kleuren uit de foto's te halen; in de app: kijk naar de foto's). Vul aan met één neutrale achtergrond die daarbij past. Geen standaardpalet per branche.
+2. **Kies een richting** uit de lijst hieronder die past bij hoe de zaak er echt uitziet (luxe of eenvoudig, jong of klassiek, Nederlands of Turks/Arabisch publiek). Schrijf in één zin op waarom.
+3. **Check `demos/LOG.md`** (maak hem als hij er niet is). Gebruik geen richting, fontpaar of "signatuur-moment" dat in de laatste 5 demo's al voorkwam. Voeg na het bouwen een regel toe: `datum | zaak | richting | fonts | kleuren | signatuur-moment`.
+
+| Richting | Past bij | Fonts (kop + tekst) | Layout-idee |
+|---|---|---|---|
+| Editorial / tijdschrift | nette kapsalon, salon, schilder | Instrument Serif + Manrope | grote foto's met bijschrift, asymmetrische kolommen, veel wit |
+| Straat / collage | barbershop met jong publiek | Archivo Black + IBM Plex Sans | fotocollage met schuine randen, tape-stroken, grote cijfers |
+| Ouderwetse vakzaak | klassieke herenkapper, slager, schoenmaker | Rozha One + Work Sans | tegelpatroon of houtnerf als rand, emaille-bordje als kop |
+| Nachtzaak / neon | zaak met lichtreclame, shisha, late snackbar | Big Shoulders Display + Barlow | donker, hun neonkleur als enige felle kleur, gloed rond koppen |
+| Retro snackbar | cafetaria, frituur | Alfa Slab One + Rubik | menubord-layout, prijzen als op een lichtbak, rood-wit |
+| Grill / kebab | Turkse of Arabische grill, bakker | Yeseva One + Nunito Sans | warme foto van de grill groot, menu in kaarten per gerecht |
+| Zacht luxe | nagelstudio, beauty, dameskapper | Bodoni Moda + Jost | smalle kolom, foto's in boogvormen, rustige kleuren uit hun salon |
+| Speels kleur | nagelstudio met jong publiek | Gloock + Figtree | kleurvlakken uit hun nagelwerk, grote ronde foto's |
+| Vakman / betrouwbaar | schilder, klusbedrijf, loodgieter | Zilla Slab + Source Sans 3 | voor/na-foto's, werkgebied, stappenplan |
+| Werkplaats | garage, fietsenmaker | Saira Condensed + Barlow | stoere foto's, diensten als werkorder/bon, merkenlogo's in tekst |
+| Rustig standaard | vereniging, winkel, overig | Fraunces + Karla | heldere secties, agenda of aanbod centraal |
+
+Gebruik **niet**: Anton, Instrument Sans, Space Mono (dat is Efe's eigen huisstijl, klantsites moeten anders zijn), Inter, Space Grotesk, Poppins.
 
 Bij tweetalig: TR/NL-knop rechtsboven zoals in de ADD Hengelo-demo (`data-lang` op `<html>`, elementen met `lang="tr"` en `lang="nl"`, keuze onthouden in `localStorage` met try/catch).
 
 ## Stap 3: bouwen
 
-Eén bestand `index.html` met alle CSS en JS erin. Mobiel eerst (ontwerp voor 390px breed, daarna groter). Volgorde van de pagina:
+Eén bestand `index.html` met alle CSS en JS erin. Mobiel eerst (ontwerp voor 390px breed, daarna groter).
 
-1. **Header** (sticky): naam/logo + knop "Bel" of "Afspraak".
-2. **Hero**: naam, wat ze doen + plaats ("Barbershop in Hengelo"), de sterkste reden om te komen (score, lange openingstijden, lage prijs), twee knoppen: **Bel nu** (`tel:`) en **Route** (Google Maps-link naar het adres).
-3. **Diensten/prijzen of menu** (het belangrijkste blok van de branche).
-4. **Foto's** van hun werk/zaak (als die er zijn; anders dit blok weglaten, geen stockfoto's).
-5. **Reviews**: alleen echte score + bron, of weglaten.
-6. **Openingstijden + adres** met kaartlink.
-7. **Contact**: WhatsApp-knop (`https://wa.me/31...`), telefoon, Instagram/boekingslink.
-8. **Footer**: naam, adres, en klein: "Demo gemaakt door Efe Webdesign".
+Deze **inhoud** moet erin (volgorde en vorm kies je per richting, niet elke site dezelfde volgorde):
+- naam + wat ze doen + plaats, en de sterkste echte reden om te komen
+- **Bel nu** (`tel:`) en **Route** (Google Maps-link), en boek/bestel als dat bestaat
+- diensten/prijzen of menu
+- hun foto's (gevel, binnen, werk)
+- echte score + bron, en 1-2 letterlijke reviewzinnen als je die hebt
+- openingstijden + adres
+- WhatsApp, Instagram/boekingslink
+- footer met klein: "Demo gemaakt door Efe Webdesign"
 
 Altijd:
-- Een klein vast label "Demo" (hoek van het scherm) en bij formulieren: "Demo: op de echte site gaat dit naar [e-mail]".
-- Knoppen minstens 44px hoog, telefoonnummer klikbaar.
-- Geen horizontaal scrollen, `img{max-width:100%}`, `prefers-reduced-motion` respecteren.
+- Een klein vast label "Demo" en bij formulieren: "Demo: op de echte site gaat dit naar [e-mail]".
+- Op de telefoon een vaste balk onderin met de 2-3 belangrijkste knoppen (Bel / Boek of Bestel / Route).
+- Knoppen minstens 44px hoog. Geen horizontaal scrollen, `img{max-width:100%}`, `prefers-reduced-motion` respecteren.
 
-### Niveau: rijk, niet kaal (Efe, 2026-10-06)
-Een simpele site met alleen tekst en lijstjes is **te kaal**: de eigenaar moet "wauw" zeggen als Efe zijn telefoon laat zien. Elke demo heeft minstens:
-- **Een hero met karakter**: enorme koppen (bijv. letters die invallen, één woord in outline), plus een getekende SVG-illustratie die bij de branche hoort (kappersstoel, frietbakje, verfroller, auto) in plaats van een stockfoto. Echte score als ronde sticker/stempel.
-- **Eén interactief moment dat alleen bij deze branche past**, bijvoorbeeld: kapper = tondeuse-schuif (#0 tot #4) die het kapsel op een getekend hoofd laat veranderen; snackbar = menu met tabbladen en "stel je bestelling samen"; salon = kleurkiezer voor nagels; schilder = voor/na-schuif; garage = "wat is er mis?"-kiezer die naar de juiste dienst leidt.
-- **Beweging**: een schuine lichtkrant (ticker) met de diensten, een draaiende tekstring of draaiend detail (kapperspaal), knoppen die veren, secties die zacht inschuiven (maar ook zonder JS zichtbaar zijn).
-- **Een vaste balk onderin op de telefoon** met Bel / Boek of Bestel / Route, zoals een app.
-- **Iets met hun echte verhaal**: verhuisd? Teken een kaartje met looproute van oud naar nieuw adres. Veel reviews? Een groot getal dat optelt. Lang open? Laat dat groot zien.
-- Achtergrond met diepte (radiale gloed, lichte korrel), geen vlak egaal vlak.
-- Lege plekken (prijzen, tijden) mooi vormgeven zodat het bedoeld lijkt, niet als een kale lijst met puntjes. Bij onbekende openingstijden: één nette zin in plaats van zeven lege regels.
+### Rijk, maar eigen (Efe, 2026-10-06)
+Een kale site met tekst en lijstjes is te weinig, maar "rijk" betekent **hun eigen materiaal groot en goed gebruikt**, niet zoveel mogelijk effecten.
+- **Foto's dragen de site.** Groot, goed bijgesneden (`object-fit: cover`), met een eigen behandeling die bij de richting past (bijschriften, collage, boogvorm, duotoon in hun kleur). Geen stockfoto's.
+- **Precies één signatuur-moment** dat alleen bij deze zaak past en verschilt van de vorige demo's. Voorbeelden: tondeuse-schuif (#0 tot #4) die een kapsel verandert; voor/na-schuif; menu waarmee je een bestelling samenstelt; kleurkiezer voor nagels; kaartje met looproute na een verhuizing; "wat is er mis met je auto?"-kiezer.
+- **Echte details als inhoud**: de straatnaam, het aantal reviews, letterlijke reviewzinnen, de openingstijden in de avond, de taal die ze spreken.
+- Lege plekken (prijzen, tijden) netjes vormgeven: één zin als "Prijzen volgen" in de stijl van de site, geen rijen met puntjes.
+- Getekende SVG-illustraties alleen als er écht geen foto's zijn, en dan typografisch sterk in plaats van clipart.
 
-Voorbeeld op dit niveau: de Eray's Barbershop-demo in `demos/erays-barbershop/` en Efe's eigen site (Efe Webdesign).
-
-### Smaakregels (uit Taste Skill / Impeccable)
-- Eén duidelijk concept per site, geen "AI-look": geen paarse gradients, geen glassmorphism, geen emoji als iconen, geen drie gelijke kaartjes met icoon-kop-tekst als enige layout.
-- Grote, karaktervolle koppen; ruimte tussen secties (64-96px); maximaal 2 fonts + 1 mono.
-- Echte inhoud boven versiering: elke animatie of illustratie hoort bij de branche, geen willekeurige effecten.
-- Teksten kort, in de taal van de klant (simpel Nederlands), geen "Welkom op onze website".
+### Anti-AI-check (doe deze vóór je oplevert)
+Loop deze lijst na en haal weg wat erin staat:
+- Dezelfde trucjes als de vorige demo (kijk in `demos/LOG.md`): draaiende tekstring, ronde stempel/sticker, schuine lichtkrant (ticker), letters die invallen, mono-labels in hoofdletters boven elke sectie. Maximaal één van deze per site, en nooit dezelfde als de vorige keer.
+- Paarse/blauwe gradients, glassmorphism, emoji als iconen, drie gelijke kaartjes met icoon-kop-tekst, alles gecentreerd, overal dezelfde ronde hoeken.
+- Algemene zinnen die bij elke zaak passen ("Strakke fades, scherpe lijnen", "Kwaliteit en service staan voorop", "Welkom op onze website"). Vervang door iets wat alleen over deze zaak waar is.
+- Verzonnen feiten ("sinds 1998", "het beste van Hengelo", reviews die je niet hebt).
+- Vraag jezelf: als ik de naam weghaal, kan dit dan ook de site van een andere kapper zijn? Zo ja, dan is hij nog niet eigen genoeg.
 
 ### SEO-basis (uit `klantenwerving/seo.md`)
 - `<html lang="nl">`, `<title>[Naam] | [Dienst] in [Plaats]</title>`
