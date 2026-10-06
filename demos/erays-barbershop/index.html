@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eray's Barbershop | Barbershop in Hengelo</title>
+<meta name="description" content="Eray's Barbershop in Hengelo: fades, knippen en baard trimmen. 4,9 uit 724 reviews. Nu aan de Oudeboekeloseweg 7. Bel of maak online een afspraak.">
+<meta property="og:title" content="Eray's Barbershop | Barbershop in Hengelo">
+<meta property="og:description" content="Fades, knippen en baard. 4,9 uit 724 reviews. Oudeboekeloseweg 7, Hengelo.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#161412">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Sans:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Eray's Barbershop",
+  "description": "Barbershop in Hengelo voor fades, knippen en baard trimmen.",
+  "address": { "@type": "PostalAddress", "streetAddress": "Oudeboekeloseweg 7", "addressLocality": "Hengelo", "addressRegion": "Overijssel", "addressCountry": "NL" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "reviewCount": "724" }
+}
+</script>
+<style>
+:root {
+  --bg: #161412; --bg2: #201d1a; --ink: #f2ebe0; --muted: #b9b0a4; --gold: #d4ad6a; --line: #3a332e;
+  --sign: "Anton", Impact, "Arial Narrow Bold", sans-serif;
+  --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Space Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.6 var(--body); overflow-x: clip; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+h1, h2, h3, p { margin: 0; }
+.wrap { max-width: 68rem; margin: 0 auto; padding-inline: 1.25rem; }
+.sign { font-family: var(--sign); font-weight: 400; text-transform: uppercase; line-height: .92; letter-spacing: .01em; }
+.label { font: 700 .75rem/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+section { padding-block: 4.5rem; }
+
+.demo-tag { position: fixed; right: .75rem; pointer-events: none; opacity: .9; bottom: calc(env(safe-area-inset-bottom, 0px) + .75rem); z-index: 30; font: 700 .65rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: var(--bg); padding: .45rem .6rem; border-radius: 4px; }
+
+/* header */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4rem; }
+.logo { font-family: var(--sign); font-size: 1.5rem; text-decoration: none; letter-spacing: .03em; }
+.logo span { color: var(--gold); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3rem; padding: .8rem 1.4rem; border-radius: 999px; font-weight: 700; text-decoration: none; transition: transform .15s, background-color .15s; }
+.btn:active { transform: scale(.97); }
+.btn-gold { background: var(--gold); color: var(--bg); }
+.btn-gold:hover { background: #e3c084; }
+.btn-line { border: 1px solid #5a4f45; }
+.btn-line:hover { border-color: var(--gold); }
+.top .btn { min-height: 2.75rem; padding: .55rem 1.1rem; }
+
+/* hero */
+.hero { padding-block: 3.5rem 4rem; background: radial-gradient(120% 80% at 85% 0%, #3b3029, var(--bg) 65%); }
+.hero h1 { font-size: clamp(4.4rem, 22vw, 10rem); margin: .9rem 0 1.2rem; }
+.hero h1 em { font-style: normal; color: var(--gold); display: block; font-size: .42em; letter-spacing: .04em; margin-top: .35em; }
+.score { display: inline-flex; align-items: center; gap: .7rem; border: 1px solid var(--line); border-radius: 999px; padding: .45rem .9rem .45rem .5rem; margin-bottom: 1.4rem; }
+.score b { background: var(--gold); color: var(--bg); border-radius: 999px; padding: .2rem .65rem; font-weight: 700; }
+.score span { color: var(--muted); font-size: .9rem; }
+.lead { color: var(--muted); max-width: 32rem; font-size: 1.15rem; margin-bottom: 1.8rem; }
+.lead strong { color: var(--ink); font-weight: 600; }
+.cta { display: flex; flex-wrap: wrap; gap: .7rem; }
+
+/* move notice */
+.move { background: var(--gold); color: var(--bg); }
+.move .wrap { padding-block: 1rem; display: flex; flex-wrap: wrap; gap: .3rem 1rem; align-items: baseline; }
+.move b { font-family: var(--sign); font-weight: 400; font-size: 1.4rem; text-transform: uppercase; }
+
+/* prijzen */
+.head { margin-bottom: 2rem; display: grid; gap: .6rem; }
+.head h2 { font-size: clamp(3rem, 13vw, 5.5rem); }
+.head p { color: var(--muted); max-width: 34rem; }
+.prices { display: grid; gap: 2.5rem; }
+@media (min-width: 860px) { .prices { grid-template-columns: 1.2fr 1fr; align-items: start; } }
+.list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.list li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px dashed var(--line); }
+.list span:first-child { font-weight: 600; font-size: 1.15rem; }
+.list small { display: block; color: var(--muted); font-weight: 400; font-size: .85rem; }
+.list .p { font-family: var(--mono); color: var(--gold); white-space: nowrap; }
+.book { background: var(--bg2); border: 1px solid var(--line); border-radius: 1.2rem; padding: 1.6rem; display: grid; gap: 1rem; }
+.book h3 { font-family: var(--sign); font-weight: 400; font-size: 2.2rem; text-transform: uppercase; line-height: 1; }
+.book p { color: var(--muted); }
+
+/* tijden */
+.info { background: var(--bg2); border-block: 1px solid var(--line); }
+.info-grid { display: grid; gap: 2.5rem; }
+@media (min-width: 860px) { .info-grid { grid-template-columns: 1fr 1fr; } }
+.hours { list-style: none; margin: 0; padding: 0; font-family: var(--mono); font-size: .95rem; }
+.hours li { display: flex; justify-content: space-between; padding: .55rem 0; border-bottom: 1px dashed var(--line); color: var(--muted); }
+.hours li span:first-child { color: var(--ink); }
+.addr { display: grid; gap: 1rem; align-content: start; }
+.addr address { font-style: normal; font-size: 1.3rem; line-height: 1.4; }
+.addr .old { color: var(--muted); font-size: .9rem; }
+
+/* contact */
+.contact h2 { font-size: clamp(3.6rem, 18vw, 8rem); margin-bottom: 1.5rem; }
+.contact h2 span { color: var(--gold); }
+.wa { background: #1fae5b; color: #fff; }
+.wa:hover { background: #24c466; }
+footer { border-top: 1px solid var(--line); padding-block: 1.6rem calc(1.6rem + env(safe-area-inset-bottom, 0px)); color: var(--muted); font: .75rem/1.6 var(--mono); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.5rem; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise { animation: rise .7s cubic-bezier(.2, .8, .2, 1) both; }
+  .rise:nth-child(2) { animation-delay: .08s; } .rise:nth-child(3) { animation-delay: .16s; } .rise:nth-child(4) { animation-delay: .24s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+</style>
+</head>
+<body>
+<div class="demo-tag" aria-hidden="true">Demo</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">ERAY'S<span>.</span></a>
+    <a class="btn btn-gold" href="tel:+3100000000" data-todo="telefoonnummer">Bel nu</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="label rise">Barbershop · Hengelo</p>
+      <h1 class="sign rise">Eray's<em>Barbershop in Hengelo</em></h1>
+      <div class="score rise"><b>4,9</b><span>uit 724 reviews op Knipklok</span></div>
+      <p class="lead rise">Strakke fades, knippen en baard trimmen. <strong>Nu op ons nieuwe adres: Oudeboekeloseweg 7.</strong></p>
+      <div class="cta">
+        <a class="btn btn-gold" href="tel:+3100000000" data-todo="telefoonnummer">Bel nu</a>
+        <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Oudeboekeloseweg+7+Hengelo" target="_blank" rel="noopener">Route</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="move" role="note">
+    <div class="wrap"><b>We zijn verhuisd</b><span>Van Vuurdoornplein 8 naar Oudeboekeloseweg 7, Hengelo.</span></div>
+  </div>
+
+  <section id="prijzen">
+    <div class="wrap prices">
+      <div>
+        <div class="head">
+          <p class="label">Prijzen</p>
+          <h2 class="sign">Wat het kost</h2>
+        </div>
+        <ul class="list" data-todo="prijzen">
+          <li><span>Knippen</span><span class="p">€ ··</span></li>
+          <li><span>Skin fade</span><span class="p">€ ··</span></li>
+          <li><span>Baard trimmen</span><span class="p">€ ··</span></li>
+          <li><span>Knippen + baard</span><span class="p">€ ··</span></li>
+          <li><span>Kinderen<small>t/m 12 jaar</small></span><span class="p">€ ··</span></li>
+        </ul>
+      </div>
+      <aside class="book">
+        <p class="label">Afspraak</p>
+        <h3>Niet wachten, gewoon boeken</h3>
+        <p>Kies zelf je tijd online, of bel even. Druk? Boek een paar dagen vooruit.</p>
+        <a class="btn btn-gold" href="https://www.knipklok.nl" target="_blank" rel="noopener" data-todo="eigen Knipklok-link">Boek via Knipklok</a>
+        <a class="btn btn-line" href="tel:+3100000000" data-todo="telefoonnummer">Of bel</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="info" id="tijden">
+    <div class="wrap info-grid">
+      <div>
+        <div class="head">
+          <p class="label">Openingstijden</p>
+          <h2 class="sign">Wanneer</h2>
+        </div>
+        <ul class="hours" data-todo="openingstijden">
+          <li><span>Maandag</span><span>volgt</span></li>
+          <li><span>Dinsdag</span><span>volgt</span></li>
+          <li><span>Woensdag</span><span>volgt</span></li>
+          <li><span>Donderdag</span><span>volgt</span></li>
+          <li><span>Vrijdag</span><span>volgt</span></li>
+          <li><span>Zaterdag</span><span>volgt</span></li>
+          <li><span>Zondag</span><span>volgt</span></li>
+        </ul>
+      </div>
+      <div class="addr">
+        <div class="head">
+          <p class="label">Adres</p>
+          <h2 class="sign">Waar</h2>
+        </div>
+        <address>Oudeboekeloseweg 7<br>Hengelo</address>
+        <p class="old">Let op: niet meer op het Vuurdoornplein.</p>
+        <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Oudeboekeloseweg+7+Hengelo" target="_blank" rel="noopener">Open in Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="label">Contact</p>
+      <h2 class="sign">Tot <span>zo.</span></h2>
+      <div class="cta">
+        <a class="btn wa" href="https://wa.me/3100000000" target="_blank" rel="noopener" data-todo="WhatsApp-nummer">WhatsApp</a>
+        <a class="btn btn-gold" href="tel:+3100000000" data-todo="telefoonnummer">Bel nu</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Eray's Barbershop · Oudeboekeloseweg 7, Hengelo</span>
+    <span>Demo gemaakt door Efe Webdesign</span>
+  </div>
+</footer>
+</body>
+</html>
