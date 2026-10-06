@@ -98,6 +98,15 @@ Maak met `klantenwerving/berichten.md` twee teksten, ingevuld met naam, plaats, 
 1. **Instagram/Facebook DM** (sjabloon 1)
 2. **Binnenloop-zin** (sjabloon 2), met €250 en €25 per maand
 
+Is `berichten.md` niet beschikbaar (bijv. in de app), gebruik dan deze twee:
+
+> Hoi [naam of zaak]! Ik ben Efe, ik maak websites voor zaken hier in [plaats].
+> [openingszin]
+> Ik heb alvast een voorbeeld gemaakt van hoe een site voor jullie eruit kan zien: [demo-link]
+> Mag ik het een keer kort laten zien? Kost je niks om te kijken.
+
+> "Hoi, ik ben Efe uit [plaats]. Ik zag dat jullie nog geen website hebben, dus ik heb er alvast eentje voor jullie gemaakt. Mag ik hem even laten zien? Duurt één minuut." (telefoon laten zien) "Als je hem wil hebben zet ik hem online voor €250. Je betaalt de helft nu en de rest als hij live staat. Daarna €25 per maand en dan regel ik alles: aanpassingen, hosting, dat hij op Google komt."
+
 Geen e-mail naar eenmanszaken. Alleen echte klanten als referentie noemen.
 
 ## Oplevering aan Efe
