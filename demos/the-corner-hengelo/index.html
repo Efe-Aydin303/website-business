@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Corner Hengelo | Snackbar, döner en kapsalon in Hengelo</title>
+<meta name="description" content="The Corner is de nieuwe snackbar aan de Dennenbosweg 92 in Hengelo. Snacks, döner, kapsalon en burgers. Grand opening in november: alle snacks €1, dönerbox en kapsalon €5.">
+<link rel="canonical" href="https://the-corner-hengelo.pages.dev/">
+<meta property="og:title" content="The Corner Hengelo | Nieuw in Hengelo">
+<meta property="og:description" content="Snacks, döner, kapsalon en burgers aan de Dennenbosweg 92. Grand opening hele maand november.">
+<meta property="og:image" content="flyer.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0d0d0d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FastFoodRestaurant",
+  "name": "The Corner Hengelo",
+  "image": "https://the-corner-hengelo.pages.dev/flyer.jpg",
+  "url": "https://the-corner-hengelo.pages.dev/",
+  "telephone": "+31 74 737 0119",
+  "servesCuisine": ["Snacks", "Döner", "Kapsalon", "Burgers"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Dennenbosweg 92",
+    "postalCode": "7556",
+    "addressLocality": "Hengelo",
+    "addressCountry": "NL"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=The+Corner+Dennenbosweg+92+Hengelo"
+}
+</script>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --card: #1a1a1a;
+    --orange: #ff7a00;
+    --orange-2: #ffb21a;
+    --red: #d7261e;
+    --text: #f5f5f5;
+    --muted: #b5b5b5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: Inter, system-ui, sans-serif; line-height: 1.5; }
+  a { color: inherit; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+  .display { font-family: Anton, Impact, sans-serif; text-transform: uppercase; letter-spacing: .5px; line-height: 1.05; }
+
+  /* top bar */
+  header { position: sticky; top: 0; z-index: 10; background: rgba(13,13,13,.92); backdrop-filter: blur(6px); border-bottom: 1px solid #222; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .logo { font-family: Anton, Impact, sans-serif; font-size: 24px; text-decoration: none; }
+  .logo span { color: var(--orange); }
+  .btn { display: inline-block; background: var(--orange); color: #111; font-weight: 800; text-decoration: none; padding: 12px 20px; border-radius: 999px; }
+  .btn.ghost { background: transparent; color: var(--text); border: 2px solid var(--orange); }
+  header .btn { padding: 8px 16px; font-size: 14px; }
+
+  /* hero */
+  .hero { padding: 40px 0 32px; background: radial-gradient(ellipse at top, #3a1a00 0%, var(--bg) 70%); text-align: center; }
+  .tag { display: inline-block; background: var(--orange); color: #111; font-weight: 800; padding: 4px 12px; transform: rotate(-2deg); margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(44px, 12vw, 88px); }
+  .hero h1 span { color: var(--orange); display: block; }
+  .hero .sub { color: var(--muted); margin: 12px 0 24px; font-size: 18px; }
+  .cats { font-weight: 600; letter-spacing: 2px; margin-bottom: 24px; font-size: 14px; }
+  .cats b { color: var(--orange); }
+  .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  /* opening deal */
+  .deal { padding: 40px 0; }
+  .banner { background: var(--red); text-align: center; padding: 10px; transform: rotate(-1deg); margin-bottom: 24px; }
+  .banner h2 { font-size: clamp(28px, 7vw, 44px); }
+  .banner p { font-weight: 800; letter-spacing: 1px; }
+  .offers { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .offer { background: var(--card); border: 2px solid #2a2a2a; border-radius: 16px; padding: 24px; text-align: center; }
+  .offer .what { font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+  .offer .price { font-family: Anton, Impact, sans-serif; font-size: 64px; color: var(--orange-2); line-height: 1.1; }
+  .offer.big { border-color: var(--orange); }
+  .note { color: var(--muted); font-size: 14px; text-align: center; margin-top: 12px; }
+  @media (min-width: 640px) { .offers { grid-template-columns: repeat(3, 1fr); } }
+
+  /* menu */
+  section h2.title { font-size: clamp(32px, 8vw, 48px); margin-bottom: 20px; }
+  section h2.title span { color: var(--orange); }
+  .menu { padding: 40px 0; }
+  .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .menu-item { background: var(--card); border-radius: 14px; padding: 20px 16px; border-left: 4px solid var(--orange); }
+  .menu-item h3 { font-family: Anton, Impact, sans-serif; font-size: 26px; text-transform: uppercase; }
+  .menu-item p { color: var(--muted); font-size: 14px; }
+  @media (min-width: 640px) { .menu-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .flyer { padding: 8px 0 40px; text-align: center; }
+  .flyer img { width: 100%; max-width: 480px; border-radius: 16px; box-shadow: 0 10px 40px rgba(255,122,0,.25); }
+
+  /* info */
+  .info { padding: 40px 0; background: #121212; }
+  .info-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .info-card { background: var(--card); border-radius: 14px; padding: 20px; }
+  .info-card h3 { color: var(--orange); text-transform: uppercase; font-size: 14px; letter-spacing: 1px; margin-bottom: 8px; }
+  .info-card a { font-weight: 800; }
+  .placeholder { color: var(--orange-2); font-style: italic; }
+  .hours td { padding: 2px 12px 2px 0; }
+  iframe { width: 100%; height: 280px; border: 0; border-radius: 14px; margin-top: 16px; filter: grayscale(.3); }
+  @media (min-width: 640px) { .info-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  footer { padding: 24px 0 96px; text-align: center; color: var(--muted); font-size: 13px; }
+
+  /* sticky call bar on phone */
+  .callbar { position: fixed; bottom: 0; left: 0; right: 0; display: flex; gap: 8px; padding: 10px 16px; background: rgba(13,13,13,.95); border-top: 1px solid #222; }
+  .callbar a { flex: 1; text-align: center; }
+  @media (min-width: 640px) { .callbar { display: none; } footer { padding-bottom: 24px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">THE <span>CORNER</span></a>
+    <a class="btn" href="tel:+31747370119" data-umami-event="bel-klik">Bel ons</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="tag display">Nieuw in Hengelo!</div>
+      <h1 class="display">The Corner<span>Hengelo</span></h1>
+      <p class="sub">Snackbar aan de Dennenbosweg. Lekker eten voor iedereen!</p>
+      <p class="cats">SNACKS <b>•</b> DÖNER <b>•</b> KAPSALON <b>•</b> BURGERS</p>
+      <div class="ctas">
+        <a class="btn" href="#opening">Bekijk de openingsactie</a>
+        <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&destination=Dennenbosweg+92+Hengelo" target="_blank" rel="noopener" data-umami-event="route-klik">Route</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="deal" id="opening">
+    <div class="wrap">
+      <div class="banner">
+        <h2 class="display">Grand Opening</h2>
+        <p>HELE MAAND NOVEMBER</p>
+      </div>
+      <div class="offers">
+        <div class="offer big">
+          <div class="what">Alle snacks</div>
+          <div class="price">€1,-</div>
+        </div>
+        <div class="offer">
+          <div class="what">Dönerbox</div>
+          <div class="price">€5,-</div>
+        </div>
+        <div class="offer">
+          <div class="what">Kapsalon</div>
+          <div class="price">€5,-</div>
+        </div>
+      </div>
+      <p class="note">Openingsactie geldt de hele maand november.</p>
+    </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <h2 class="title display">Ons <span>menu</span></h2>
+      <div class="menu-grid">
+        <div class="menu-item"><h3>Snacks</h3><p>Vers uit de frituur.</p></div>
+        <div class="menu-item"><h3>Döner</h3><p>O.a. de dönerbox.</p></div>
+        <div class="menu-item"><h3>Kapsalon</h3><p>Friet, vlees, kaas en salade.</p></div>
+        <div class="menu-item"><h3>Burgers</h3><p class="placeholder">[soorten invullen]</p></div>
+      </div>
+      <p class="note"><span class="placeholder">[Volledige menukaart met prijzen komt hier]</span></p>
+    </div>
+  </section>
+
+  <section class="flyer">
+    <div class="wrap">
+      <img src="flyer.jpg" alt="Flyer grand opening The Corner Hengelo: alle snacks €1, dönerbox €5, kapsalon €5" loading="lazy" width="725" height="987">
+    </div>
+  </section>
+
+  <section class="info" id="contact">
+    <div class="wrap">
+      <h2 class="title display">Kom <span>langs</span></h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Adres</h3>
+          <p>The Corner Hengelo<br>Dennenbosweg 92<br>7556 Hengelo</p>
+        </div>
+        <div class="info-card">
+          <h3>Bellen / bestellen</h3>
+          <p><a href="tel:+31747370119" data-umami-event="bel-klik">074 737 0119</a></p>
+        </div>
+        <div class="info-card">
+          <h3>Openingstijden</h3>
+          <table class="hours">
+            <tr><td>Ma t/m zo</td><td class="placeholder">[tijden invullen]</td></tr>
+          </table>
+        </div>
+      </div>
+      <iframe title="The Corner Hengelo op Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Dennenbosweg+92,+Hengelo&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 The Corner Hengelo · Dennenbosweg 92, Hengelo · 074 737 0119</p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn" href="tel:+31747370119" data-umami-event="bel-klik">Bel</a>
+  <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&destination=Dennenbosweg+92+Hengelo" target="_blank" rel="noopener" data-umami-event="route-klik">Route</a>
+</div>
+
+</body>
+</html>
