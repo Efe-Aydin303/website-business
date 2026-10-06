@@ -57,10 +57,22 @@ Altijd:
 - Knoppen minstens 44px hoog, telefoonnummer klikbaar.
 - Geen horizontaal scrollen, `img{max-width:100%}`, `prefers-reduced-motion` respecteren.
 
+### Niveau: rijk, niet kaal (Efe, 2026-10-06)
+Een simpele site met alleen tekst en lijstjes is **te kaal**: de eigenaar moet "wauw" zeggen als Efe zijn telefoon laat zien. Elke demo heeft minstens:
+- **Een hero met karakter**: enorme koppen (bijv. letters die invallen, één woord in outline), plus een getekende SVG-illustratie die bij de branche hoort (kappersstoel, frietbakje, verfroller, auto) in plaats van een stockfoto. Echte score als ronde sticker/stempel.
+- **Eén interactief moment dat alleen bij deze branche past**, bijvoorbeeld: kapper = tondeuse-schuif (#0 tot #4) die het kapsel op een getekend hoofd laat veranderen; snackbar = menu met tabbladen en "stel je bestelling samen"; salon = kleurkiezer voor nagels; schilder = voor/na-schuif; garage = "wat is er mis?"-kiezer die naar de juiste dienst leidt.
+- **Beweging**: een schuine lichtkrant (ticker) met de diensten, een draaiende tekstring of draaiend detail (kapperspaal), knoppen die veren, secties die zacht inschuiven (maar ook zonder JS zichtbaar zijn).
+- **Een vaste balk onderin op de telefoon** met Bel / Boek of Bestel / Route, zoals een app.
+- **Iets met hun echte verhaal**: verhuisd? Teken een kaartje met looproute van oud naar nieuw adres. Veel reviews? Een groot getal dat optelt. Lang open? Laat dat groot zien.
+- Achtergrond met diepte (radiale gloed, lichte korrel), geen vlak egaal vlak.
+- Lege plekken (prijzen, tijden) mooi vormgeven zodat het bedoeld lijkt, niet als een kale lijst met puntjes. Bij onbekende openingstijden: één nette zin in plaats van zeven lege regels.
+
+Voorbeeld op dit niveau: de Eray's Barbershop-demo in `demos/erays-barbershop/` en Efe's eigen site (Efe Webdesign).
+
 ### Smaakregels (uit Taste Skill / Impeccable)
 - Eén duidelijk concept per site, geen "AI-look": geen paarse gradients, geen glassmorphism, geen emoji als iconen, geen drie gelijke kaartjes met icoon-kop-tekst als enige layout.
 - Grote, karaktervolle koppen; ruimte tussen secties (64-96px); maximaal 2 fonts + 1 mono.
-- Echte inhoud boven versiering. Eén kleine animatie mag (fade-in, hover), niet meer.
+- Echte inhoud boven versiering: elke animatie of illustratie hoort bij de branche, geen willekeurige effecten.
 - Teksten kort, in de taal van de klant (simpel Nederlands), geen "Welkom op onze website".
 
 ### SEO-basis (uit `klantenwerving/seo.md`)
