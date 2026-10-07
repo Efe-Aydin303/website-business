@@ -278,6 +278,17 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .ticker-track { animation: none; }
   .btn, summary::after { transition: none; }
 }
+
+/* ---------- animaties (geinspireerd op efe.wtf) ---------- */
+.top { transition: background-color .3s, top .45s cubic-bezier(.25,.46,.45,.94), width .45s cubic-bezier(.25,.46,.45,.94), border-radius .45s, box-shadow .3s, transform .45s cubic-bezier(.25,.46,.45,.94); width: 100%; margin-inline: auto; }
+.top.float { top: calc(env(safe-area-inset-top, 0px) + .7rem); width: min(60rem, calc(100% - 1.5rem)); border-radius: 99px; background: var(--ink); box-shadow: 0 10px 30px rgba(11,16,48,.35); }
+.top.float .wrap { padding-inline: 1rem .6rem; }
+.top.gone { transform: translateY(calc(-100% - 1.2rem)); }
+.hero h1 .w { display: inline-block; white-space: nowrap; }
+.hero h1 .l { display: inline-block; transform-origin: 50% 100%; will-change: transform; }
+.hero h1 .l.in { animation: l-in .7s cubic-bezier(.34,1.56,.64,1) both; }
+@keyframes l-in { 0% { transform: translateY(.5em) scaleY(.4); opacity: 0; } 100% { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .top, .top.gone { transition: none; transform: none; } .hero h1 .l.in { animation: none; } }
 </style>
 </head>
 <body>
@@ -630,6 +641,60 @@ document.addEventListener('click', e => {
   e.preventDefault();
   if (id === 'top') scrollTo({ top: 0 }); else el.scrollIntoView();
 });
+
+// Header wordt een zwevend pilletje na 60px, en verstopt zich bij naar beneden scrollen
+(() => {
+  const top = document.querySelector('.top');
+  let last = scrollY, tick = false;
+  const upd = () => {
+    const y = scrollY, d = y - last;
+    top.classList.toggle('float', y > 60);
+    if (Math.abs(d) > 6) { top.classList.toggle('gone', d > 0 && y > 240); last = y; }
+    tick = false;
+  };
+  addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
+  top.addEventListener('focusin', () => top.classList.remove('gone'));
+  upd();
+})();
+
+// Grote kop: letters rekken uit (en de omlijnde letters vullen zich) waar je muis of vinger is
+(() => {
+  const h1 = document.querySelector('.hero h1');
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const letters = [];
+  h1.querySelectorAll(':scope > span:not(.hl)').forEach(line => {
+    const text = line.textContent, out = line.classList.contains('out');
+    line.setAttribute('aria-label', text); line.textContent = '';
+    text.split(' ').forEach((word, wi) => {
+      if (wi) line.append(' ');
+      const w = document.createElement('span'); w.className = 'w'; w.setAttribute('aria-hidden', 'true');
+      [...word].forEach(ch => { const l = document.createElement('span'); l.className = 'l'; l.textContent = ch; w.append(l); letters.push({ el: l, out, f: 0 }); });
+      line.append(w);
+    });
+  });
+  if (still) return;
+  letters.forEach((o, i) => { o.el.style.animationDelay = (i * 35) + 'ms'; o.el.classList.add('in'); o.el.addEventListener('animationend', () => o.el.classList.remove('in'), { once: true }); });
+
+  const hero = document.querySelector('.hero'), R = 170;
+  let px = -1e4, py = -1e4, raf = 0;
+  const frame = () => {
+    raf = 0; let busy = false;
+    letters.forEach(o => {
+      if (o.el.classList.contains('in')) return;
+      const b = o.el.getBoundingClientRect(), d = Math.hypot(px - (b.left + b.width / 2), py - (b.top + b.height / 2));
+      const t = Math.max(0, 1 - d / R), f = o.f + (t * t * (3 - 2 * t) - o.f) * .2;
+      o.f = Math.abs(f - o.f) < .002 ? t : f; if (o.f !== t) busy = true;
+      o.el.style.transform = o.f > .001 ? `translateY(${-o.f * .06}em) scaleY(${1 + o.f * .22})` : '';
+      if (o.out) o.el.style.color = o.f > .001 ? `rgba(255,255,255,${o.f})` : '';
+    });
+    if (busy) raf = requestAnimationFrame(frame);
+  };
+  const go = () => { if (!raf) raf = requestAnimationFrame(frame); };
+  hero.addEventListener('pointermove', e => { px = e.clientX; py = e.clientY; go(); });
+  hero.addEventListener('pointerleave', () => { px = py = -1e4; go(); });
+  hero.addEventListener('touchmove', e => { const t = e.touches[0]; px = t.clientX; py = t.clientY; go(); }, { passive: true });
+  hero.addEventListener('touchend', () => { px = py = -1e4; go(); });
+})();
 </script>
 </body>
 </html>
