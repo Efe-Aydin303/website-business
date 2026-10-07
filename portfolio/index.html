@@ -681,15 +681,18 @@ document.addEventListener('click', e => {
     raf = 0; let busy = false;
     letters.forEach(o => {
       if (o.el.classList.contains('in')) return;
-      const b = o.el.getBoundingClientRect(), d = Math.hypot(px - (b.left + b.width / 2), py - (b.top + b.height / 2));
-      const t = Math.max(0, 1 - d / R), f = o.f + (t * t * (3 - 2 * t) - o.f) * .2;
-      o.f = Math.abs(f - o.f) < .002 ? t : f; if (o.f !== t) busy = true;
+      // middelpunt zonder vervorming meten, anders schuift de letter onder de muis heen en weer (trillen)
+      if (!o.c) { const b = o.el.getBoundingClientRect(), h = h1.getBoundingClientRect(); o.c = [b.left + b.width / 2 - h.left, b.top + b.height / 2 - h.top]; }
+      const h = h1.getBoundingClientRect(), d = Math.hypot(px - h.left - o.c[0], py - h.top - o.c[1]);
+      const t = Math.max(0, 1 - d / R), s = t * t * (3 - 2 * t), f = o.f + (s - o.f) * .2;
+      o.f = Math.abs(f - o.f) < .002 ? s : f; if (o.f !== s) busy = true;
       o.el.style.transform = o.f > .001 ? `translateY(${-o.f * .06}em) scaleY(${1 + o.f * .22})` : '';
       if (o.out) o.el.style.color = o.f > .001 ? `rgba(255,255,255,${o.f})` : '';
     });
     if (busy) raf = requestAnimationFrame(frame);
   };
   const go = () => { if (!raf) raf = requestAnimationFrame(frame); };
+  addEventListener('resize', () => letters.forEach(o => { o.f = 0; o.c = null; o.el.style.transform = o.el.style.color = ''; }));
   hero.addEventListener('pointermove', e => { px = e.clientX; py = e.clientY; go(); });
   hero.addEventListener('pointerleave', () => { px = py = -1e4; go(); });
   hero.addEventListener('touchmove', e => { const t = e.touches[0]; px = t.clientX; py = t.clientY; go(); }, { passive: true });
