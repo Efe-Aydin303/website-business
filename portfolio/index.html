@@ -55,6 +55,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 var(--font-body); overflow-x: hidden; }
+body { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
 img { max-width: 100%; }
 a { color: inherit; }
 a:focus-visible, summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
@@ -265,7 +266,6 @@ details p { color: var(--muted); padding-bottom: 1.3rem; max-width: 40rem; }
 @media (min-width: 820px) { .contact-row { grid-template-columns: 1fr auto; } }
 .contact-row p { font-size: 1.2rem; max-width: 32rem; }
 .lines { display: grid; gap: .3rem; font-family: var(--font-till); font-size: 1rem; }
-.lines span { user-select: all; }
 .contact .btn-signal { background: var(--ink); }
 .contact .btn-signal:hover { box-shadow: 6px 6px 0 var(--white); }
 .contact .btn-signal { box-shadow: 4px 4px 0 var(--white); }
