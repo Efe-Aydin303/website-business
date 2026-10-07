@@ -617,6 +617,17 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { const v = visited; build(); visited = 0; document.getElementById('n-ja').textContent = 0; requestAnimationFrame(draw); }, 200); });
   requestAnimationFrame(draw);
 })();
+
+// Menu: scrollen zonder #wat / #hoe in de adresbalk
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a || e.ctrlKey || e.metaKey || e.shiftKey) return;
+  const id = a.getAttribute('href').slice(1);
+  const el = id && document.getElementById(id);
+  if (!el) return;
+  e.preventDefault();
+  if (id === 'top') scrollTo({ top: 0 }); else el.scrollIntoView();
+});
 </script>
 </body>
 </html>
