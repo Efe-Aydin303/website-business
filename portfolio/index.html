@@ -97,10 +97,10 @@ section { padding-block: 5rem; }
 .btn-ghost { border: 2px solid currentColor; }
 
 .hero-phone { position: relative; justify-self: center; width: min(18rem, 76vw); }
-.sticker { position: absolute; z-index: 3; top: -1.2rem; left: -2.2rem; width: 7.6rem; height: 7.6rem; border-radius: 50%; background: var(--signal); color: var(--white); display: grid; place-items: center; text-align: center; transform: rotate(-14deg); box-shadow: 3px 3px 0 var(--ink); }
+.sticker { position: absolute; z-index: 3; top: -4.4rem; right: -2.4rem; width: 7.6rem; height: 7.6rem; border-radius: 50%; background: var(--signal); color: var(--white); display: grid; place-items: center; text-align: center; transform: rotate(12deg); box-shadow: 3px 3px 0 var(--ink); }
 .sticker span { font-family: var(--font-sign); font-size: 1.55rem; line-height: .95; text-transform: uppercase; }
-.sticker small { display: block; font-family: var(--font-till); font-size: .62rem; letter-spacing: .06em; margin-top: .25rem; }
-@media (max-width: 480px) { .sticker { left: -.6rem; width: 6.4rem; height: 6.4rem; } .sticker span { font-size: 1.3rem; } }
+.sticker small { display: block; font-family: var(--font-till); font-size: .55rem; line-height: 1.25; letter-spacing: .02em; margin-top: .35rem; }
+@media (max-width: 480px) { .sticker { right: -.8rem; width: 6.4rem; height: 6.4rem; } .sticker span { font-size: 1.3rem; } .sticker small { font-size: .5rem; } }
 
 .phone { aspect-ratio: 9 / 18; max-width: 100%; border-radius: 2.6rem 2.6rem 0 0; background: var(--ink); padding: .75rem .75rem 0; box-shadow: -14px 0 0 var(--cobalt-deep); }
 .screen { height: 100%; border-radius: 1.9rem 1.9rem 0 0; overflow: hidden; background: #161412; color: #f2ebe0; display: flex; flex-direction: column; font-size: .72rem; }
@@ -310,7 +310,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         </div>
       </div>
       <div class="hero-phone" aria-hidden="true">
-        <div class="sticker"><div><span>1e demo<br>gratis</span><small>geen verplichting</small></div></div>
+        <div class="sticker"><div><span>1e demo<br>gratis</span><small>geen<br>verplichting</small></div></div>
         <div class="phone">
           <div class="screen">
             <div class="notch"><i></i></div>
@@ -320,10 +320,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
               <div class="d-btns"><span>Bel nu</span><span>Route</span></div>
             </div>
             <div class="d-list">
-              <div><span>Knippen</span><span>€ ··</span></div>
-              <div><span>Skin fade</span><span>€ ··</span></div>
-              <div><span>Baard trimmen</span><span>€ ··</span></div>
-              <div><span>Knippen + baard</span><span>€ ··</span></div>
+              <div><span>Knippen</span><span>€ 22</span></div>
+              <div><span>Skin fade</span><span>€ 25</span></div>
+              <div><span>Baard trimmen</span><span>€ 12</span></div>
+              <div><span>Knippen + baard</span><span>€ 32</span></div>
             </div>
             <div class="d-hours">MA–ZA · OPENINGSTIJDEN<br>★★★★★ GOOGLE REVIEWS</div>
           </div>
@@ -606,9 +606,11 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     if (!still || target) requestAnimationFrame(draw);
   }
 
-  hero.addEventListener('pointermove', e => { if (e.target.closest('a,.hero-phone')) { hover = null; return; } const b = cv.getBoundingClientRect(), n = nearest(e.clientX - b.left, e.clientY - b.top); hover = n && Math.hypot(n.x - (e.clientX - b.left), n.y - (e.clientY - b.top)) < 60 ? n : null; if (still) requestAnimationFrame(draw); });
+  const copy = document.querySelector('.hero-copy');
+  const underCopy = (n, b) => { const r = copy.getBoundingClientRect(); return n.x + b.left > r.left - 24 && n.x + b.left < r.right + 24 && n.y + b.top > r.top - 24 && n.y + b.top < r.bottom + 24; };
+  hero.addEventListener('pointermove', e => { if (e.target.closest('a,.hero-phone,.hero-copy')) { hover = null; if (still) requestAnimationFrame(draw); return; } const b = cv.getBoundingClientRect(), n = nearest(e.clientX - b.left, e.clientY - b.top); hover = n && !underCopy(n, b) && Math.hypot(n.x - (e.clientX - b.left), n.y - (e.clientY - b.top)) < 60 ? n : null; if (still) requestAnimationFrame(draw); });
   hero.addEventListener('pointerleave', () => { hover = null; });
-  hero.addEventListener('click', e => { if (e.target.closest('a')) return; const b = cv.getBoundingClientRect(); walkTo(nearest(e.clientX - b.left, e.clientY - b.top)); if (still) requestAnimationFrame(draw); });
+  hero.addEventListener('click', e => { if (e.target.closest('a,.hero-copy')) return; const b = cv.getBoundingClientRect(); walkTo(nearest(e.clientX - b.left, e.clientY - b.top)); if (still) requestAnimationFrame(draw); });
 
   build();
   // Openingsmoment: de eerste drie deuren lopen vanzelf
