@@ -208,7 +208,6 @@ section { padding-block: 5rem; }
 
 /* ---------- wie ben ik ---------- */
 .about { display: grid; gap: 2rem; align-items: center; }
-@media (min-width: 820px) { .about { grid-template-columns: 18rem 1fr; } }
 .about > * { min-width: 0; }
 .photo { aspect-ratio: 4 / 5; width: min(18rem, 100%); border: 3px dashed var(--ink); background: var(--white); display: grid; place-items: center; text-align: center; padding: 1rem; color: var(--muted); box-shadow: 6px 6px 0 var(--cobalt); }
 .about-text { display: grid; gap: 1rem; max-width: 36rem; font-size: 1.15rem; }
@@ -459,7 +458,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <div class="head">
         <p class="label">04 · Werk</p>
         <h2 class="sign">Gemaakt in<br>Hengelo.</h2>
-        <p>Ik ben net begonnen. Dit heb ik al gemaakt.</p>
+        <p>Schuif en zie het verschil. Zo vindt een klant je nu, en zo met een eigen site.</p>
       </div>
       <div class="vs" id="vs">
         <div class="vs-pane vs-before">
@@ -470,33 +469,18 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         </div>
         <div class="vs-pane vs-after">
           <span class="vs-tag">Met Efe</span>
-          <em>Voorbeeld · Hengelo</em>
+          <em>(voorbeeld website)</em>
           <b>BARBERSHOP<br>HENGELO</b>
           <div class="d-btns"><span>Bel nu</span><span>Route</span></div>
         </div>
         <input type="range" id="vs-range" min="0" max="100" value="40" aria-label="Schuif tussen nu en met een site">
         <span class="vs-line"></span>
       </div>
-      <div class="work-grid">
-        <article class="case">
-          <div class="case-visual"><em>Voorbeeld-demo</em><b>BARBERSHOP<br>HENGELO</b></div>
-          <div class="case-info">
-            <p class="label">Website-demo</p>
-            <p>Een site voor een barbershop in Hengelo, met prijslijst, openingstijden, bel-knop en route. Gemaakt om in de zaak op de telefoon te laten zien.</p>
-            <a class="btn btn-ghost" href="https://DEMO-LINK.pages.dev" target="_blank" rel="noopener">Bekijk de demo →</a>
-          </div>
-        </article>
-        <div class="slot">
-          <b>Jouw zaak<br>hier?</b>
-          <p>De eerste demo maak ik gratis.</p>
-        </div>
-      </div>
     </div>
   </section>
 
   <section id="wie">
     <div class="wrap about">
-      <div class="photo label">Foto van Efe<br>komt hier</div>
       <div class="about-text">
         <p class="label">05 · Wie ben ik</p>
         <h2 class="sign" style="font-size:clamp(3rem,10vw,6rem)">Hoi, ik ben Efe.</h2>
