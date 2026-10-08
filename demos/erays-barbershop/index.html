@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eray's Barbershop | Barbershop in Hengelo</title>
+<meta name="description" content="Eray's Barbershop in Hengelo: fades, knippen en baard trimmen. 4,9 uit 724 reviews. Nu aan de Oudeboekeloseweg 7. Boek online of bel.">
+<meta property="og:title" content="Eray's Barbershop | Barbershop in Hengelo">
+<meta property="og:description" content="Fades, knippen en baard. 4,9 uit 724 reviews. Oudeboekeloseweg 7, Hengelo.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120f0d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Sans:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Eray's Barbershop",
+  "description": "Barbershop in Hengelo voor fades, knippen en baard trimmen.",
+  "address": { "@type": "PostalAddress", "streetAddress": "Oudeboekeloseweg 7", "addressLocality": "Hengelo", "addressRegion": "Overijssel", "addressCountry": "NL" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "reviewCount": "724" }
+}
+</script>
+<style>
+/* Concept: de stoel bij Eray. Draaiende kapperspaal, een tondeuse-schuif die laat zien hoe kort je gaat,
+   en het verhuisbericht als een kaartje met looproute. Donker hout, messing, wit licht. */
+:root {
+  --bg: #120f0d; --bg2: #1c1814; --bg3: #262019; --ink: #f4ede1; --muted: #b3a998;
+  --gold: #d6af6a; --gold2: #f0d29a; --red: #c8352e; --line: #3a3229;
+  --sign: "Anton", Impact, "Arial Narrow Bold", sans-serif;
+  --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Space Mono", ui-monospace, Menlo, monospace;
+  --spring: cubic-bezier(.2, 1.4, .4, 1);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.6 var(--body); overflow-x: clip; padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px)); }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 60; opacity: .07; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3, p { margin: 0; }
+.wrap { max-width: 70rem; margin: 0 auto; padding-inline: 1.25rem; }
+.sign { font-family: var(--sign); font-weight: 400; text-transform: uppercase; line-height: .9; letter-spacing: .01em; text-wrap: balance; }
+.label { font: 700 .72rem/1.3 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+section { padding-block: 5rem; position: relative; }
+
+/* kapperspaal */
+.pole { width: 14px; height: 34px; border-radius: 7px; border: 2px solid var(--gold); overflow: hidden; flex: none;
+  background: repeating-linear-gradient(-45deg, var(--red) 0 6px, var(--ink) 6px 12px, #2b4ea2 12px 18px, var(--ink) 18px 24px); background-size: 100% 34px; animation: pole 1.6s linear infinite; }
+@keyframes pole { to { background-position: 0 34px; } }
+
+/* header */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4rem; }
+.logo { display: flex; align-items: center; gap: .7rem; font-family: var(--sign); font-size: 1.45rem; text-decoration: none; letter-spacing: .04em; }
+.logo span { color: var(--gold); margin-left: -.5rem; }
+.nav { display: flex; gap: 1.6rem; font: 700 .75rem var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.nav a { text-decoration: none; color: var(--muted); }
+.nav a:hover { color: var(--gold); }
+@media (max-width: 760px) { .nav { display: none; } }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 3.1rem; padding: .8rem 1.5rem; border-radius: 999px; font-weight: 700; text-decoration: none; border: 0; font-family: var(--body); font-size: 1rem; cursor: pointer; transition: transform .2s var(--spring), background-color .2s, box-shadow .2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: scale(.96); }
+.btn svg { width: 1.15rem; height: 1.15rem; }
+.btn-gold { background: var(--gold); color: var(--bg); box-shadow: 0 6px 0 #8a6c38; }
+.btn-gold:hover { background: var(--gold2); }
+.btn-line { border: 1.5px solid #5d5144; color: var(--ink); background: transparent; }
+.btn-line:hover { border-color: var(--gold); }
+.top .btn { min-height: 2.6rem; padding: .5rem 1.1rem; box-shadow: none; }
+
+/* hero */
+.hero { padding-block: 3rem 2.5rem; overflow: hidden; background: radial-gradient(90% 70% at 85% 10%, #4a3a28 0%, transparent 60%), radial-gradient(60% 50% at 0% 100%, #2a1d16 0%, transparent 70%), var(--bg); }
+.hero-grid { display: grid; gap: 2.5rem; align-items: center; }
+@media (min-width: 900px) { .hero-grid { grid-template-columns: 1.15fr 1fr; } }
+.hero-copy { display: grid; gap: 1.3rem; min-width: 0; padding-bottom: 2rem; }
+.mega { font-size: clamp(5.2rem, 26vw, 12rem); line-height: .82; }
+.mega .w { display: inline-block; }
+.mega .o { color: transparent; -webkit-text-stroke: 2px var(--gold); }
+.mega .ch { display: inline-block; animation: drop .8s var(--spring) both; animation-delay: calc(var(--i) * 60ms); }
+@keyframes drop { from { transform: translateY(-40%) rotate(-8deg); opacity: .2; } }
+.sub { font-family: var(--sign); text-transform: uppercase; font-size: clamp(1.5rem, 6vw, 2.3rem); color: var(--gold); letter-spacing: .03em; line-height: 1; }
+.lead { color: var(--muted); max-width: 30rem; font-size: 1.15rem; }
+.lead strong { color: var(--ink); font-weight: 600; }
+.cta { display: flex; flex-wrap: wrap; gap: .8rem; }
+
+/* stoel-visual */
+.stage { position: relative; aspect-ratio: 1; width: min(30rem, 100%); max-width: 100%; justify-self: center; }
+.halo { position: absolute; inset: 8%; border-radius: 50%; background: radial-gradient(circle, #f0d29a33, transparent 65%); }
+.ring { position: absolute; inset: 0; animation: spin 26s linear infinite; }
+.ring text { font: 400 19px var(--sign); fill: var(--gold); letter-spacing: 4px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.chair { position: absolute; inset: 14%; }
+.stamp { position: absolute; right: 2%; top: 6%; width: 7.5rem; aspect-ratio: 1; border-radius: 50%; background: var(--gold); color: var(--bg); display: grid; place-items: center; text-align: center; transform: rotate(12deg); box-shadow: 0 0 0 6px var(--bg), 0 0 0 8px var(--gold); animation: wob 4s ease-in-out infinite; }
+.stamp b { display: block; font: 400 2.4rem/1 var(--sign); }
+.stamp small { display: block; font: 700 .6rem/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+@keyframes wob { 50% { transform: rotate(4deg) scale(1.04); } }
+@media (max-width: 480px) { .stamp { width: 6.2rem; } .stamp b { font-size: 2rem; } }
+
+/* ticker */
+.ticker { background: var(--gold); color: var(--bg); overflow: hidden; transform: rotate(-2deg); margin-block: 2.5rem -1rem; width: 104%; margin-left: -2%; border-block: 3px solid var(--bg); }
+.track { display: flex; width: max-content; animation: roll 30s linear infinite; }
+.track span { font: 400 1.7rem/1 var(--sign); text-transform: uppercase; padding: .7rem 0; white-space: nowrap; }
+.track span::after { content: "✂"; margin: 0 1.3rem; font-size: 1.2rem; vertical-align: .15rem; }
+@keyframes roll { to { transform: translateX(-50%); } }
+
+/* verhuisd */
+.move-grid { display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 860px) { .move-grid { grid-template-columns: 1fr 1.1fr; } }
+.move-grid > * { min-width: 0; }
+.head { display: grid; gap: .7rem; margin-bottom: 2rem; }
+.head h2 { font-size: clamp(3.2rem, 14vw, 6rem); }
+.head p { color: var(--muted); max-width: 34rem; }
+.mapcard { position: relative; aspect-ratio: 4 / 3; max-width: 100%; border-radius: 1.5rem; overflow: hidden; background: var(--bg2); border: 1px solid var(--line); }
+.mapcard svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.route { stroke-dasharray: 6 8; animation: walk 1.2s linear infinite; }
+@keyframes walk { to { stroke-dashoffset: -28; } }
+.pin-new { animation: bounce 1.6s var(--spring) infinite; transform-origin: 50% 100%; transform-box: fill-box; }
+@keyframes bounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-8px); } }
+.mapcard .tag { position: absolute; font: 700 .68rem/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; padding: .4rem .6rem; border-radius: 6px; }
+.tag-old { left: 6%; bottom: 10%; background: var(--bg3); color: var(--muted); text-decoration: line-through; }
+.tag-new { right: 6%; top: 10%; background: var(--gold); color: var(--bg); }
+
+/* tondeuse-schuif */
+.clip { background: var(--bg2); border-block: 1px solid var(--line); }
+.clip-grid { display: grid; gap: 2.5rem; align-items: center; }
+@media (min-width: 860px) { .clip-grid { grid-template-columns: 1fr 1fr; } }
+.clip-grid > * { min-width: 0; }
+.head-svg { width: min(22rem, 100%); max-width: 100%; margin-inline: auto; aspect-ratio: 1; }
+.guard { display: grid; gap: 1.2rem; }
+.guard-num { display: flex; align-items: baseline; gap: .8rem; }
+.guard-num b { font: 400 clamp(5rem, 22vw, 8rem)/.85 var(--sign); color: var(--gold); font-variant-numeric: tabular-nums; }
+.guard-num span { font: 700 .8rem var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.guard-name { font: 400 2rem/1 var(--sign); text-transform: uppercase; }
+.guard p { color: var(--muted); min-height: 3.2em; }
+input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 3rem; background: transparent; cursor: pointer; }
+input[type=range]::-webkit-slider-runnable-track { height: .7rem; border-radius: 99px; background: repeating-linear-gradient(90deg, var(--line) 0 3px, transparent 3px 12px), linear-gradient(90deg, var(--gold) var(--p, 25%), var(--bg3) var(--p, 25%)); }
+input[type=range]::-moz-range-track { height: .7rem; border-radius: 99px; background: var(--bg3); }
+input[type=range]::-moz-range-progress { height: .7rem; border-radius: 99px; background: var(--gold); }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 2.4rem; height: 2.4rem; margin-top: -.85rem; border-radius: 50%; background: var(--ink); border: 4px solid var(--gold); box-shadow: 0 4px 0 #8a6c38; }
+input[type=range]::-moz-range-thumb { width: 2rem; height: 2rem; border-radius: 50%; background: var(--ink); border: 4px solid var(--gold); }
+.ticks { display: flex; justify-content: space-between; font: 700 .72rem var(--mono); color: var(--muted); padding-inline: .4rem; }
+
+/* prijzen */
+.prices { display: grid; gap: 2.5rem; }
+@media (min-width: 860px) { .prices { grid-template-columns: 1.2fr 1fr; align-items: start; } }
+.prices > * { min-width: 0; }
+.menu { list-style: none; margin: 0; padding: 0; }
+.menu li { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: .8rem; padding: 1rem 0; cursor: default; transition: padding .3s var(--spring); }
+.menu li:hover { padding-left: .6rem; }
+.menu li::after { content: none; }
+.menu .n { font: 400 1.6rem/1 var(--sign); text-transform: uppercase; }
+.menu .dots { border-bottom: 2px dotted #5d5144; transform: translateY(-.35rem); }
+.menu .p { font: 700 1.05rem var(--mono); color: var(--gold); white-space: nowrap; }
+.menu small { grid-column: 1 / -1; color: var(--muted); font-size: .88rem; margin-top: -.5rem; }
+.book { position: relative; overflow: hidden; background: linear-gradient(160deg, var(--bg3), var(--bg2)); border: 1px solid var(--line); border-radius: 1.6rem; padding: 2rem 1.6rem; display: grid; gap: 1rem; }
+.book::before { content: ""; position: absolute; right: -3rem; top: -3rem; width: 10rem; height: 10rem; border-radius: 50%; border: 2px dashed var(--gold); opacity: .4; animation: spin 30s linear infinite; }
+.book h3 { font: 400 2.4rem/.95 var(--sign); text-transform: uppercase; }
+.book p { color: var(--muted); }
+
+/* reviews */
+.rate { display: grid; gap: 2rem; align-items: center; text-align: center; justify-items: center; }
+.big { font: 400 clamp(7rem, 34vw, 14rem)/.8 var(--sign); background: linear-gradient(180deg, var(--gold2), var(--gold) 55%, #8a6c38); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.stars { display: flex; gap: .4rem; }
+.stars svg { width: 2rem; height: 2rem; fill: var(--gold); }
+.rate p { color: var(--muted); max-width: 26rem; }
+.rate p b { color: var(--ink); }
+
+/* waar */
+.where { display: grid; gap: 2rem; }
+@media (min-width: 860px) { .where { grid-template-columns: 1fr 1fr; align-items: end; } }
+.where address { font-style: normal; font: 400 clamp(2.4rem, 10vw, 4rem)/.95 var(--sign); text-transform: uppercase; }
+.where address span { color: var(--gold); display: block; }
+.hours { border: 1px dashed var(--line); border-radius: 1rem; padding: 1.3rem; display: grid; gap: .6rem; }
+.hours p { color: var(--muted); }
+
+/* contact */
+.contact { text-align: center; background: radial-gradient(70% 60% at 50% 100%, #4a3a28, transparent 70%); }
+.contact h2 { font-size: clamp(4.5rem, 24vw, 11rem); margin-bottom: 1.8rem; }
+.contact h2 span { color: var(--gold); }
+.contact .cta { justify-content: center; }
+.wa { background: #1fae5b; color: #fff; box-shadow: 0 6px 0 #127a3e; }
+.wa:hover { background: #26c468; }
+footer { border-top: 1px solid var(--line); padding-block: 1.6rem; color: var(--muted); font: .74rem/1.6 var(--mono); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.5rem; }
+
+/* vaste balk onder (telefoon) */
+.dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom, 0px)); background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid var(--line); }
+.dock a { display: grid; justify-items: center; gap: .15rem; padding: .45rem; border-radius: .9rem; text-decoration: none; font: 700 .72rem var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.dock a svg { width: 1.4rem; height: 1.4rem; }
+.dock a.main { background: var(--gold); color: var(--bg); }
+@media (min-width: 900px) { .dock { display: none; } body { padding-bottom: 0; } }
+.demo-tag { position: fixed; right: .75rem; top: calc(env(safe-area-inset-top, 0px) + 4.6rem); z-index: 35; pointer-events: none; font: 700 .62rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; background: var(--red); color: #fff; padding: .4rem .55rem; border-radius: 4px; transform: rotate(4deg); }
+
+.rise { transition: transform .8s var(--spring), opacity .8s; }
+.rise.pre { transform: translateY(24px); opacity: .35; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+  .rise.pre { transform: none; opacity: 1; }
+}
+</style>
+</head>
+<body>
+<div class="demo-tag" aria-hidden="true">Demo</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Eray's Barbershop, naar boven"><i class="pole" aria-hidden="true"></i>ERAY'S<span>.</span></a>
+    <nav class="nav" aria-label="Menu"><a href="#kort">Fade</a><a href="#prijzen">Prijzen</a><a href="#waar">Adres</a></nav>
+    <a class="btn btn-gold" href="https://www.knipklok.nl" target="_blank" rel="noopener" data-todo="eigen Knipklok-link">Boek</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="label">Barbershop · Hengelo · Nieuw adres</p>
+        <h1 class="sign mega" aria-label="Eray's"><span class="w" aria-hidden="true" id="mega">ERAY'S</span></h1>
+        <p class="sub">Barbershop in Hengelo</p>
+        <p class="lead">Strakke fades, scherpe lijnen en een baard die klopt. <strong>Nu op de Oudeboekeloseweg 7.</strong></p>
+        <div class="cta">
+          <a class="btn btn-gold" href="https://www.knipklok.nl" target="_blank" rel="noopener" data-todo="eigen Knipklok-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Afspraak maken</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Oudeboekeloseweg+7+Hengelo" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Route</a>
+        </div>
+      </div>
+      <div class="stage" aria-hidden="true">
+        <div class="halo"></div>
+        <svg class="ring" viewBox="0 0 400 400"><defs><path id="c" d="M200,200 m-180,0 a180,180 0 1,1 360,0 a180,180 0 1,1 -360,0"/></defs><text><textPath href="#c" textLength="1120" lengthAdjust="spacing">FADES ✦ TAPERS ✦ BAARD ✦ LINE-UPS ✦ HENGELO ✦ OUDEBOEKELOSEWEG ✦</textPath></text></svg>
+        <svg class="chair" viewBox="0 0 200 200">
+          <ellipse cx="100" cy="186" rx="58" ry="7" fill="#000" opacity=".45"/>
+          <rect x="94" y="140" width="12" height="40" rx="3" fill="#8a6c38"/>
+          <ellipse cx="100" cy="180" rx="36" ry="7" fill="#d6af6a"/>
+          <rect x="52" y="108" width="96" height="30" rx="12" fill="#5a1f1b" stroke="#d6af6a" stroke-width="3"/>
+          <path d="M62 112 Q60 40 100 34 Q140 40 138 112 Z" fill="#7a2a24" stroke="#d6af6a" stroke-width="3"/>
+          <path d="M74 100 Q74 54 100 50 Q126 54 126 100" fill="none" stroke="#a63a32" stroke-width="3"/>
+          <rect x="84" y="20" width="32" height="18" rx="8" fill="#5a1f1b" stroke="#d6af6a" stroke-width="3"/>
+          <rect x="38" y="96" width="24" height="10" rx="5" fill="#d6af6a"/>
+          <rect x="138" y="96" width="24" height="10" rx="5" fill="#d6af6a"/>
+          <path d="M70 138 L64 160 M130 138 L136 160" stroke="#d6af6a" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <div class="stamp"><div><b>4,9</b><small>724 reviews<br>op Knipklok</small></div></div>
+      </div>
+    </div>
+    <div class="ticker" aria-hidden="true"><div class="track">
+      <span>Skin fade</span><span>Taper</span><span>Baard trimmen</span><span>Line-up</span><span>Knippen</span><span>Hengelo</span>
+      <span>Skin fade</span><span>Taper</span><span>Baard trimmen</span><span>Line-up</span><span>Knippen</span><span>Hengelo</span>
+    </div></div>
+  </section>
+
+  <section id="verhuisd">
+    <div class="wrap move-grid">
+      <div class="head rise">
+        <p class="label">Let op</p>
+        <h2 class="sign">We zijn verhuisd</h2>
+        <p>Niet meer op het Vuurdoornplein. Je vindt ons nu aan de <b style="color:var(--ink)">Oudeboekeloseweg 7</b>. Zelfde stoel, zelfde fade.</p>
+        <div class="cta"><a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Oudeboekeloseweg+7+Hengelo" target="_blank" rel="noopener">Open in Google Maps</a></div>
+      </div>
+      <div class="mapcard rise" role="img" aria-label="Kaartje: van Vuurdoornplein 8 naar Oudeboekeloseweg 7">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="300" fill="#1c1814"/>
+          <g stroke="#2e2720" stroke-width="14" stroke-linecap="round" fill="none">
+            <path d="M-20 220 L420 170"/><path d="M60 -20 L120 320"/><path d="M-20 90 L420 60"/><path d="M260 -20 L300 320"/><path d="M-20 300 L200 120 L420 20"/>
+          </g>
+          <g stroke="#3a3229" stroke-width="5" fill="none"><path d="M180 -20 L170 320"/><path d="M-20 150 L420 130"/><path d="M340 -20 L380 320"/></g>
+          <path class="route" d="M86 236 C 120 200, 150 180, 175 150 S 250 110, 300 78" stroke="#d6af6a" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="86" cy="236" r="8" fill="#5d5144" stroke="#b3a998" stroke-width="2"/>
+          <g class="pin-new"><path d="M300 78 c0 -22 -26 -22 -26 0 c0 14 13 26 13 26 s13 -12 13 -26z" transform="translate(13 -26)" fill="#d6af6a" stroke="#120f0d" stroke-width="2"/><circle cx="300" cy="66" r="4.5" fill="#120f0d"/></g>
+        </svg>
+        <span class="tag tag-old">Vuurdoornplein 8</span>
+        <span class="tag tag-new">Oudeboekeloseweg 7</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="clip" id="kort">
+    <div class="wrap clip-grid">
+      <div class="guard rise">
+        <p class="label">Hoe kort wil je het?</p>
+        <div class="guard-num"><b id="gNum">#1</b><span>opzetstuk</span></div>
+        <p class="guard-name" id="gName">Mid fade</p>
+        <p id="gText">De klassieker. Kort aan de zijkant, loopt mooi op naar boven.</p>
+        <input type="range" id="guardRange" min="0" max="4" step="1" value="1" aria-label="Kies je opzetstuk, van 0 tot 4">
+        <div class="ticks" aria-hidden="true"><span>#0</span><span>#1</span><span>#2</span><span>#3</span><span>#4</span></div>
+      </div>
+      <svg class="head-svg" viewBox="0 0 240 240" aria-hidden="true">
+        <defs>
+          <linearGradient id="fade" x1="0" y1="1" x2="0" y2="0">
+            <stop id="s1" offset="0" stop-color="#e2b38f"/>
+            <stop id="s2" offset=".35" stop-color="#3a2a20"/>
+            <stop offset="1" stop-color="#1a120d"/>
+          </linearGradient>
+        </defs>
+        <circle cx="120" cy="120" r="112" fill="#262019"/>
+        <circle cx="120" cy="120" r="112" fill="none" stroke="#d6af6a" stroke-width="2" stroke-dasharray="3 7"/>
+        <path d="M84 196 Q84 172 96 164 L96 150 L144 150 L144 164 Q156 172 156 196 Z" fill="#c99a76"/>
+        <ellipse cx="120" cy="112" rx="46" ry="54" fill="#e2b38f"/>
+        <ellipse cx="166" cy="116" rx="8" ry="13" fill="#d7a580"/>
+        <path id="hair" d="M74 112 Q70 52 120 50 Q172 50 166 112 L160 112 Q158 86 150 80 Q120 92 90 80 Q82 88 80 112 Z" fill="url(#fade)"/>
+        <path d="M128 134 Q140 140 152 134" stroke="#9b6c4e" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="150" cy="108" r="3.5" fill="#2a1d16"/>
+        <path d="M140 98 Q150 94 158 98" stroke="#2a1d16" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M100 160 Q120 172 152 154" stroke="#2a1d16" stroke-width="0" fill="none" id="beard"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="prijzen">
+    <div class="wrap prices">
+      <div class="rise">
+        <div class="head">
+          <p class="label">Prijslijst</p>
+          <h2 class="sign">Wat het kost</h2>
+        </div>
+        <ul class="menu" data-todo="prijzen">
+          <li><span class="n">Knippen</span><span class="dots"></span><span class="p">€ ··</span></li>
+          <li><span class="n">Skin fade</span><span class="dots"></span><span class="p">€ ··</span></li>
+          <li><span class="n">Baard trimmen</span><span class="dots"></span><span class="p">€ ··</span><small>met scheermes en hete handdoek</small></li>
+          <li><span class="n">Knippen + baard</span><span class="dots"></span><span class="p">€ ··</span></li>
+          <li><span class="n">Kids</span><span class="dots"></span><span class="p">€ ··</span><small>t/m 12 jaar</small></li>
+        </ul>
+      </div>
+      <aside class="book rise">
+        <p class="label">Afspraak</p>
+        <h3>Niet wachten.<br>Gewoon boeken.</h3>
+        <p>Kies zelf je tijd en je barber. Druk weekend? Boek een paar dagen vooruit.</p>
+        <a class="btn btn-gold" href="https://www.knipklok.nl" target="_blank" rel="noopener" data-todo="eigen Knipklok-link">Boek via Knipklok</a>
+        <a class="btn btn-line" href="https://wa.me/31600000000" target="_blank" rel="noopener" data-todo="WhatsApp-nummer">Of app ons</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="clip">
+    <div class="wrap rate rise">
+      <p class="label">Wat klanten zeggen</p>
+      <div class="big">4,9</div>
+      <div class="stars" aria-label="4,9 van de 5 sterren">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.8 9.4 9 8.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.8 9.4 9 8.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.8 9.4 9 8.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.8 9.4 9 8.6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.8 9.4 9 8.6z"/></svg>
+      </div>
+      <p>Uit <b id="cnt">724</b> reviews op Knipklok. Dat zijn veel tevreden hoofden in Hengelo.</p>
+    </div>
+  </section>
+
+  <section id="waar">
+    <div class="wrap where">
+      <div class="rise">
+        <p class="label">Adres</p>
+        <address>Oudeboekeloseweg 7<span>Hengelo</span></address>
+      </div>
+      <div class="hours rise" data-todo="openingstijden">
+        <p class="label">Openingstijden</p>
+        <p>De tijden komen hier te staan. Vrije plekken zie je altijd direct bij het boeken.</p>
+        <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Oudeboekeloseweg+7+Hengelo" target="_blank" rel="noopener">Route plannen</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="label">Tot in de stoel</p>
+      <h2 class="sign">Tot <span>zo.</span></h2>
+      <div class="cta">
+        <a class="btn btn-gold" href="https://www.knipklok.nl" target="_blank" rel="noopener" data-todo="eigen Knipklok-link">Afspraak maken</a>
+        <a class="btn wa" href="https://wa.me/31600000000" target="_blank" rel="noopener" data-todo="WhatsApp-nummer">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Eray's Barbershop · Oudeboekeloseweg 7, Hengelo</span>
+    <span>Demo gemaakt door Efe Webdesign</span>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Snel">
+  <a href="tel:+31600000000" data-todo="telefoonnummer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Bel</a>
+  <a class="main" href="https://www.knipklok.nl" target="_blank" rel="noopener" data-todo="eigen Knipklok-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Boek</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=Oudeboekeloseweg+7+Hengelo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Route</a>
+</nav>
+
+<script>
+(() => {
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // letters vallen in
+  const m = document.getElementById('mega');
+  m.innerHTML = [...m.textContent].map((c, i) => `<span class="ch${i >= 5 ? ' o' : ''}" style="--i:${i}">${c}</span>`).join('');
+
+  // tondeuse-schuif
+  const G = [
+    { n: '#0', name: 'Skin fade', t: 'Helemaal kaal aan de zijkant, strak naar boven. Voor wie het scherp wil.', skin: .42, mid: .62 },
+    { n: '#1', name: 'Mid fade', t: 'De klassieker. Kort aan de zijkant, loopt mooi op naar boven.', skin: .3, mid: .5 },
+    { n: '#2', name: 'Low fade', t: 'Rustig en net. De overgang zit laag, net boven het oor.', skin: .18, mid: .38 },
+    { n: '#3', name: 'Taper', t: 'Alleen bij de bakkebaarden en de nek korter. Netjes voor elke dag.', skin: .08, mid: .26 },
+    { n: '#4', name: 'Bijwerken', t: 'Kort bijknippen en de lijnen strak. Lengte blijft.', skin: 0, mid: .12 }
+  ];
+  const r = document.getElementById('guardRange'), s1 = document.getElementById('s1'), s2 = document.getElementById('s2');
+  const num = document.getElementById('gNum'), nm = document.getElementById('gName'), tx = document.getElementById('gText');
+  const set = () => {
+    const g = G[r.value];
+    num.textContent = g.n; nm.textContent = g.name; tx.textContent = g.t;
+    s1.setAttribute('offset', g.skin); s2.setAttribute('offset', g.mid);
+    r.style.setProperty('--p', (r.value / 4 * 100) + '%');
+    if (!still) num.animate([{ transform: 'translateY(-12px) scale(1.15)' }, { transform: 'none' }], { duration: 350, easing: 'cubic-bezier(.2,1.4,.4,1)' });
+  };
+  r.addEventListener('input', set); set();
+
+  // teller
+  const cnt = document.getElementById('cnt');
+  // secties schuiven zacht in (blijven zichtbaar als JS of observer ontbreekt)
+  if (!still && 'IntersectionObserver' in window) {
+    const els = [...document.querySelectorAll('.rise')];
+    els.forEach(el => { if (el.getBoundingClientRect().top > innerHeight) el.classList.add('pre'); });
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.remove('pre'); io.unobserve(e.target);
+      if (e.target.contains(cnt)) { let n = 0; const go = () => { n = Math.min(724, n + 23); cnt.textContent = n; if (n < 724) requestAnimationFrame(go); }; go(); }
+    }), { threshold: .15 });
+    els.forEach(el => io.observe(el));
+  }
+})();
+</script>
+</body>
+</html>
