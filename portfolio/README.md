@@ -1,0 +1,12 @@
+# Portfolio-site van Efe
+
+Eén pagina, geen build nodig. Open `index.html` in je browser om te kijken.
+
+## Nog invullen (zoek op deze woorden)
+- `Efe Webdesign`: als je een andere naam wil
+
+## Online zetten (gratis, Cloudflare Pages)
+1. dash.cloudflare.com → Workers & Pages → Create → Pages → Connect to Git.
+2. Kies de repo `website-business`.
+3. Build command: leeg laten. Build output directory: `portfolio`.
+4. Deploy. Daarna site aanmelden bij Google Search Console.
