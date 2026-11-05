@@ -255,6 +255,22 @@ p { margin: 0; }
 .dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--line); transition: width .3s, background .3s; }
 .dots i.on { width: 22px; border-radius: 3px; background: var(--ink); }
 .beats > div { height: 100svh; }
+@media (min-width: 900px) {
+  .panel.l .step.on { display: flex !important; flex-direction: column; height: 100%; }
+  .panel.l h2 { font-size: clamp(2.1rem, 3vw, 2.9rem); margin-top: auto; }
+  .panel.l p { font-size: var(--t-md); }
+  .panel.l .price { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line); font-size: 1.75rem; }
+  .panel.l .m-steps { display: none; }
+  .panel.r .step.feat.on { height: 100%; align-content: space-between; gap: 0; }
+  .panel.r .feat > div + div { border-top: 1px solid var(--line); padding-top: 16px; }
+  .panel.r .feat h3 { font-size: var(--t-lg); }
+  .panel.r .feat p { font-size: var(--t-md); line-height: 1.5; }
+}
+@media (max-width: 899px) { .d-only { display: none !important; } }
+@media (min-width: 900px) and (max-height: 760px) {
+  .panel.r .feat p { font-size: var(--t-sm); }
+  .panel.r .feat h3 { font-size: var(--t-md); }
+}
 
 @media (max-width: 899px) {
   .side { display: none; }
@@ -461,6 +477,7 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
           <p class="eyebrow" style="margin-bottom:12px"><b>Hoe ik het doe</b></p>
           <h2>Eerst zien, dan pas betalen.</h2>
           <p>Je ziet je eigen site al voordat je iets betaalt. Bevalt hij niet? Dan kost het je niets.</p>
+          <div class="price d-only">Gratis demo<small>geen verplichting, je zegt pas ja als je hem goed vindt</small></div>
           <ol class="m-steps"><li>Ik maak gratis een demo</li><li>Ik laat hem zien of stuur de link</li><li>Jij zegt ja, de helft vooraf, hij gaat live</li><li>Ik regel hosting, aanpassingen en Google</li></ol>
         </div>
       </div>
@@ -469,16 +486,19 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
           <div><h3>Diensten en prijzen</h3><p>Alles op één plek, zonder dat iemand hoeft te bellen om het te vragen.</p></div>
           <div><h3>Bel-knop en route</h3><p>Eén tik en ze bellen je, of ze lopen zo naar je toe.</p></div>
           <div><h3>Openingstijden</h3><p>Live open of dicht, zodat niemand voor een dichte deur staat.</p></div>
+          <div><h3>Direct een appje</h3><p>Klanten sturen je vanaf je site meteen een WhatsApp.</p></div>
         </div>
         <div class="step feat" data-s="1">
           <div><h3>Google Bedrijfsprofiel</h3><p>Goed ingesteld, met foto's, tijden en een link naar je site.</p></div>
           <div><h3>Meer reviews</h3><p>Een QR-code bij de kassa, zodat tevreden klanten het makkelijk achterlaten.</p></div>
           <div><h3>Elke maand je cijfers</h3><p>Met het maandpakket zie je hoeveel mensen je vinden en bellen.</p></div>
+          <div><h3>Snel en goed gebouwd</h3><p>Google laat snelle, nette sites hoger zien. Daar let ik op.</p></div>
         </div>
         <div class="step feat" data-s="2">
           <div><h3>Gefilmd bij jou</h3><p>Maximaal een uur op locatie, tijdens een rustig moment.</p></div>
           <div><h3>Volledig gemonteerd</h3><p>Kort, strak en met één ronde om dingen aan te passen.</p></div>
           <div><h3>Klaar om te posten</h3><p>In het juiste formaat voor Reels, TikTok en je eigen site.</p></div>
+          <div><h3>In jouw stijl</h3><p>Passend bij je zaak, je kleuren en je klanten.</p></div>
         </div>
         <div class="step feat" data-s="3">
           <div><span class="n">1</span><h3>Ik maak een demo</h3><p>Met jouw naam, foto's, diensten en openingstijden. Gratis.</p></div>
