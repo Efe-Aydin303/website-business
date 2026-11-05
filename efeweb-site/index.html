@@ -140,7 +140,7 @@ p { margin: 0; }
 .story.past .s-l2, .story.past .s-l1 { transform: translate(calc(-50% - 900px), calc(var(--sy) - 60px)); }
 .story.past .s-r1, .story.past .s-r2 { transform: translate(calc(-50% + 900px), calc(var(--sy) - 60px)); }
 .main-phone { position: relative; z-index: 3; transform-origin: 50% 50%; transform: translateY(var(--introY, 26svh)) scale(calc(.9 * var(--fit, 1))); transition: transform .8s cubic-bezier(.2,.7,.2,1); }
-.story.past .main-phone { transform: scale(var(--fit, 1)); }
+.story.past .main-phone { transform: translateY(26px) scale(var(--fit, 1)); }
 .screen.on { opacity: 1; }
 /* scherm 1: voorbeeldsite kapper */
 .s-site { background: #15110e; color: #f3e9dc; font-family: "Hanken Grotesk", sans-serif; padding: 50px 18px 18px; }
@@ -232,7 +232,7 @@ p { margin: 0; }
 .s-chat .input b .ic { width: 16px; height: 16px; }
 
 
-.panel { position: absolute; z-index: 4; top: 50%; transform: translateY(-50%); width: min(30vw, 380px); height: min(560px, 76svh); background: var(--stone);
+.panel { position: absolute; z-index: 4; top: calc(50% + 26px); transform: translateY(-50%); width: min(30vw, 380px); height: min(560px, calc(100svh - 180px)); background: var(--stone);
   border-radius: 22px; padding: 30px; opacity: 0; transition: opacity .5s ease .15s; display: flex; flex-direction: column; }
 .story.past .panel { opacity: 1; }
 .panel.l { right: calc(50% + 186px); justify-content: flex-end; }
@@ -258,7 +258,7 @@ p { margin: 0; }
 
 @media (max-width: 899px) {
   .side { display: none; }
-  .stage { place-items: start center; }
+  .stage { place-items: start center; padding: 0; }
   .intro { padding-top: 88px; }
   .intro h1 { font-size: clamp(2.2rem, 10vw, 2.9rem); }
   .intro .lead { font-size: var(--t-sm); }
@@ -613,7 +613,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   function fit() {
     phone.style.setProperty('--fit', 1);
     const mob = innerWidth < 640, ph = phone.offsetHeight;
-    let reserve = 120;
+    let reserve = 156;
     if (mob) {
       const on = steps.filter(s => s.classList.contains('on'));
       let max = 0;
