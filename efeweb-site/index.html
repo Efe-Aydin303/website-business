@@ -96,7 +96,15 @@ p { margin: 0; }
 .intro { position: absolute; z-index: 4; top: 0; left: 0; right: 0; padding-top: clamp(96px, 15svh, 150px); transition: opacity .45s, transform .45s; }
 .intro .wrap { display: grid; gap: 20px; }
 .intro h1 { font-size: min(var(--t-2xl), 9svh); }
-.intro h1 span { display: block; }
+.intro h1 > span { display: block; }
+.rot { overflow: hidden; height: 1.16em; margin-bottom: -.12em; }
+.rot-in { line-height: 1.16; }
+.rot-in { display: block; transition: transform .45s cubic-bezier(.2,.7,.2,1), opacity .45s; }
+.rot-in.out { transform: translateY(-100%); opacity: 0; }
+.rot-in.pre { transform: translateY(100%); opacity: 0; transition: none; }
+.sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.link-btn { min-height: 48px; padding: 0 14px; background: none; border: 0; cursor: pointer; font: 600 var(--t-sm)/1 var(--body); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px; }
+.link-btn:hover { color: var(--accent); }
 .intro .side-txt { display: grid; gap: 18px; align-content: end; }
 .intro .lead { color: var(--muted); max-width: 30rem; }
 .intro .lead strong { color: var(--ink); font-weight: 600; }
@@ -369,12 +377,12 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
     <div class="stage">
       <div class="intro">
         <div class="wrap">
-          <h1><span>Jouw bedrijf.</span> <span>Op Google.</span> <span>Op elke telefoon.</span></h1>
+          <h1><span>Jouw bedrijf.</span> <span class="rot" aria-hidden="true"><span class="rot-in">Op Google.</span></span><span class="sr">Op Google, Instagram en TikTok.</span> <span>Op elke telefoon.</span></h1>
           <div class="side-txt">
             <p class="lead">Websites en promovideo's voor bedrijven die professioneel online willen staan. Ik bouw <strong>eerst gratis een demo van jóuw bedrijf</strong>. Vind je hem goed? Dan staat hij voor €250 online.</p>
             <div class="ctas">
               <a class="btn btn-ink" href="https://wa.me/31644154540?text=Hoi%20Efe%2C%20ik%20wil%20graag%20een%20demo%20van%20mijn%20bedrijf.">Vraag je gratis demo</a>
-              <button class="btn btn-line" type="button" data-go="prijzen">Bekijk prijzen</button>
+              <button class="link-btn" type="button" data-go="prijzen">Bekijk prijzen</button>
             </div>
           </div>
         </div>
@@ -434,7 +442,7 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
         <div class="step on" data-s="0">
           <p class="eyebrow" style="margin-bottom:12px"><b>Website</b></p>
           <h2>Een site die verkoopt.</h2>
-          <p>Snel, mooi en gemaakt voor de telefoon. Klanten zien meteen wat je doet en wat het kost.</p>
+          <p>Snel, mooi en gemaakt voor de telefoon. Gebouwd om klanten te laten bellen, boeken of langskomen.</p>
           <div class="price">€250<small>+ €25 per maand voor hosting en aanpassingen</small></div>
         </div>
         <div class="step" data-s="1">
@@ -529,6 +537,10 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
         <details><summary>Wat kost een website laten maken?</summary><p>Bij mij €250 eenmalig en €25 per maand. Daarin zitten hosting, kleine aanpassingen en de basis voor Google.</p></details>
         <details><summary>Heb ik een website nodig als ik al Instagram heb?</summary><p>Met een website vinden mensen je op Google als ze zoeken op bijvoorbeeld "kapper in de buurt". Instagram doet dat niet. Ze werken goed samen.</p></details>
         <details><summary>Kom ik bovenaan in Google?</summary><p>Dat kan niemand beloven. Ik zorg dat je goed vindbaar bent en je ziet elke maand hoeveel mensen je vinden. Resultaat zie je meestal na 1 tot 3 maanden.</p></details>
+        <details><summary>Zijn er maandelijkse kosten?</summary><p>Ja, €25 per maand. Daarvoor regel ik hosting, je domeinnaam en kleine aanpassingen. De eerste 3 maanden staan vast, daarna kun je per maand opzeggen.</p></details>
+        <details><summary>Staat het domein op mijn naam?</summary><p>Ja. De domeinnaam staat op jouw naam. Ik regel en betaal hem, dat zit in de €25 per maand.</p></details>
+        <details><summary>Hoe snel staat mijn site online?</summary><p>De demo maak ik voordat we praten, die zie je dus meteen. Zeg je ja, dan staat de echte site meestal binnen 1 tot 2 weken online.</p></details>
+        <details><summary>Help je ook als de site eenmaal online staat?</summary><p>Ja. Wil je een prijs, foto of openingstijd aanpassen, dan app je me en ik pas het aan. Dat zit in het onderhoud.</p></details>
         <details><summary>Moet je langskomen om een site te maken?</summary><p>Hoeft niet. In de buurt kom ik graag langs, maar alles kan ook via WhatsApp: ik stuur je de demo als link en we regelen de rest via de app.</p></details>
       </div>
     </div>
@@ -574,6 +586,18 @@ document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', 
   document.getElementById(id).scrollIntoView({ behavior });
 }));
 document.getElementById('main').tabIndex = -1;
+(() => {
+  const el = document.querySelector('.rot-in'), words = ['Op Google.', 'Op Instagram.', 'Op TikTok.'];
+  if (!el || reduce) return;
+  let i = 0;
+  setInterval(() => {
+    el.classList.add('out');
+    setTimeout(() => {
+      i = (i + 1) % words.length; el.textContent = words[i];
+      el.classList.remove('out'); el.classList.add('pre'); void el.offsetWidth; el.classList.remove('pre');
+    }, 450);
+  }, 2600);
+})();
 document.querySelector('.skip').addEventListener('click', e => { e.preventDefault(); document.getElementById('main').focus(); });
 
 
