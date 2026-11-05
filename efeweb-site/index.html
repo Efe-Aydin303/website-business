@@ -380,10 +380,6 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
         </div>
       </div>
 
-      <div class="phone side s-l2" aria-hidden="true"><div class="scr"></div></div>
-      <div class="phone side s-l1" aria-hidden="true"><div class="scr"></div></div>
-      <div class="phone side s-r1" aria-hidden="true"><div class="scr"></div></div>
-      <div class="phone side s-r2" aria-hidden="true"><div class="scr"></div></div>
 
       <div class="phone main-phone" id="phone" role="img" aria-label="Telefoon met een voorbeeld van een website, Google, een promovideo en een WhatsApp-gesprek">
         <div class="scr">
@@ -588,11 +584,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 (() => {
   const phone = document.getElementById('phone');
   const screens = [...phone.querySelectorAll('.screen')], steps = [...document.querySelectorAll('.panel .step')], dots = [...document.querySelectorAll('.dots i')];
-  const sideMap = { 's-l2': 3, 's-l1': 1, 's-r1': 2, 's-r2': 0 };
-  document.querySelectorAll('.side').forEach(ph => {
-    const k = [...ph.classList].find(c => c in sideMap), c = screens[sideMap[k]].cloneNode(true);
-    c.classList.add('on'); c.removeAttribute('data-s'); ph.querySelector('.scr').appendChild(c);
-  });
+
   const panelL = document.querySelector('.panel.l');
   function fit() {
     phone.style.setProperty('--fit', 1);
