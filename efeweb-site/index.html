@@ -363,6 +363,24 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+/* ============ begin: alleen tekst, telefoon komt pas bij scrollen ============ */
+.intro { bottom: 0; padding-top: 0; display: grid; align-content: center; }
+.intro .wrap { gap: 36px; }
+.intro h1 { font-size: min(clamp(2.8rem, 7vw, 6.2rem), 12svh); letter-spacing: -.02em; }
+.intro .lead { font-size: var(--t-lg); max-width: 34rem; line-height: 1.5; }
+@media (min-width: 900px) { .intro .wrap { grid-template-columns: 1fr; gap: 40px; } .intro .side-txt { gap: 26px; } }
+.scroll-hint { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); font: 500 var(--t-sm)/1 var(--body); color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.scroll-hint i { width: 1px; height: 34px; background: linear-gradient(var(--muted), transparent); animation: hint 1.8s ease-in-out infinite; transform-origin: top; }
+@keyframes hint { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .scroll-hint i { animation: none; } }
+.main-phone { transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .6s ease; }
+.story:not(.past) .main-phone { opacity: 0; transform: translateY(60svh) scale(var(--fit, 1)); }
+@media (max-width: 899px) {
+  .intro { padding: 72px 0 60px; }
+  .intro h1 { font-size: clamp(2.5rem, 11vw, 3.4rem); }
+  .intro .lead { font-size: var(--t-md); }
+  .story:not(.past) .main-phone { transform: translateY(70svh) scale(var(--fit, 1)); }
+}
 </style>
 </head>
 <body class="no-js">
@@ -402,6 +420,7 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
             </div>
           </div>
         </div>
+        <div class="scroll-hint" aria-hidden="true">Scroll om te zien wat ik doe<i></i></div>
       </div>
 
 
