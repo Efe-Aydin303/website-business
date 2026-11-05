@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Website laten maken | Efe Web</title>
+<meta name="description" content="Website laten maken? Snelle websites en promovideo's voor bedrijven. Eerst een gratis demo van jouw zaak, daarna €250 eenmalig en €25 per maand.">
+<link rel="canonical" href="https://efeweb.nl/">
+<meta property="og:title" content="Website laten maken | Efe Web">
+<meta property="og:description" content="Eerst gratis een demo van jouw bedrijf. Bevalt hij? Dan staat hij voor €250 online.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:url" content="https://efeweb.nl/">
+<meta property="og:image" content="https://efeweb.nl/og.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/archivo-300-500.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Efe Webdesign",
+  "description": "Websites en promovideo's voor bedrijven.",
+  "url": "https://efeweb.nl/",
+  "telephone": "+31644154540",
+  "email": "info@efeweb.nl",
+  "address": { "@type": "PostalAddress", "addressLocality": "Hengelo", "addressRegion": "Overijssel", "addressCountry": "NL" },
+  "areaServed": { "@type": "Country", "name": "Nederland" },
+  "priceRange": "€€",
+  "makesOffer": [
+    { "@type": "Offer", "name": "Website", "price": "250", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "3 promovideo's", "price": "75", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Google-pakket", "price": "75", "priceCurrency": "EUR" }
+  ]
+}
+</script>
+<style>
+/* Concept: "Zo ziet je klant het." Licht en rustig, met één telefoon in het midden die blijft staan
+   terwijl de panelen ernaast wisselen. Het scherm laat zien wat Efe voor een zaak maakt. */
+@font-face { font-family: "Archivo"; src: url(fonts/archivo-300-500.woff2) format("woff2"); font-weight: 300 500; font-stretch: 112% 125%; font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; src: url(fonts/hanken-grotesk-400-600.woff2) format("woff2"); font-weight: 400 600; font-display: swap; }
+:root {
+  --bg: #ffffff;
+  --stone: #f1f1ef;
+  --line: #e2e2de;
+  --ink: #111214;
+  --muted: #5d6067;
+  --accent: #1f3bff;
+  --display: "Archivo", "Arial Narrow", Arial, sans-serif;
+  --body: "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
+  --t-sm: .875rem; --t-md: 1.0625rem; --t-lg: 1.3125rem; --t-xl: clamp(1.9rem, 3.4vw, 2.75rem); --t-2xl: clamp(2.5rem, 5.4vw, 4.6rem);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 var(--t-md)/1.6 var(--body); overflow-x: hidden;
+  -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+h1, h2, h3 { font-family: var(--display); font-stretch: 112%; font-weight: 400; letter-spacing: -.025em; line-height: 1.04; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.wrap { width: min(100% - 32px, 1240px); margin-inline: auto; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: #fff; padding: 10px 14px; z-index: 100; }
+.skip:focus { left: 8px; }
+.eyebrow { font: 500 var(--t-sm)/1.2 var(--body); color: var(--muted); }
+.eyebrow b { color: var(--accent); font-weight: 600; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 999px;
+  font: 600 var(--t-sm)/1 var(--body); text-decoration: none; cursor: pointer; border: 1px solid transparent; }
+.btn-ink { background: var(--ink); color: #fff; }
+.btn-ink:hover { background: #000; }
+.btn-line { border-color: var(--line); background: var(--bg); }
+.btn-line:hover { border-color: var(--ink); }
+
+/* header */
+.top { position: fixed; z-index: 50; top: 12px; left: 50%; transform: translateX(-50%); width: min(100% - 24px, 900px);
+  display: flex; align-items: center; gap: 6px; padding: 5px 5px 5px 18px; background: var(--stone); border-radius: 999px; transition: transform .35s ease, opacity .35s ease; }
+.top.hide { transform: translate(-50%, -140%); opacity: 0; }
+.logo { font: 500 1rem/1 var(--display); font-stretch: 125%; text-decoration: none; display: flex; align-items: center; min-height: 44px; }
+.logo b { font-weight: 500; color: var(--accent); }
+.nav { display: none; margin-left: auto; }
+.nav button { background: none; border: 0; cursor: pointer; padding: 0 12px; min-height: 44px; font: 500 var(--t-sm)/1 var(--body); color: var(--muted); border-radius: 999px; }
+.nav button:hover { color: var(--ink); }
+.menu-btn { margin-left: auto; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: var(--bg); cursor: pointer; font: 500 var(--t-sm)/1 var(--body); }
+.top .btn { min-height: 44px; padding: 0 18px; }
+.sheet { position: fixed; inset: 0; z-index: 60; background: var(--bg); display: none; flex-direction: column; padding: 90px 24px 32px; }
+.sheet.open { display: flex; }
+.sheet .go { background: none; border: 0; border-bottom: 1px solid var(--line); text-align: left; padding: 16px 0; font: 400 1.9rem/1.1 var(--display); font-stretch: 112%; cursor: pointer; }
+.sheet .close { position: absolute; top: 18px; right: 18px; min-height: 44px; padding: 0 16px; background: var(--stone); border: 0; border-radius: 999px; cursor: pointer; font: 500 var(--t-sm)/1 var(--body); }
+@media (min-width: 900px) { .nav { display: flex; } .menu-btn { display: none; } .top .btn { margin-left: 6px; } }
+
+/* ============ STORY ============ */
+.story { position: relative; }
+.stage { position: sticky; top: 0; height: 100svh; overflow: hidden; display: grid; place-items: center; }
+.intro { position: absolute; z-index: 4; top: 0; left: 0; right: 0; padding-top: clamp(96px, 15svh, 150px); transition: opacity .45s, transform .45s; }
+.intro .wrap { display: grid; gap: 20px; }
+.intro h1 { font-size: min(var(--t-2xl), 9svh); }
+.intro h1 span { display: block; }
+.intro .side-txt { display: grid; gap: 18px; align-content: end; }
+.intro .lead { color: var(--muted); max-width: 30rem; }
+.intro .lead strong { color: var(--ink); font-weight: 600; }
+.intro .ctas { display: flex; flex-wrap: wrap; gap: 8px; }
+.story.past .intro { opacity: 0; transform: translateY(-24px); pointer-events: none; }
+@media (min-width: 900px) { .intro .wrap { grid-template-columns: 7fr 5fr; align-items: end; gap: 48px; } }
+
+.phone { --w: 300px; width: var(--w); aspect-ratio: 9 / 19.5; border-radius: 46px; background: #000; padding: 10px; position: relative;
+  border: 1px solid #39475c; box-shadow: 0 0 0 1px #0e141d inset; }
+.phone .scr { position: absolute; inset: 10px; border-radius: 37px; overflow: hidden; background: #fff; }
+.phone .scr::before { content: ""; position: absolute; top: 9px; left: 50%; width: 84px; height: 24px; margin-left: -42px; background: #000; border-radius: 20px; z-index: 5; }
+.side { position: absolute; top: 50%; left: 50%; --w: 230px; transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .6s; opacity: .55; pointer-events: none; }
+.side.s-l2 { transform: translate(calc(-50% - 540px), calc(-50% + 13svh)); } .side.s-l1 { transform: translate(calc(-50% - 275px), calc(-50% + 11svh)); }
+.side.s-r1 { transform: translate(calc(-50% + 275px), calc(-50% + 11svh)); } .side.s-r2 { transform: translate(calc(-50% + 540px), calc(-50% + 13svh)); }
+.story.past-intro .side { opacity: 0; }
+.story.past-intro .s-l2, .story.past-intro .s-l1 { transform: translate(calc(-50% - 900px), -40%); }
+.story.past-intro .s-r1, .story.past-intro .s-r2 { transform: translate(calc(-50% + 900px), -40%); }
+.main-phone { position: relative; z-index: 3; transform: translateY(11svh) scale(.86); transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+.story.past-intro .main-phone { transform: none; }
+.side .scr { pointer-events: none; }
+
+.screen { position: absolute; inset: 0; opacity: 0; transition: opacity .45s ease; }
+.screen.on { opacity: 1; }
+
+.phone { border-color: #2a2b2e; box-shadow: none; }
+.side { opacity: 1 !important; }
+.story.past .side { opacity: 0 !important; }
+.side { position: absolute; top: 50%; left: 50%; --w: 236px; transition: transform .9s cubic-bezier(.2,.7,.2,1), opacity .6s; pointer-events: none; }
+.side { top: 0; --sy: calc(var(--introTop, 70svh) + 40px); }
+.side.s-l2 { transform: translate(calc(-50% - 540px), calc(var(--sy) + 40px)); } .side.s-l1 { transform: translate(calc(-50% - 272px), calc(var(--sy) + 16px)); }
+.side.s-r1 { transform: translate(calc(-50% + 272px), calc(var(--sy) + 16px)); } .side.s-r2 { transform: translate(calc(-50% + 540px), calc(var(--sy) + 40px)); }
+.story.past .side { opacity: 0; }
+.story.past .s-l2, .story.past .s-l1 { transform: translate(calc(-50% - 900px), calc(var(--sy) - 60px)); }
+.story.past .s-r1, .story.past .s-r2 { transform: translate(calc(-50% + 900px), calc(var(--sy) - 60px)); }
+.main-phone { position: relative; z-index: 3; transform-origin: 50% 50%; transform: translateY(var(--introY, 26svh)) scale(calc(.9 * var(--fit, 1))); transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+.story.past .main-phone { transform: scale(var(--fit, 1)); }
+.screen.on { opacity: 1; }
+/* scherm 1: voorbeeldsite kapper */
+.s-site { background: #15110e; color: #f3e9dc; font-family: "Hanken Grotesk", sans-serif; padding: 50px 18px 18px; }
+.s-site .kick { font: 500 9px/1 "Hanken Grotesk", sans-serif; letter-spacing: .14em; color: #c9a777; }
+.s-site h4 { font: 400 calc(var(--w) * .078)/.98 "Archivo", Arial, sans-serif; font-stretch: 112%; margin: 10px 0 14px; letter-spacing: -.01em; text-transform: uppercase; }
+.s-site .row2 { display: flex; gap: 8px; }
+.s-site .pill { flex: 1; text-align: center; font: 600 12px/1 "Hanken Grotesk", sans-serif; padding: 12px 0; border-radius: 3px; }
+.s-site .pill.gold { background: #d9b47e; color: #15110e; } .s-site .pill.dark { border: 1px solid #5b4a37; }
+.s-site ul { list-style: none; padding: 0; margin: 18px 0 0; font-size: 13px; }
+.s-site li { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid #33291f; }
+.s-site .hrs { margin-top: 14px; font: 400 10px/1.5 "Hanken Grotesk", sans-serif; color: #bba98f; }
+.s-site .hrs b { color: #7bd88f; font-weight: 500; }
+.s-site .ex { position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font: 400 8px/1 "Hanken Grotesk", sans-serif; letter-spacing: .14em; color: #7a6a57; }
+
+/* scherm 2: Google */
+.s-google { background: #fff; color: #202124; font-family: Arial, sans-serif; padding: 48px 14px 14px; font-size: 12px; }
+.s-google .q { border: 1px solid #dfe1e5; border-radius: 22px; padding: 10px 14px; font-size: 13px; }
+.s-google .chips { display: flex; gap: 6px; margin: 10px 0 12px; }
+.s-google .chips span { border: 1px solid #dadce0; border-radius: 14px; padding: 4px 10px; font-size: 10px; color: #3c4043; }
+.s-google .card { border: 1px solid #dadce0; border-radius: 12px; padding: 12px; }
+.s-google .map { height: 92px; border-radius: 8px; margin-bottom: 10px; position: relative;
+  background: linear-gradient(90deg, transparent 47%, #fff 47% 53%, transparent 53%), linear-gradient(0deg, transparent 40%, #fff 40% 46%, transparent 46%), linear-gradient(35deg, transparent 60%, #fde293 60% 65%, transparent 65%), #e8eaed; }
+.s-google .map::after { content: ""; position: absolute; left: 50%; top: 40%; width: 16px; height: 16px; margin: -16px 0 0 -8px; background: #ea4335; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); }
+.s-google .nm { font-size: 15px; color: #1a0dab; }
+.s-google .stars { color: #e37400; font-size: 11px; margin: 2px 0; }
+.s-google .open { color: #188038; font-size: 11px; }
+.s-google .acts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 10px; }
+.s-google .acts span { border: 1px solid #dadce0; border-radius: 16px; text-align: center; padding: 7px 0; color: #1a73e8; font-size: 11px; }
+.s-google .old { margin-top: 12px; color: #70757a; font-size: 11px; line-height: 1.4; }
+.s-google .old b { color: #1a0dab; font-weight: 400; display: block; font-size: 12px; }
+
+/* scherm 3: reel */
+.ic { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; display: block; }
+/* scherm 3: reel */
+.s-reel { background: #0e0e10; color: #fff; font-family: "Hanken Grotesk", sans-serif; }
+.s-reel .half { position: absolute; top: 0; bottom: 0; width: 50%; }
+.s-reel .before { left: 0; background: linear-gradient(180deg, #3a3a3c, #1c1c1e 70%); }
+.s-reel .after { right: 0; background: linear-gradient(180deg, #6b4a2e, #2a1b10 70%); }
+.s-reel .half b { position: absolute; top: 58px; font: 600 9px/1 "Hanken Grotesk", sans-serif; letter-spacing: .14em; padding: 5px 7px; border-radius: 3px; background: rgba(0,0,0,.45); }
+.s-reel .before b { left: 12px; } .s-reel .after b { right: 12px; background: #d9b47e; color: #15110e; }
+.s-reel .split { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; margin-left: -1px; background: #fff; opacity: .9; }
+.s-reel .split::after { content: ""; position: absolute; top: 38%; left: 50%; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 4px rgba(255,255,255,.2); }
+.s-reel .title { position: absolute; left: 14px; right: 14px; top: 50%; font: 500 calc(var(--w) * .13)/.9 "Archivo", Arial, sans-serif; font-stretch: 125%; letter-spacing: -.03em; text-transform: uppercase; }
+.s-reel .title span { display: block; color: #d9b47e; }
+.s-reel .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.35), transparent 22%, transparent 55%, rgba(0,0,0,.8)); }
+.s-reel .hd { position: absolute; top: 44px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center; font: 600 14px/1 "Hanken Grotesk", sans-serif; display: none; }
+.s-reel .rail { position: absolute; right: 10px; bottom: 128px; display: grid; gap: 14px; justify-items: center; font: 600 10px/1 "Hanken Grotesk", sans-serif; }
+.s-reel .rail div { display: grid; gap: 4px; justify-items: center; }
+.s-reel .rail .ic { width: 24px; height: 24px; }
+.s-reel .acct { position: absolute; left: 12px; right: 12px; bottom: 76px; white-space: nowrap; display: flex; align-items: center; gap: 8px; font: 600 11px/1 "Hanken Grotesk", sans-serif; }
+.s-reel .acct i { width: 26px; height: 26px; border-radius: 50%; background: #d9b47e; color: #15110e; font: 700 9px/26px "Hanken Grotesk", sans-serif; text-align: center; font-style: normal; flex: none; }
+.s-reel .acct em { font-style: normal; border: 1px solid rgba(255,255,255,.7); border-radius: 6px; padding: 4px 7px; font-size: 10px; }
+.s-reel .cap { position: absolute; left: 12px; right: 40px; bottom: 26px; font: 400 11px/1.35 "Hanken Grotesk", sans-serif; }
+.s-reel .cap small { display: block; margin-top: 4px; opacity: .8; font-size: 10px; }
+.s-reel .bar { position: absolute; left: 0; right: 0; bottom: 14px; height: 2px; background: rgba(255,255,255,.25); }
+.s-reel .bar i { display: block; height: 100%; width: 42%; background: #fff; }
+
+/* scherm 4: WhatsApp */
+.s-chat { background: #0b141a; color: #e9edef; font-family: "Hanken Grotesk", sans-serif; font-size: 12px; display: flex; flex-direction: column; }
+.s-chat .bar { display: flex; align-items: center; gap: 8px; padding: 44px 10px 9px 6px; background: #1f2c34; }
+.s-chat .bar .ic { width: 18px; height: 18px; color: #aebac1; }
+.s-chat .av { width: 30px; height: 30px; border-radius: 50%; background: #d9b47e; color: #15110e; display: grid; place-items: center; font: 700 10px/1 "Hanken Grotesk", sans-serif; flex: none; }
+.s-chat .wa-name { flex: 1; min-width: 0; font-weight: 600; font-size: 12px; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.s-chat .wa-name small { display: block; color: #8696a0; font-size: 10px; font-weight: 400; }
+.s-chat .acts { display: flex; gap: 14px; }
+.s-chat .msgs { flex: 1; padding: 10px 10px; display: flex; flex-direction: column; gap: 6px; background: #0b141a radial-gradient(circle at 20% 30%, rgba(255,255,255,.025) 0 1px, transparent 2px) 0 0 / 14px 14px; }
+.s-chat .day { align-self: center; background: #182229; color: #8696a0; font-size: 9.5px; padding: 4px 9px; border-radius: 6px; margin-bottom: 2px; }
+.s-chat .m { position: relative; max-width: 84%; padding: 6px 8px 5px; border-radius: 8px; line-height: 1.35; font-size: 11.5px; }
+.s-chat .me { align-self: flex-end; background: #005c4b; border-top-right-radius: 0; }
+.s-chat .them { align-self: flex-start; background: #202c33; border-top-left-radius: 0; }
+.s-chat .me::before, .s-chat .them::before { content: ""; position: absolute; top: 0; width: 8px; height: 10px; }
+.s-chat .me::before { right: -7px; background: linear-gradient(225deg, transparent 50%, #005c4b 50%); }
+.s-chat .them::before { left: -7px; background: linear-gradient(135deg, transparent 50%, #202c33 50%); }
+.s-chat .m + .m.me::before, .s-chat .me + .me::before { display: none; }
+.s-chat .lp { display: block; background: #025144; border-radius: 6px; overflow: hidden; margin: -2px -4px 6px; }
+.s-chat .thumb { overflow: hidden; aspect-ratio: 1.91 / 1; background: #15110e; padding: 9px 10px; display: grid; align-content: start; gap: 5px; }
+.s-chat .thumb i { font: 400 7px/1 "Hanken Grotesk", sans-serif; font-style: normal; letter-spacing: .14em; color: #c9a777; }
+.s-chat .thumb b { font: 400 13px/.95 "Archivo", Arial, sans-serif; font-stretch: 112%; color: #f3e9dc; text-transform: uppercase; }
+.s-chat .thumb u { display: flex; gap: 4px; text-decoration: none; margin-top: 2px; }
+.s-chat .thumb u span { width: 34px; height: 10px; border-radius: 2px; background: #d9b47e; } .s-chat .thumb u span + span { background: none; border: 1px solid #5b4a37; }
+.s-chat .lp-t { padding: 6px 8px 7px; }
+.s-chat .lp-t strong { display: block; font-size: 11px; color: #e9edef; }
+.s-chat .lp-t small { display: block; font-size: 9.5px; color: #9fc1b8; margin-top: 1px; }
+.s-chat .meta { float: right; margin: 6px 0 -2px 8px; font-size: 9px; color: rgba(233,237,239,.6); display: inline-flex; align-items: center; gap: 3px; }
+.s-chat .meta svg { width: 14px; height: 9px; color: #53bdeb; }
+.s-chat .input { display: flex; gap: 6px; align-items: center; padding: 6px 8px 16px; }
+.s-chat .input span { flex: 1; background: #1f2c34; border-radius: 18px; padding: 9px 12px; color: #8696a0; font-size: 11px; }
+.s-chat .input b { width: 32px; height: 32px; border-radius: 50%; background: #00a884; display: grid; place-items: center; color: #0b141a; }
+.s-chat .input b .ic { width: 16px; height: 16px; }
+
+
+.panel { position: absolute; z-index: 4; top: 50%; transform: translateY(-50%); width: min(30vw, 380px); height: min(560px, 76svh); background: var(--stone);
+  border-radius: 22px; padding: 30px; opacity: 0; transition: opacity .5s ease .15s; display: flex; flex-direction: column; }
+.story.past .panel { opacity: 1; }
+.panel.l { right: calc(50% + 186px); justify-content: flex-end; }
+.panel.r { left: calc(50% + 186px); justify-content: flex-start; }
+.step { display: none !important; }
+.step.on { display: block !important; animation: rise .5s ease both; }
+.step.feat.on { display: grid !important; }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.panel.l h2 { font-size: clamp(1.9rem, 2.7vw, 2.5rem); margin: 0 0 14px; }
+.panel.l p { color: var(--muted); font-size: var(--t-sm); }
+.price { margin-top: 20px; font: 500 var(--t-lg)/1.25 var(--body); font-variant-numeric: tabular-nums; }
+.price small { display: block; font-size: var(--t-sm); color: var(--muted); font-weight: 400; }
+.m-steps { display: none; }
+.feat { gap: 26px; }
+.feat h3 { font: 600 var(--t-md)/1.3 var(--body); letter-spacing: 0; }
+.feat p { color: var(--muted); font-size: var(--t-sm); margin-top: 4px; }
+.feat .n { font: 600 var(--t-sm)/1 var(--body); color: var(--accent); display: block; margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+.dots { position: absolute; z-index: 5; bottom: 22px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; opacity: 0; transition: opacity .4s; }
+.story.past .dots { opacity: 1; }
+.dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--line); transition: width .3s, background .3s; }
+.dots i.on { width: 22px; border-radius: 3px; background: var(--ink); }
+.beats > div { height: 100svh; }
+
+@media (max-width: 899px) {
+  .side { display: none; }
+  .stage { place-items: start center; }
+  .intro { padding-top: 88px; }
+  .intro h1 { font-size: clamp(2.2rem, 10vw, 2.9rem); }
+  .intro .lead { font-size: var(--t-sm); }
+  .main-phone { --w: 260px; margin-top: 92px; transform-origin: 50% 0; transform: translateY(min(330px, 48svh)) scale(var(--fit, 1)); border-radius: 38px; padding: 8px; }
+  .story.past .main-phone { transform: scale(var(--fit, 1)); }
+  .main-phone .scr { inset: 8px; border-radius: 31px; }
+  .panel { top: auto; bottom: 0; transform: none; left: 0 !important; right: 0 !important; width: auto; height: auto; border-radius: 22px 22px 0 0; padding: 16px max(16px, env(safe-area-inset-left, 0px)) 20px; }
+  .panel.l p { font-size: .8125rem; }
+  .panel .eyebrow { margin-bottom: 6px !important; }
+  .panel.r { display: none; }
+  .panel.l h2 { font-size: 1.45rem; margin-bottom: 4px; }
+  .price { margin-top: 6px; font-size: 1rem; }
+  .price small { display: inline; margin-left: 6px; font-size: .8125rem; }
+  .m-steps { display: grid; gap: 0; margin: 6px 0 0; padding-left: 1.3em; font-size: var(--t-sm); }
+  .m-steps li::marker { color: var(--accent); font-weight: 600; }
+  .dots { bottom: auto; top: 74px; }
+}
+
+
+@media (min-width: 640px) and (max-width: 899px) {
+  .stage { place-items: center; }
+  .main-phone { margin-top: 40px; margin-left: 46%; transform-origin: 50% 50%; }
+  .panel.l { top: 50%; bottom: auto; left: 16px !important; right: auto !important; width: calc(50% - 32px); transform: translateY(-50%); border-radius: 22px; padding: 24px; }
+  .price small { display: block; margin-left: 0; }
+}
+/* ============ secties ============ */
+section.blk { padding-block: clamp(80px, 11vw, 140px); }
+.head { display: grid; gap: 14px; margin-bottom: clamp(32px, 5vw, 56px); }
+.head h2 { font-size: var(--t-xl); max-width: 16ch; }
+.head p { color: var(--muted); max-width: 30rem; }
+
+.price-grid { display: grid; gap: 0; }
+.prices { border-top: 1px solid var(--ink); }
+.pr { display: grid; grid-template-columns: 1fr auto; gap: 4px 20px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.pr h3 { font: 600 var(--t-md)/1.3 var(--body); letter-spacing: 0; }
+.pr p { color: var(--muted); font-size: var(--t-sm); grid-column: 1; }
+.pr .eur { font: 500 var(--t-lg)/1.2 var(--body); font-variant-numeric: tabular-nums; grid-row: 1 / span 2; grid-column: 2; text-align: right; }
+.pr .eur small { display: block; font-size: var(--t-sm); color: var(--muted); font-weight: 400; }
+.btw { margin-top: 16px; color: var(--muted); font-size: var(--t-sm); }
+@media (min-width: 900px) {
+  .price-grid { grid-template-columns: 4fr 8fr; gap: 64px; }
+  .price-grid .head { position: sticky; top: 110px; align-self: start; }
+  .pr { grid-template-columns: 1fr 1.3fr auto; padding: 24px 0; }
+  .pr p { grid-column: 2; grid-row: 1; }
+  .pr .eur { grid-column: 3; grid-row: 1; }
+}
+
+.who-band { background: var(--stone); border-radius: 28px; margin-inline: 12px; }
+.who { display: grid; gap: 36px; }
+.who h2 { font-size: var(--t-2xl); }
+.who .txt { display: grid; gap: 22px; align-content: start; }
+.who .txt p { font-size: var(--t-lg); line-height: 1.5; max-width: 32rem; }
+.facts { margin: 0; display: grid; align-self: end; background: var(--bg); border-radius: 18px; padding: 6px 20px; }
+.facts div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: var(--t-sm); }
+.facts div:last-child { border-bottom: 0; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; font-weight: 500; }
+@media (min-width: 900px) { .who { grid-template-columns: 7fr 4fr; gap: 80px; } }
+
+.faq { border-top: 1px solid var(--ink); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 20px; align-items: center; min-height: 64px; padding: 14px 0; font: 600 var(--t-md)/1.35 var(--body); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font: 400 1.4rem/1 var(--body); color: var(--accent); }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { color: var(--muted); padding: 0 0 22px; max-width: 40rem; }
+@media (min-width: 900px) { .faq-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; } }
+
+.contact { padding-block: clamp(90px, 14vw, 180px) clamp(60px, 8vw, 90px); }
+.contact h2 { font-size: clamp(4rem, 15vw, 12rem); line-height: .9; letter-spacing: -.045em; }
+.contact h2 span { color: var(--accent); }
+.contact .row { display: grid; gap: 24px; margin-top: 36px; }
+.contact p { max-width: 30rem; color: var(--muted); }
+.contact .ctas { display: flex; flex-wrap: wrap; gap: 8px; }
+.contact .alt { font-size: var(--t-sm); color: var(--muted); }
+@media (min-width: 900px) { .contact .row { grid-template-columns: 1fr 1fr; align-items: end; } .contact .right { justify-self: end; text-align: right; } .contact .ctas { justify-content: flex-end; } }
+
+footer { padding-block: 24px 40px; border-top: 1px solid var(--line); font-size: var(--t-sm); color: var(--muted); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 4px 24px; justify-content: space-between; align-items: center; }
+footer a { min-height: 44px; display: inline-flex; align-items: center; }
+
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.no-js .reveal { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body class="no-js">
+<a class="skip" href="#main">Naar de inhoud</a>
+
+<header class="top" id="top">
+  <a class="logo" href="/" aria-label="Efe Web, naar boven">efe<b>web</b></a>
+  <nav class="nav" aria-label="Hoofdmenu">
+    <button type="button" data-go="diensten">Wat ik doe</button>
+    <button type="button" data-go="werkwijze">Hoe</button>
+    <button type="button" data-go="prijzen">Prijzen</button>
+    <button type="button" data-go="vragen">Vragen</button>
+  </nav>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
+  <a class="btn btn-ink" href="https://wa.me/31644154540?text=Hoi%20Efe%2C%20ik%20wil%20graag%20een%20demo%20van%20mijn%20bedrijf.">App me</a>
+</header>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="close" type="button">Sluit</button>
+  <button class="go" type="button" data-go="diensten">Wat ik doe</button>
+  <button class="go" type="button" data-go="werkwijze">Hoe ik het doe</button>
+  <button class="go" type="button" data-go="prijzen">Prijzen</button>
+  <button class="go" type="button" data-go="vragen">Vragen</button>
+  <button class="go" type="button" data-go="contact">Contact</button>
+</div>
+
+<main id="main">
+  <section class="story" id="diensten" aria-label="Wat ik doe en hoe ik het doe">
+    <div class="stage">
+      <div class="intro">
+        <div class="wrap">
+          <h1><span>Jouw bedrijf.</span> <span>Op Google.</span> <span>Op elke telefoon.</span></h1>
+          <div class="side-txt">
+            <p class="lead">Websites en promovideo's voor bedrijven die professioneel online willen staan. Ik bouw <strong>eerst gratis een demo van jóuw bedrijf</strong>. Vind je hem goed? Dan staat hij voor €250 online.</p>
+            <div class="ctas">
+              <a class="btn btn-ink" href="https://wa.me/31644154540?text=Hoi%20Efe%2C%20ik%20wil%20graag%20een%20demo%20van%20mijn%20bedrijf.">Vraag je gratis demo</a>
+              <button class="btn btn-line" type="button" data-go="prijzen">Bekijk prijzen</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone side s-l2" aria-hidden="true"><div class="scr"></div></div>
+      <div class="phone side s-l1" aria-hidden="true"><div class="scr"></div></div>
+      <div class="phone side s-r1" aria-hidden="true"><div class="scr"></div></div>
+      <div class="phone side s-r2" aria-hidden="true"><div class="scr"></div></div>
+
+      <div class="phone main-phone" id="phone" role="img" aria-label="Telefoon met een voorbeeld van een website, Google, een promovideo en een WhatsApp-gesprek">
+        <div class="scr">
+          <div class="screen s-site on" data-s="0">
+            <div class="kick">KAPPER · SINDS 2019</div>
+            <h4>Barbershop<br>Noord</h4>
+            <div class="row2"><span class="pill gold">Bel nu</span><span class="pill dark">Route</span></div>
+            <ul>
+              <li><span>Knippen</span><span>€22</span></li>
+              <li><span>Skin fade</span><span>€25</span></li>
+              <li><span>Baard trimmen</span><span>€12</span></li>
+              <li><span>Knippen + baard</span><span>€32</span></li>
+            </ul>
+            <div class="hrs"><b>● Nu open</b> · ma–za 09:00–18:00</div>
+            <div class="ex">VOORBEELD-SITE</div>
+          </div>
+          <div class="screen s-google" data-s="1">
+            <div class="q">kapper in de buurt</div>
+            <div class="chips"><span>Nu open</span><span>Hoge score</span><span>In de buurt</span></div>
+            <div class="card">
+              <div class="map"></div>
+              <div class="nm">Barbershop Noord</div>
+              <div class="stars">4,8 ★★★★★ (126)</div>
+              <div class="open">Open · sluit om 18:00</div>
+              <div class="acts"><span>Website</span><span>Route</span><span>Bellen</span></div>
+            </div>
+            <div class="old"><b>Barbershop Noord | Facebook</b>Laatste bericht: 2022</div>
+          </div>
+          <div class="screen s-reel" data-s="2">
+            <div class="half before"><b>VOOR</b></div><div class="half after"><b>NA</b></div><div class="split"></div>
+            <div class="shade"></div>
+            <div class="title">Skin<span>fade</span></div>
+            <div class="rail"><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>2,1k</div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>48</div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 10 14"/><path d="M21 4l-7 17-4-7-7-4z"/></svg></div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></div></div>
+            <div class="acct"><i>BN</i>barbershop.noord<em>Volgen</em></div>
+            <div class="cap">Van lang naar skin fade in 30 seconden.<small>Originele audio · barbershop.noord</small></div>
+            <div class="bar"><i></i></div>
+          </div>
+          <div class="screen s-chat" data-s="3">
+            <div class="bar"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span class="av">BN</span><div class="wa-name">Barbershop Noord<small>online</small></div><div class="acts"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="M15 11l6-3v8l-6-3"/></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div></div>
+            <div class="msgs">
+              <span class="day">Vandaag</span>
+              <div class="m me"><span class="lp"><span class="thumb"><i>KAPPER · SINDS 2019</i><b>Barbershop<br>Noord</b><u><span></span><span></span></u></span><span class="lp-t"><strong>Barbershop Noord</strong><small>barbershop-noord.pages.dev</small></span></span>Hoi! Ik heb alvast een demo van jullie zaak gemaakt. Kijk maar even.<span class="meta">14:02 <svg viewBox="0 0 16 10" aria-hidden="true"><path d="M1 5.5l3 3L10 1.5M6.5 8.5l1 0L15 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+              <div class="m them">Ziet er echt goed uit. Wat kost het?<span class="meta">14:09</span></div>
+              <div class="m me">€250. De helft als je ja zegt, de rest als hij live staat.<span class="meta">14:10 <svg viewBox="0 0 16 10" aria-hidden="true"><path d="M1 5.5l3 3L10 1.5M6.5 8.5l1 0L15 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+            </div>
+            <div class="input"><span>Bericht</span><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel l">
+        <div class="step on" data-s="0">
+          <p class="eyebrow" style="margin-bottom:12px"><b>Website</b></p>
+          <h2>Een site die verkoopt.</h2>
+          <p>Snel, mooi en gemaakt voor de telefoon. Klanten zien meteen wat je doet en wat het kost.</p>
+          <div class="price">€250<small>+ €25 per maand voor hosting en aanpassingen</small></div>
+        </div>
+        <div class="step" data-s="1">
+          <p class="eyebrow" style="margin-bottom:12px"><b>Google</b></p>
+          <h2>Gevonden worden.</h2>
+          <p>Ik zet je goed op Google, zodat mensen je vinden als ze zoeken op "kapper in de buurt". Niet meer een oude Facebook-pagina bovenaan.</p>
+          <div class="price">€75<small>eenmalig, of €40 per maand extra</small></div>
+        </div>
+        <div class="step" data-s="2">
+          <p class="eyebrow" style="margin-bottom:12px"><b>Promovideo's</b></p>
+          <h2>Video's die opvallen.</h2>
+          <p>Ik film bij jou op locatie en maak korte video's voor Instagram, TikTok en je site.</p>
+          <div class="price">3 voor €75<small>of €50 samen met een website</small></div>
+        </div>
+        <div class="step" data-s="3" id="werkwijze">
+          <p class="eyebrow" style="margin-bottom:12px"><b>Hoe ik het doe</b></p>
+          <h2>Eerst zien, dan pas betalen.</h2>
+          <p>Je ziet je eigen site al voordat je iets betaalt. Bevalt hij niet? Dan kost het je niets.</p>
+          <ol class="m-steps"><li>Ik maak gratis een demo</li><li>Ik laat hem zien of stuur de link</li><li>Jij zegt ja, de helft vooraf, hij gaat live</li><li>Ik regel hosting, aanpassingen en Google</li></ol>
+        </div>
+      </div>
+      <div class="panel r">
+        <div class="step feat on" data-s="0">
+          <div><h3>Diensten en prijzen</h3><p>Alles op één plek, zonder dat iemand hoeft te bellen om het te vragen.</p></div>
+          <div><h3>Bel-knop en route</h3><p>Eén tik en ze bellen je, of ze lopen zo naar je toe.</p></div>
+          <div><h3>Openingstijden</h3><p>Live open of dicht, zodat niemand voor een dichte deur staat.</p></div>
+        </div>
+        <div class="step feat" data-s="1">
+          <div><h3>Google Bedrijfsprofiel</h3><p>Goed ingesteld, met foto's, tijden en een link naar je site.</p></div>
+          <div><h3>Meer reviews</h3><p>Een QR-code bij de kassa, zodat tevreden klanten het makkelijk achterlaten.</p></div>
+          <div><h3>Elke maand je cijfers</h3><p>Met het maandpakket zie je hoeveel mensen je vinden en bellen.</p></div>
+        </div>
+        <div class="step feat" data-s="2">
+          <div><h3>Gefilmd bij jou</h3><p>Maximaal een uur op locatie, tijdens een rustig moment.</p></div>
+          <div><h3>Volledig gemonteerd</h3><p>Kort, strak en met één ronde om dingen aan te passen.</p></div>
+          <div><h3>Klaar om te posten</h3><p>In het juiste formaat voor Reels, TikTok en je eigen site.</p></div>
+        </div>
+        <div class="step feat" data-s="3">
+          <div><span class="n">1</span><h3>Ik maak een demo</h3><p>Met jouw naam, foto's, diensten en openingstijden. Gratis.</p></div>
+          <div><span class="n">2</span><h3>Ik loop binnen</h3><p>Ik laat hem zien op mijn telefoon, of ik stuur je de link.</p></div>
+          <div><span class="n">3</span><h3>Hij gaat live</h3><p>Je betaalt de helft, ik maak hem af en zet hem online. Dan de rest.</p></div>
+          <div><span class="n">4</span><h3>Ik regel de rest</h3><p>Hosting, aanpassingen en Google. Jij hoeft er niet meer naar te kijken.</p></div>
+        </div>
+      </div>
+      <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="beats" aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div>
+  </section>
+
+  <section class="blk" id="prijzen">
+    <div class="wrap price-grid">
+      <div class="head reveal">
+        <p class="eyebrow"><b>Prijzen</b></p>
+        <h2>Gewoon duidelijk.</h2>
+        <p>Geen uurtarief, geen kleine lettertjes. Dit is wat je betaalt.</p>
+      </div>
+      <div class="reveal">
+        <div class="prices">
+          <div class="pr"><h3>Website</h3><p>Complete site met basis-SEO voor Google. De helft vooraf, de rest bij livegang.</p><div class="eur">€250<small>eenmalig</small></div></div>
+          <div class="pr"><h3>Onderhoud</h3><p>Hosting, kleine aanpassingen en je domeinnaam. Eerste 3 maanden vast, daarna per maand opzegbaar.</p><div class="eur">€25<small>per maand</small></div></div>
+          <div class="pr"><h3>3 promovideo's</h3><p>Los, of voor €50 samen met een website.</p><div class="eur">€75<small>of €50</small></div></div>
+          <div class="pr"><h3>Google-pakket</h3><p>Je bedrijfsprofiel goed ingesteld plus een review-QR.</p><div class="eur">€75<small>eenmalig</small></div></div>
+          <div class="pr"><h3>Maandpakket Google</h3><p>Elke maand posts, een nieuwe pagina en je cijfers. Bovenop de €25 onderhoud.</p><div class="eur">€40<small>per maand</small></div></div>
+        </div>
+        <p class="btw">Alle prijzen zijn exclusief 21% btw. De eerste demo is altijd gratis.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk who-band" id="wie">
+    <div class="wrap who">
+      <div class="txt reveal">
+        <p class="eyebrow"><b>Wie ben ik</b></p>
+        <h2>Hoi, ik ben Efe.</h2>
+        <p>Ik maak websites voor bedrijven. Geen bureau, gewoon één persoon die je kunt appen en die je zaak echt bekijkt voordat hij begint.</p>
+      </div>
+      <dl class="facts reveal">
+        <div><dt>E-mail</dt><dd><a href="mailto:info@efeweb.nl">info@efeweb.nl</a></dd></div>
+        <div><dt>Telefoon</dt><dd><a href="tel:+31644154540">06 44 15 45 40</a></dd></div>
+        <div><dt>KvK</dt><dd>42163908</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="blk" id="vragen">
+    <div class="wrap faq-grid">
+      <div class="head reveal">
+        <p class="eyebrow"><b>Vragen</b></p>
+        <h2>Goede vraag.</h2>
+      </div>
+      <div class="faq reveal">
+        <details><summary>Wat kost een website laten maken?</summary><p>Bij mij €250 eenmalig en €25 per maand. Daarin zitten hosting, kleine aanpassingen en de basis voor Google.</p></details>
+        <details><summary>Heb ik een website nodig als ik al Instagram heb?</summary><p>Met een website vinden mensen je op Google als ze zoeken op bijvoorbeeld "kapper in de buurt". Instagram doet dat niet. Ze werken goed samen.</p></details>
+        <details><summary>Kom ik bovenaan in Google?</summary><p>Dat kan niemand beloven. Ik zorg dat je goed vindbaar bent en je ziet elke maand hoeveel mensen je vinden. Resultaat zie je meestal na 1 tot 3 maanden.</p></details>
+        <details><summary>Moet je langskomen om een site te maken?</summary><p>Hoeft niet. In de buurt kom ik graag langs, maar alles kan ook via WhatsApp: ik stuur je de demo als link en we regelen de rest via de app.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="eyebrow"><b>Contact</b></p>
+      <h2 style="margin-top:20px">App me<span>.</span></h2>
+      <div class="row">
+        <p>Stuur de naam van je bedrijf. Ik maak een gratis demo en laat hem zien wanneer het jou uitkomt.</p>
+        <div class="right">
+          <div class="ctas"><a class="btn btn-ink" href="https://wa.me/31644154540?text=Hoi%20Efe%2C%20ik%20wil%20graag%20een%20demo%20van%20mijn%20bedrijf.">WhatsApp 06 44 15 45 40</a></div>
+          <p class="alt" style="margin-top:12px">of mail <a href="mailto:info@efeweb.nl">info@efeweb.nl</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Efe Aydin · Efe Webdesign (Zavqero)</span>
+    <span>KvK 42163908 · <a href="privacy.html">Privacy</a></span>
+  </div>
+</footer>
+
+<script>
+document.body.classList.remove('no-js');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const sheet = document.getElementById('sheet'), menuBtn = document.querySelector('.menu-btn');
+function closeSheet(){ sheet.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); }
+menuBtn.addEventListener('click', () => { sheet.classList.add('open'); menuBtn.setAttribute('aria-expanded','true'); sheet.querySelector('.go').focus(); });
+sheet.querySelector('.close').addEventListener('click', () => { closeSheet(); menuBtn.focus(); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && sheet.classList.contains('open')) { closeSheet(); menuBtn.focus(); } });
+const story = document.querySelector('.story');
+function storyY(f) { return story.offsetTop + (story.offsetHeight - innerHeight) * f; }
+document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => {
+  closeSheet();
+  const id = b.dataset.go, behavior = reduce ? 'auto' : 'smooth';
+  if (id === 'diensten') return scrollTo({ top: storyY(.2), behavior });
+  if (id === 'werkwijze') return scrollTo({ top: storyY(.9), behavior });
+  document.getElementById(id).scrollIntoView({ behavior });
+}));
+document.getElementById('main').tabIndex = -1;
+document.querySelector('.skip').addEventListener('click', e => { e.preventDefault(); document.getElementById('main').focus(); });
+
+
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* telefoon blijft staan, schermen en panelen wisselen */
+(() => {
+  const phone = document.getElementById('phone');
+  const screens = [...phone.querySelectorAll('.screen')], steps = [...document.querySelectorAll('.panel .step')], dots = [...document.querySelectorAll('.dots i')];
+  const sideMap = { 's-l2': 3, 's-l1': 1, 's-r1': 2, 's-r2': 0 };
+  document.querySelectorAll('.side').forEach(ph => {
+    const k = [...ph.classList].find(c => c in sideMap), c = screens[sideMap[k]].cloneNode(true);
+    c.classList.add('on'); c.removeAttribute('data-s'); ph.querySelector('.scr').appendChild(c);
+  });
+  const panelL = document.querySelector('.panel.l');
+  function fit() {
+    phone.style.setProperty('--fit', 1);
+    const mob = innerWidth < 640, ph = phone.offsetHeight;
+    let reserve = 120;
+    if (mob) {
+      const on = steps.filter(s => s.classList.contains('on'));
+      let max = 0;
+      steps.filter(s => s.closest('.panel.l')).forEach(s => { steps.forEach(x => x.classList.toggle('on', x === s)); max = Math.max(max, panelL.offsetHeight); });
+      steps.forEach(x => x.classList.toggle('on', on.includes(x)));
+      reserve = 92 + max + 14;
+    }
+    phone.style.setProperty('--fit', Math.min(1, (innerHeight - reserve) / ph).toFixed(3));
+    if (!mob) {
+      const f = Math.min(1, (innerHeight - reserve) / ph), introB = document.querySelector('.intro .wrap').getBoundingClientRect().bottom - Math.min(0, story.getBoundingClientRect().top);
+      const top = introB + 28, natTop = innerHeight / 2 - ph * f * .9 / 2;
+      phone.style.setProperty('--introY', (top - natTop) + 'px');
+      story.style.setProperty('--introTop', (introB + 40) + 'px');
+    }
+  }
+  let cur = -1;
+  function setStep(i) {
+    if (i === cur) return; cur = i;
+    screens.forEach((s, k) => s.classList.toggle('on', k === i));
+    steps.forEach(s => s.classList.toggle('on', +s.dataset.s === i));
+    dots.forEach((d, k) => d.classList.toggle('on', k === i));
+  }
+  function onScroll() {
+    const total = story.offsetHeight - innerHeight, p = Math.min(1, Math.max(0, -story.getBoundingClientRect().top / total));
+    story.classList.toggle('past', p > .1);
+    setStep(Math.min(3, Math.max(0, Math.floor((p - .1) / .22))));
+  }
+  addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', () => { fit(); onScroll(); }); onScroll(); fit();
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(fit);
+})();
+</script>
+</body>
+</html>
