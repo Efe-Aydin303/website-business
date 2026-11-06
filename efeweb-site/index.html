@@ -374,6 +374,7 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
 @keyframes hint { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .scroll-hint i { animation: none; } }
 .main-phone { transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .6s ease; }
+.story:not(.past) .panel, .story:not(.past) .dots, .story:not(.past) .main-phone { pointer-events: none; }
 .story:not(.past) .main-phone { opacity: 0; transform: translateY(60svh) scale(var(--fit, 1)); }
 @media (max-width: 899px) {
   .intro { padding: 72px 0 60px; }
