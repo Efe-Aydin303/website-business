@@ -53,7 +53,7 @@
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 400 var(--t-md)/1.6 var(--body); overflow-x: hidden;
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 var(--t-md)/1.6 var(--body); overflow-x: hidden; overflow-x: clip;
   -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
 a { color: inherit; }
 button { font: inherit; color: inherit; }
@@ -382,6 +382,30 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
   .intro .lead { font-size: var(--t-md); }
   .story:not(.past) .main-phone { transform: translateY(70svh) scale(var(--fit, 1)); }
 }
+/* ============ ronde 10 nov: foto's, soepelere scroll, zo werkt het ============ */
+.screen .photo { background: #2a2622 center / cover no-repeat; }
+.s-site { padding: 0 18px 18px; }
+.s-site .photo { margin: 0 -18px 16px; height: 44%; position: relative; }
+.s-site .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21,17,14,.25), transparent 40%, #15110e); }
+.s-site h4 { margin: 8px 0 12px; }
+.s-site ul { margin-top: 12px; }
+.s-google .photo { height: 104px; border-radius: 8px; margin-bottom: 10px; }
+.s-reel .photo { position: absolute; inset: 0; }
+.s-reel .shade { background: linear-gradient(180deg, rgba(0,0,0,.35), transparent 22%, transparent 45%, rgba(0,0,0,.85)); }
+.s-reel .title { top: 46%; }
+.s-chat .thumb { background: #3a2c20 center / cover no-repeat; position: relative; align-content: end; }
+.s-chat .thumb::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,.7)); }
+.s-chat .thumb i, .s-chat .thumb b { position: relative; }
+.s-chat .thumb i { color: #f1d9b5; }
+.how { list-style: none; counter-reset: how; padding: 0; margin: 40px 0 0; display: grid; gap: 22px; max-width: 26rem; }
+.how li { counter-increment: how; display: grid; grid-template-columns: 42px 1fr; column-gap: 14px; }
+.how li::before { content: counter(how); grid-row: span 2; width: 42px; height: 42px; border-radius: 50%; background: var(--stone); display: grid; place-items: center; font: 600 var(--t-md)/1 var(--body); }
+.how b { font: 600 var(--t-md)/1.3 var(--body); padding-top: 2px; }
+.how span { color: var(--muted); font-size: var(--t-sm); }
+@media (min-width: 900px) { #vragen .head { position: sticky; top: 110px; align-self: start; } }
+#vragen { padding-bottom: clamp(48px, 6vw, 72px); }
+.contact { padding-top: clamp(8px, 2vw, 32px); }
+@media (max-width: 899px) { .beats > div { height: 75svh; } }
 </style>
 </head>
 <body class="no-js">
@@ -425,9 +449,10 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
       </div>
 
 
-      <div class="phone main-phone" id="phone" role="img" aria-label="Telefoon met een voorbeeld van een website, Google, een promovideo en een WhatsApp-gesprek">
+      <div class="phone main-phone" id="phone" role="img" aria-label="Telefoon met voorbeelden: de site van een bouwbedrijf, een restaurant op Google, een promovideo van een kapper en een WhatsApp-gesprek met een bakkerij">
         <div class="scr">
           <div class="screen s-site on" data-s="0">
+            <div class="photo" style="background-image:url(img/bouw.jpg)"></div>
             <div class="kick">AANNEMER · SINDS 2009</div>
             <h4>Noord<br>Bouw</h4>
             <div class="row2"><span class="pill gold">Offerte</span><span class="pill dark">Bellen</span></div>
@@ -435,37 +460,36 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
               <li><span>Verbouwing</span><span>→</span></li>
               <li><span>Aanbouw</span><span>→</span></li>
               <li><span>Badkamer</span><span>→</span></li>
-              <li><span>Dakkapel</span><span>→</span></li>
             </ul>
             <div class="hrs"><b>● Binnen 24 uur een offerte</b></div>
             <div class="ex">VOORBEELD-SITE</div>
           </div>
           <div class="screen s-google" data-s="1">
-            <div class="q">aannemer in de buurt</div>
+            <div class="q">restaurant in de buurt</div>
             <div class="chips"><span>Nu open</span><span>Hoge score</span><span>In de buurt</span></div>
             <div class="card">
-              <div class="map"></div>
-              <div class="nm">Noord Bouw</div>
-              <div class="stars">4,8 ★★★★★ (126)</div>
-              <div class="open">Open · sluit om 17:00</div>
-              <div class="acts"><span>Website</span><span>Route</span><span>Bellen</span></div>
+              <div class="photo" style="background-image:url(img/restaurant.jpg)"></div>
+              <div class="nm">Brasserie De Linde</div>
+              <div class="stars">4,7 ★★★★★ (212)</div>
+              <div class="open">Open · sluit om 22:00</div>
+              <div class="acts"><span>Website</span><span>Route</span><span>Reserveren</span></div>
             </div>
-            <div class="old"><b>Noord Bouw | Facebook</b>Laatste bericht: 2022</div>
+            <div class="old"><b>Brasserie De Linde | Facebook</b>Laatste bericht: 2022</div>
           </div>
           <div class="screen s-reel" data-s="2">
-            <div class="half before"><b>VOOR</b></div><div class="half after"><b>NA</b></div><div class="split"></div>
+            <div class="photo" style="background-image:url(img/kapper.jpg)"></div>
             <div class="shade"></div>
-            <div class="title">Klus<span>klaar</span></div>
+            <div class="title">Fresh<span>cut</span></div>
             <div class="rail"><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>2,1k</div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>48</div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 10 14"/><path d="M21 4l-7 17-4-7-7-4z"/></svg></div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></div></div>
-            <div class="acct"><i>NB</i>noord.bouw<em>Volgen</em></div>
-            <div class="cap">Van oude badkamer naar nieuw in 30 seconden.<small>Originele audio · noord.bouw</small></div>
+            <div class="acct"><i>SM</i>studio.mila<em>Volgen</em></div>
+            <div class="cap">Van lang naar kort in 30 seconden.<small>Originele audio · studio.mila</small></div>
             <div class="bar"><i></i></div>
           </div>
           <div class="screen s-chat" data-s="3">
-            <div class="bar"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span class="av">NB</span><div class="wa-name">Noord Bouw<small>online</small></div><div class="acts"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="M15 11l6-3v8l-6-3"/></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div></div>
+            <div class="bar"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span class="av">BV</span><div class="wa-name">Bakkerij Vos<small>online</small></div><div class="acts"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="M15 11l6-3v8l-6-3"/></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div></div>
             <div class="msgs">
               <span class="day">Vandaag</span>
-              <div class="m me"><span class="lp"><span class="thumb"><i>AANNEMER · SINDS 2009</i><b>Noord<br>Bouw</b><u><span></span><span></span></u></span><span class="lp-t"><strong>Noord Bouw</strong><small>noord-bouw.pages.dev</small></span></span>Hoi! Ik heb alvast een demo van jullie bedrijf gemaakt. Kijk maar even.<span class="meta">14:02 <svg viewBox="0 0 16 10" aria-hidden="true"><path d="M1 5.5l3 3L10 1.5M6.5 8.5l1 0L15 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+              <div class="m me"><span class="lp"><span class="thumb" style="background-image:url(img/bakkerij.jpg)"><i>BAKKER · SINDS 1987</i><b>Bakkerij<br>Vos</b></span><span class="lp-t"><strong>Bakkerij Vos</strong><small>bakkerij-vos.pages.dev</small></span></span>Hoi! Ik heb alvast een demo van jullie bakkerij gemaakt. Kijk maar even.<span class="meta">14:02 <svg viewBox="0 0 16 10" aria-hidden="true"><path d="M1 5.5l3 3L10 1.5M6.5 8.5l1 0L15 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
               <div class="m them">Ziet er echt goed uit. Wat kost het?<span class="meta">14:09</span></div>
               <div class="m me">€250. De helft als je ja zegt, de rest als hij live staat.<span class="meta">14:10 <svg viewBox="0 0 16 10" aria-hidden="true"><path d="M1 5.5l3 3L10 1.5M6.5 8.5l1 0L15 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
             </div>
@@ -482,7 +506,7 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
         </div>
         <div class="step" data-s="1">
           <h2>Gevonden worden.</h2>
-          <p>Ik zet je goed op Google, zodat mensen je vinden als ze zoeken op "aannemer in de buurt". Niet meer een oude Facebook-pagina bovenaan.</p>
+          <p>Ik zet je goed op Google, zodat mensen je vinden als ze zoeken op "restaurant in de buurt". Niet meer een oude Facebook-pagina bovenaan.</p>
           <div class="price">€75<small>eenmalig, of €40 per maand extra</small></div>
         </div>
         <div class="step" data-s="2">
@@ -561,10 +585,15 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
     <div class="wrap faq-grid">
       <div class="head reveal">
         <h2>Goede vraag.</h2>
+        <ol class="how">
+          <li><b>Gratis demo</b><span>Ik bouw een voorbeeld van jouw bedrijf, voordat we praten.</span></li>
+          <li><b>Jij kiest</b><span>Vind je hem goed? Dan betaal je de helft en maak ik hem af.</span></li>
+          <li><b>Online</b><span>Binnen 1 tot 2 weken live, daarna app je me voor aanpassingen.</span></li>
+        </ol>
       </div>
       <div class="faq reveal">
         <details><summary>Wat kost een website laten maken?</summary><p>Bij mij €250 eenmalig en €25 per maand. Daarin zitten hosting, kleine aanpassingen en de basis voor Google.</p></details>
-        <details><summary>Heb ik een website nodig als ik al Instagram heb?</summary><p>Met een website vinden mensen je op Google als ze zoeken op bijvoorbeeld "aannemer in de buurt". Instagram doet dat niet. Ze werken goed samen.</p></details>
+        <details><summary>Heb ik een website nodig als ik al Instagram heb?</summary><p>Met een website vinden mensen je op Google als ze zoeken op bijvoorbeeld "restaurant in de buurt". Instagram doet dat niet. Ze werken goed samen.</p></details>
         <details><summary>Kom ik bovenaan in Google?</summary><p>Dat kan niemand beloven. Ik zorg dat je goed vindbaar bent en je ziet elke maand hoeveel mensen je vinden. Resultaat zie je meestal na 1 tot 3 maanden.</p></details>
         <details><summary>Zijn er maandelijkse kosten?</summary><p>Ja, €25 per maand. Daarvoor regel ik hosting, je domeinnaam en kleine aanpassingen. De eerste 3 maanden staan vast, daarna kun je per maand opzeggen.</p></details>
         <details><summary>Staat het domein op mijn naam?</summary><p>Ja. De domeinnaam staat op jouw naam. Ik regel en betaal hem, dat zit in de €25 per maand.</p></details>
@@ -669,7 +698,10 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     story.classList.toggle('past', p > .1);
     setStep(Math.min(3, Math.max(0, Math.floor((p - .1) / .22))));
   }
-  addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', () => { fit(); onScroll(); }); onScroll(); fit();
+  let ticking = false, lastW = innerWidth, lastH = innerHeight;
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { ticking = false; onScroll(); }); } }, { passive: true });
+  addEventListener('resize', () => { if (innerWidth === lastW && Math.abs(innerHeight - lastH) < 120) return; lastW = innerWidth; lastH = innerHeight; fit(); onScroll(); });
+  onScroll(); fit();
   (document.fonts ? document.fonts.ready : Promise.resolve()).then(fit);
 })();
 </script>
