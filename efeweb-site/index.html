@@ -419,6 +419,31 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
 .cform button[disabled] { opacity: .6; cursor: wait; }
 .txtlink { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; text-decoration: underline; text-underline-offset: 3px; color: inherit; }
 @media (min-width: 640px) { .cform-grid { grid-template-columns: 1fr 1fr; } .cform .wide { grid-column: 1 / -1; } }
+/* Google-scherm in donkere modus, naar Efe's referentie */
+.s-google.g2 { background: #202124; color: #e8eaed; font-family: Arial, sans-serif; padding: 40px 12px 12px; font-size: 11px; }
+.g2 .g-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.g2 .g-burger { width: 14px; height: 10px; border-top: 2px solid #9aa0a6; border-bottom: 2px solid #9aa0a6; position: relative; }
+.g2 .g-burger::after { content: ""; position: absolute; left: 0; right: 0; top: 2px; border-top: 2px solid #9aa0a6; }
+.g2 .g-logo { font: 500 20px/1 Arial, sans-serif; letter-spacing: -.5px; color: #e8eaed; }
+.g2 .g-sign { background: #c2e7ff; color: #001d35; border-radius: 14px; padding: 6px 9px; font-size: 10px; }
+.g2 .g-q { display: flex; align-items: center; gap: 8px; background: #303134; border-radius: 22px; padding: 9px 12px; font-size: 12px; }
+.g2 .g-q svg { width: 14px; height: 14px; fill: none; stroke: #9aa0a6; stroke-width: 2.2; stroke-linecap: round; flex: none; }
+.g2 .g-tabs { display: flex; gap: 12px; margin: 10px 2px 0; padding-bottom: 7px; border-bottom: 1px solid #3c4043; color: #9aa0a6; font-size: 10.5px; white-space: nowrap; overflow: hidden; }
+.g2 .g-tabs b { color: #e8eaed; font-weight: 400; box-shadow: 0 7px 0 -5px #e8eaed; }
+.g2 .g-h { font-size: 14px; margin: 12px 2px 8px; }
+.g2 .g-map { position: relative; height: 104px; border-radius: 10px; overflow: hidden; background: #1f2a3a; margin-bottom: 4px; }
+.g2 .g-map svg { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: #3d4f6b; stroke-width: 3; }
+.g2 .g-map svg .thin { stroke-width: 1; stroke: #33435a; }
+.g2 .g-map em { position: absolute; right: 12px; top: 22px; font: 700 7px/1 Arial, sans-serif; letter-spacing: .14em; color: #aab4c4; font-style: normal; }
+.g2 .g-map .pin { position: absolute; left: 44%; top: 30%; width: 13px; height: 13px; background: #ea4335; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); box-shadow: 0 0 0 2px #1f2a3a; }
+.g2 .g-item { display: grid; grid-template-columns: 58px 1fr; gap: 10px; padding: 11px 0; border-bottom: 1px solid #3c4043; }
+.g2 .g-item .th { width: 58px; height: 58px; border-radius: 6px; background: #3c4043 center / cover no-repeat; }
+.g2 .g-item div { display: grid; gap: 1px; min-width: 0; }
+.g2 .g-item b { font-weight: 400; font-size: 12.5px; color: #e8eaed; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.g2 .g-item span { color: #bdc1c6; font-size: 10px; line-height: 1.35; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.g2 .g-item .r i { color: #fdd663; font-style: normal; letter-spacing: -.5px; }
+.g2 .g-item em { color: #81c995; font-style: normal; }
+.g2 .g-item.me { margin: 0 -6px; padding: 9px 6px; border-radius: 8px; background: #28292c; box-shadow: inset 0 0 0 1px #4d5156; }
 </style>
 </head>
 <body class="no-js">
@@ -477,17 +502,15 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
             <div class="hrs"><b>● Binnen 24 uur een offerte</b></div>
             <div class="ex">VOORBEELD-SITE</div>
           </div>
-          <div class="screen s-google" data-s="1">
-            <div class="q">restaurant in de buurt</div>
-            <div class="chips"><span>Nu open</span><span>Hoge score</span><span>In de buurt</span></div>
-            <div class="card">
-              <div class="photo" style="background-image:url(img/restaurant.jpg)"></div>
-              <div class="nm">Brasserie De Linde</div>
-              <div class="stars">4,7 ★★★★★ (212)</div>
-              <div class="open">Open · sluit om 22:00</div>
-              <div class="acts"><span>Website</span><span>Route</span><span>Reserveren</span></div>
-            </div>
-            <div class="old"><b>Brasserie De Linde | Facebook</b>Laatste bericht: 2022</div>
+          <div class="screen s-google g2" data-s="1">
+            <div class="g-top"><span class="g-burger"></span><span class="g-logo">Google</span><span class="g-sign">Inloggen</span></div>
+            <div class="g-q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>restaurant in de buurt</div>
+            <div class="g-tabs"><b>Alles</b><span>Afbeeldingen</span><span>Video's</span><span>Nieuws</span></div>
+            <div class="g-h">Plaatsen</div>
+            <div class="g-map"><svg viewBox="0 0 300 96" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 C60 60 90 80 150 66 S250 40 300 48" /><path d="M40 0 L70 96M130 0 C140 40 120 60 135 96M210 0 L190 96M0 30 L300 22" /><path class="thin" d="M0 50 L300 58M20 0 L250 96M90 0 L60 96M260 0 L280 96M0 86 L300 80"/></svg><i class="pin"></i><em>CENTRUM</em></div>
+            <div class="g-item me"><span class="th" style="background-image:url(img/thumbs/rest1.jpg)"></span><div><b>Brasserie De Linde</b><span class="r">4,7 <i>★★★★★</i> (212)</span><span>€20–30 · Restaurant</span><span><em>Open</em> · Sluit om 22:00</span></div></div>
+            <div class="g-item"><span class="th" style="background-image:url(img/thumbs/rest2.jpg)"></span><div><b>Eetcafé De Brug</b><span class="r">4,4 <i>★★★★</i>☆ (98)</span><span>€10–20 · Eetcafé</span><span><em>Open</em> · Sluit om 23:00</span></div></div>
+            <div class="g-item"><span class="th" style="background-image:url(img/thumbs/rest3.jpg)"></span><div><b>Bistro Oost</b><span class="r">4,3 <i>★★★★</i>☆ (61)</span><span>€30–40 · Bistro</span><span><em>Open</em> · Sluit om 21:30</span></div></div>
           </div>
           <div class="screen s-reel" data-s="2">
             <div class="photo" style="background-image:url(img/kapper.jpg)"></div>
