@@ -10,9 +10,10 @@ Efe bouwt websites (en promo video's) voor lokale zaken in en rond Hengelo die n
 - Hosting van sites: gratis via Cloudflare Pages (`zaaknaam.pages.dev`).
 
 ## Prijzen
-- Website: **€250** (50% vooraf) + **€15/maand** onderhoud
+- Website: **vanaf €250** voor een landingspagina (50% vooraf). Meer pagina's of functies kosten meer. Prijzen excl. 21% btw.
+- Onderhoud: **€25/maand** (eerste 3 maanden vast, daarna maandelijks opzegbaar)
 - Promo video's: **3 voor €75**, of **+€50** samen met een site
-- SEO-extra's: Google-pakket **€75** eenmalig, maandpakket **€40/maand** (boven op de €15)
+- SEO-extra's: Google-pakket **€75** eenmalig, maandpakket **€40/maand** (boven op de €25)
 - Idee: maandpakket content €150–250/maand (video's als hoofdaanbod, site als extra)
 
 ## Leads
