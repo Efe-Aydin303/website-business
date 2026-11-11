@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://efeweb.nl/">
 <meta property="og:image" content="https://efeweb.nl/og.jpg">
 <meta name="theme-color" content="#ffffff">
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='dark'&&t!=='light'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t;})();</script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/archivo-300-500.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
@@ -60,14 +61,14 @@ h1, h2, h3 { font-family: var(--display); font-stretch: 112%; font-weight: 400; 
 p { margin: 0; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .wrap { width: min(100% - 32px, 1240px); margin-inline: auto; }
-.skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: #fff; padding: 10px 14px; z-index: 100; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--bg); padding: 10px 14px; z-index: 100; }
 .skip:focus { left: 8px; }
 .eyebrow { font: 500 var(--t-sm)/1.2 var(--body); color: var(--muted); }
 .eyebrow b { color: var(--accent); font-weight: 600; }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 999px;
   font: 600 var(--t-sm)/1 var(--body); text-decoration: none; cursor: pointer; border: 1px solid transparent; }
-.btn-ink { background: var(--ink); color: #fff; }
+.btn-ink { background: var(--ink); color: var(--bg); }
 .btn-ink:hover { background: #000; }
 .btn-line { border-color: var(--line); background: var(--bg); }
 .btn-line:hover { border-color: var(--ink); }
@@ -411,7 +412,7 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
 .cform-grid { display: grid; gap: 14px; }
 .cform label { display: grid; gap: 6px; font: 500 var(--t-sm)/1.2 var(--body); color: var(--muted); }
 .cform input, .cform textarea { -webkit-user-select: text; user-select: text; font: 400 1rem/1.4 var(--body); color: var(--ink); background: var(--stone); border: 1px solid transparent; border-radius: 14px; padding: 14px 16px; width: 100%; min-height: 48px; resize: vertical; }
-.cform input:focus, .cform textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; background: #fff; }
+.cform input:focus, .cform textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; background: var(--bg); }
 .cform .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .cform-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 18px; }
 .cform-s { font-size: var(--t-sm); color: var(--muted); max-width: none !important; }
@@ -444,6 +445,60 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
 .g2 .g-item .r i { color: #fdd663; font-style: normal; letter-spacing: -.5px; }
 .g2 .g-item em { color: #81c995; font-style: normal; }
 .g2 .g-item.me { margin: 0 -6px; padding: 9px 6px; border-radius: 8px; background: #28292c; box-shadow: inset 0 0 0 1px #4d5156; }
+/* ============ dark en light mode ============ */
+html[data-theme="dark"] {
+  --bg: #0e0f11; --stone: #1a1b1f; --line: #2b2d33; --ink: #f1f1ee; --muted: #a3a6ad; --accent: #7088ff;
+  color-scheme: dark;
+}
+html[data-theme="dark"] .phone { border-color: #3a3c42; }
+html[data-theme="dark"] .cform input, html[data-theme="dark"] .cform textarea { border-color: var(--line); }
+body { transition: background-color .3s ease, color .3s ease; }
+.theme-btn { margin-left: auto; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--bg); color: var(--ink); cursor: pointer; display: grid; place-items: center; flex: none; }
+.theme-btn svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.theme-btn .sun, html[data-theme="dark"] .theme-btn .moon { display: none; }
+html[data-theme="dark"] .theme-btn .sun { display: block; }
+.theme-btn + .menu-btn { margin-left: 0; }
+@media (min-width: 900px) { .nav { margin-left: auto; } .theme-btn { margin-left: 4px; } }
+/* telefoonschermen in light mode */
+html[data-theme="light"] .s-site { background: #f6f1ea; color: #1d1813; }
+html[data-theme="light"] .s-site .photo::after { background: linear-gradient(180deg, rgba(246,241,234,.15), transparent 40%, #f6f1ea); }
+html[data-theme="light"] .s-site .kick { color: #9a6b2c; }
+html[data-theme="light"] .s-site .pill.gold { background: #1d1813; color: #f6f1ea; }
+html[data-theme="light"] .s-site .pill.dark { border-color: #cdbfac; }
+html[data-theme="light"] .s-site li { border-bottom-color: #e2d8ca; }
+html[data-theme="light"] .s-site .hrs { color: #7b6d5c; } html[data-theme="light"] .s-site .hrs b { color: #1f8a46; }
+html[data-theme="light"] .s-site .ex { color: #a8998a; }
+html[data-theme="light"] .s-google.g2 { background: #fff; color: #202124; }
+html[data-theme="light"] .g2 .g-burger, html[data-theme="light"] .g2 .g-burger::after { border-color: #5f6368; }
+html[data-theme="light"] .g2 .g-logo { color: #202124; }
+html[data-theme="light"] .g2 .g-sign { background: #0b57d0; color: #fff; }
+html[data-theme="light"] .g2 .g-q { background: #fff; box-shadow: 0 1px 4px rgba(32,33,36,.22); }
+html[data-theme="light"] .g2 .g-q svg { stroke: #5f6368; }
+html[data-theme="light"] .g2 .g-tabs { color: #5f6368; border-bottom-color: #ebebeb; }
+html[data-theme="light"] .g2 .g-tabs b { color: #202124; box-shadow: 0 7px 0 -5px #202124; }
+html[data-theme="light"] .g2 .g-map { background: #e9ecef; }
+html[data-theme="light"] .g2 .g-map svg { stroke: #fff; } html[data-theme="light"] .g2 .g-map svg .thin { stroke: #dde1e5; }
+html[data-theme="light"] .g2 .g-map em { color: #5f6368; }
+html[data-theme="light"] .g2 .g-map .pin { box-shadow: 0 0 0 2px #fff; }
+html[data-theme="light"] .g2 .g-item { border-bottom-color: #ebebeb; }
+html[data-theme="light"] .g2 .g-item b { color: #1a0dab; }
+html[data-theme="light"] .g2 .g-item span { color: #4d5156; }
+html[data-theme="light"] .g2 .g-item .r i { color: #e37400; }
+html[data-theme="light"] .g2 .g-item em { color: #188038; }
+html[data-theme="light"] .g2 .g-item.me { background: #f1f5fe; box-shadow: inset 0 0 0 1px #d2e3fc; }
+html[data-theme="light"] .s-chat { background: #efeae2; color: #111b21; }
+html[data-theme="light"] .s-chat .bar { background: #fff; }
+html[data-theme="light"] .s-chat .bar .ic, html[data-theme="light"] .s-chat .wa-name small { color: #54656f; }
+html[data-theme="light"] .s-chat .msgs { background: #efeae2 radial-gradient(circle at 20% 30%, rgba(0,0,0,.04) 0 1px, transparent 2px) 0 0 / 14px 14px; }
+html[data-theme="light"] .s-chat .day { background: #fff; color: #54656f; }
+html[data-theme="light"] .s-chat .me { background: #d9fdd3; }
+html[data-theme="light"] .s-chat .them { background: #fff; }
+html[data-theme="light"] .s-chat .me::before { background: linear-gradient(225deg, transparent 50%, #d9fdd3 50%); }
+html[data-theme="light"] .s-chat .them::before { background: linear-gradient(135deg, transparent 50%, #fff 50%); }
+html[data-theme="light"] .s-chat .lp { background: #c8f0c1; }
+html[data-theme="light"] .s-chat .lp-t strong { color: #111b21; } html[data-theme="light"] .s-chat .lp-t small { color: #3b6b4c; }
+html[data-theme="light"] .s-chat .meta { color: rgba(17,27,33,.5); }
+html[data-theme="light"] .s-chat .input span { background: #fff; color: #667781; }
 </style>
 </head>
 <body class="no-js">
@@ -457,6 +512,7 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
     <button type="button" data-go="prijzen">Prijzen</button>
     <button type="button" data-go="vragen">Vragen</button>
   </nav>
+  <button class="theme-btn" type="button" aria-label="Wissel tussen licht en donker"><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
   <button class="btn btn-ink" type="button" data-go="contact">Mail me</button>
 </header>
@@ -649,7 +705,7 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
         </div>
       </div>
       <form class="cform" id="cform" novalidate>
-        <p class="cform-t">Liever mailen? Stuur me een bericht.</p>
+        <p class="cform-t">Stuur me een bericht.</p>
         <div class="cform-grid">
           <label>Je naam<input name="name" type="text" autocomplete="name" maxlength="80" required></label>
           <label>Je e-mail<input name="email" type="email" autocomplete="email" inputmode="email" maxlength="120" required></label>
@@ -769,6 +825,13 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     } catch (x) { say('Versturen lukt nu niet. Mail me even rechtstreeks op info@efeweb.nl.', 'err'); }
     btn.disabled = false;
   });
+})();
+
+(() => {
+  const b = document.querySelector('.theme-btn'), meta = document.querySelector('meta[name=theme-color]'), root = document.documentElement;
+  const apply = t => { root.dataset.theme = t; if (meta) meta.content = t === 'dark' ? '#0e0f11' : '#ffffff'; };
+  apply(root.dataset.theme === 'dark' ? 'dark' : 'light');
+  b && b.addEventListener('click', () => { const t = root.dataset.theme === 'dark' ? 'light' : 'dark'; apply(t); try { localStorage.setItem('theme', t); } catch (e) {} });
 })();
 </script>
 </body>
