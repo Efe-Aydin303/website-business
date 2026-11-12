@@ -398,6 +398,8 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
 .s-chat .thumb::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,.7)); }
 .s-chat .thumb i, .s-chat .thumb b { position: relative; }
 .s-chat .thumb i { color: #f1d9b5; }
+.s-chat .msgs { justify-content: flex-end; overflow: hidden; min-height: 0; }
+.s-chat .msgs > * { flex: none; }
 .how { list-style: none; counter-reset: how; padding: 0; margin: 40px 0 0; display: grid; gap: 22px; max-width: 26rem; }
 .how li { counter-increment: how; display: grid; grid-template-columns: 42px 1fr; column-gap: 14px; }
 .how li::before { content: counter(how); grid-row: span 2; width: 42px; height: 42px; border-radius: 50%; background: var(--stone); display: grid; place-items: center; font: 600 var(--t-md)/1 var(--body); }
@@ -601,7 +603,7 @@ html[data-theme="dark"] .theme-btn .moon { display: block; } html[data-theme="da
               <span class="day">Vandaag</span>
               <div class="m me"><span class="lp"><span class="thumb" style="background-image:url(img/bakkerij.jpg)"><i>BAKKER · SINDS 1987</i><b>Bakkerij<br>Vos</b></span><span class="lp-t"><strong>Bakkerij Vos</strong><small>bakkerij-vos.pages.dev</small></span></span>Hoi! Zoals besproken: hier is de demo van jullie bakkerij. Kijk maar even.<span class="meta">14:02 <svg viewBox="0 0 16 10" aria-hidden="true"><path d="M1 5.5l3 3L10 1.5M6.5 8.5l1 0L15 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
               <div class="m them">Ziet er echt goed uit. Wat kost het?<span class="meta">14:09</span></div>
-              <div class="m me">Een landingspagina is €250, meer functies kost iets meer. De helft als je ja zegt, de rest als hij live staat.<span class="meta">14:10 <svg viewBox="0 0 16 10" aria-hidden="true"><path d="M1 5.5l3 3L10 1.5M6.5 8.5l1 0L15 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+              <div class="m me">Een landingspagina kost eenmalig €250: de helft bij akkoord, de rest als hij live staat. Hosting en onderhoud zijn €25 per maand. Bij extra functies stijgt het maandbedrag, dat spreken we vooraf af. Het abonnement is de eerste 6 maanden vast, daarna maandelijks opzegbaar.<span class="meta">14:10 <svg viewBox="0 0 16 10" aria-hidden="true"><path d="M1 5.5l3 3L10 1.5M6.5 8.5l1 0L15 1.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
             </div>
             <div class="input"><span>Bericht</span><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></b></div>
           </div>
@@ -627,7 +629,7 @@ html[data-theme="dark"] .theme-btn .moon { display: block; } html[data-theme="da
         <div class="step" data-s="3" id="werkwijze">
           <h2>Eerst zien, dan pas betalen.</h2>
           <p>Je ziet je eigen site al voordat je iets betaalt. Bevalt hij niet? Dan kost het je niets.</p>
-          <ol class="m-steps"><li>We praten kort over je bedrijf</li><li>Ik maak gratis een demo en stuur de link</li><li>Jij zegt ja, de helft vooraf, hij gaat live</li><li>Ik regel hosting, aanpassingen en Google</li></ol>
+          <ol class="m-steps"><li>We praten kort over je bedrijf</li><li>Ik maak gratis een demo en stuur de link</li><li>Jij zegt ja, de helft vooraf, hij gaat live</li><li>Ik regel hosting, onderhoud en Google voor €25 per maand (6 maanden vast, daarna opzegbaar)</li></ol>
         </div>
       </div>
       <div class="panel r">
@@ -650,7 +652,7 @@ html[data-theme="dark"] .theme-btn .moon { display: block; } html[data-theme="da
           <div><span class="n">1</span><h3>Ik maak een demo</h3><p>Met jouw naam, foto's, diensten en openingstijden. Gratis.</p></div>
           <div><span class="n">2</span><h3>Ik loop binnen</h3><p>Ik laat hem zien op mijn telefoon, of ik stuur je de link.</p></div>
           <div><span class="n">3</span><h3>Hij gaat live</h3><p>Je betaalt de helft, ik maak hem af en zet hem online. Dan de rest.</p></div>
-          <div><span class="n">4</span><h3>Ik regel de rest</h3><p>Hosting, aanpassingen en Google. Jij hoeft er niet meer naar te kijken.</p></div>
+          <div><span class="n">4</span><h3>Ik regel de rest</h3><p>Hosting, onderhoud en Google voor €25 per maand (6 maanden vast, daarna opzegbaar).</p></div>
         </div>
       </div>
       <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
@@ -667,7 +669,7 @@ html[data-theme="dark"] .theme-btn .moon { display: block; } html[data-theme="da
       <div class="reveal">
         <div class="prices">
           <div class="pr"><h3>Landingspagina</h3><p>Eén sterke pagina met basis-SEO voor Google. Meer pagina's of functies? Dan loopt de prijs mee op. De helft vooraf, de rest bij livegang.</p><div class="eur">€250<small>vanaf, eenmalig</small></div></div>
-          <div class="pr"><h3>Onderhoud</h3><p>Hosting, kleine aanpassingen en je domeinnaam. Eerste 3 maanden vast, daarna per maand opzegbaar.</p><div class="eur">€25<small>per maand</small></div></div>
+          <div class="pr"><h3>Onderhoud</h3><p>Hosting, kleine aanpassingen en je domeinnaam. Eerste 6 maanden vast, daarna per maand opzegbaar.</p><div class="eur">€25<small>per maand</small></div></div>
           <div class="pr"><h3>3 promovideo's</h3><p>Los, of voor €50 samen met een website.</p><div class="eur">€75<small>of €50</small></div></div>
           <div class="pr"><h3>Google-pakket</h3><p>Je bedrijfsprofiel goed ingesteld plus een review-QR.</p><div class="eur">€75<small>eenmalig</small></div></div>
           <div class="pr"><h3>Maandpakket Google</h3><p>Elke maand posts, een nieuwe pagina en je cijfers. Bovenop de €25 onderhoud.</p><div class="eur">€40<small>per maand</small></div></div>
@@ -705,7 +707,7 @@ html[data-theme="dark"] .theme-btn .moon { display: block; } html[data-theme="da
         <details><summary>Wat kost een website laten maken?</summary><p>Een landingspagina kost bij mij vanaf €250 eenmalig, plus €25 per maand voor hosting, kleine aanpassingen en de basis voor Google. Wil je meer pagina's, meer details of extra functies, zoals een boekingssysteem? Dan loopt de prijs mee op. Je weet de prijs altijd voordat je ja zegt.</p></details>
         <details><summary>Heb ik een website nodig als ik al Instagram heb?</summary><p>Met een website vinden mensen je op Google als ze zoeken op bijvoorbeeld "restaurant in de buurt". Instagram doet dat niet. Ze werken goed samen.</p></details>
         <details><summary>Kom ik bovenaan in Google?</summary><p>Dat kan niemand beloven. Ik zorg dat je goed vindbaar bent en je ziet elke maand hoeveel mensen je vinden. Resultaat zie je meestal na 1 tot 3 maanden.</p></details>
-        <details><summary>Zijn er maandelijkse kosten?</summary><p>Ja, €25 per maand. Daarvoor regel ik hosting, je domeinnaam en kleine aanpassingen. De eerste 3 maanden staan vast, daarna kun je per maand opzeggen.</p></details>
+        <details><summary>Zijn er maandelijkse kosten?</summary><p>Ja, €25 per maand. Daarvoor regel ik hosting, je domeinnaam en kleine aanpassingen. De eerste 6 maanden staan vast, daarna kun je per maand opzeggen.</p></details>
         <details><summary>Staat het domein op mijn naam?</summary><p>Ja. De domeinnaam staat op jouw naam. Ik regel en betaal hem, dat zit in de €25 per maand.</p></details>
         <details><summary>Hoe snel staat mijn site online?</summary><p>Na ons gesprek maak ik eerst gratis een demo, die zie je dus snel. Zeg je ja, dan staat de echte site meestal binnen 1 tot 2 weken online.</p></details>
         <details><summary>Help je ook als de site eenmaal online staat?</summary><p>Ja. Wil je een prijs, foto of openingstijd aanpassen, dan mail je me en ik pas het aan. Dat zit in het onderhoud.</p></details>
