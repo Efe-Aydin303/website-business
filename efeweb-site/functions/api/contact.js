@@ -5,7 +5,7 @@ const FROM = 'Efe Web formulier <formulier@efeweb.nl>';
 const ALLOWED = ['efeweb.nl', 'www.efeweb.nl', 'efeweb.pages.dev'];
 
 const json = (obj, status = 200) =>
-  new Response(JSON.stringify(obj), { status, headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' } });
+  new Response(JSON.stringify(obj), { status, headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', 'x-content-type-options': 'nosniff' } });
 
 export async function onRequestPost({ request, env }) {
   const origin = request.headers.get('origin') || '';
