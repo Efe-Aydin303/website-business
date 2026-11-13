@@ -7,7 +7,7 @@
 <meta name="description" content="Deze pagina bestaat niet (meer).">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#ffffff">
-<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='dark'&&t!=='light'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t;if(t==='dark'){var m=document.querySelector('meta[name=theme-color]');if(m)m.content='#0e0f11'}})();</script>
+<script>(function(){document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';})();</script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
 @font-face { font-family: "Archivo"; src: url(/fonts/archivo-300-500.woff2) format("woff2"); font-weight: 300 500; font-stretch: 112% 125%; font-display: swap; }

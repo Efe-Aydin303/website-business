@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://efeweb.nl/">
 <meta property="og:image" content="https://efeweb.nl/og.jpg">
 <meta name="theme-color" content="#ffffff">
-<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='dark'&&t!=='light'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t;})();</script>
+<script>(function(){var m=matchMedia('(prefers-color-scheme: dark)');document.documentElement.dataset.theme=m.matches?'dark':'light';})();</script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/archivo-300-500.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
@@ -421,6 +421,13 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
 .cform-s { font-size: var(--t-sm); color: var(--muted); max-width: none !important; }
 .cform-s.ok { color: #18794e; } .cform-s.err { color: #b3261e; }
 .cform button[disabled] { opacity: .6; cursor: wait; }
+.cform .via { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.cform .via legend { font: 500 var(--t-sm)/1.2 var(--body); color: var(--muted); margin-bottom: 8px; padding: 0; }
+.cform .via label { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: var(--stone); color: var(--ink); cursor: pointer; font-size: .9375rem; }
+.cform .via input { -webkit-appearance: auto; appearance: auto; accent-color: var(--accent); margin: 0; padding: 0; width: 16px; height: 16px; min-height: 0; border: 0; background: none; flex: none; outline: none; }
+.cform .via input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cform .via label:has(input:checked) { box-shadow: inset 0 0 0 1.5px var(--ink); }
+.cform [hidden] { display: none !important; }
 .txtlink { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; text-decoration: underline; text-underline-offset: 3px; color: inherit; }
 @media (min-width: 640px) { .cform-grid { grid-template-columns: 1fr 1fr; } .cform .wide { grid-column: 1 / -1; } }
 /* Google-scherm in donkere modus, naar Efe's referentie */
@@ -528,9 +535,9 @@ html[data-theme="dark"] .theme-btn .moon { display: block; } html[data-theme="da
     <button type="button" data-go="prijzen">Prijzen</button>
     <button type="button" data-go="vragen">Vragen</button>
   </nav>
-  <button class="theme-btn" type="button" role="switch" aria-checked="false" aria-label="Donkere modus"><span class="knob"><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></span></button>
+  
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
-  <button class="btn btn-ink" type="button" data-go="contact">Mail me</button>
+  <button class="btn btn-ink" type="button" data-go="contact">Kennismaken</button>
 </header>
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu">
   <button class="close" type="button">Sluit</button>
@@ -550,7 +557,7 @@ html[data-theme="dark"] .theme-btn .moon { display: block; } html[data-theme="da
           <div class="side-txt">
             <p class="lead">Websites en promovideo's voor bedrijven die professioneel online willen staan. Na een kort gesprek bouw ik <strong>gratis een demo van jóuw bedrijf</strong>. Vind je hem goed? Dan staat je landingspagina vanaf €250 online.</p>
             <div class="ctas">
-              <button class="btn btn-ink" type="button" data-go="contact">Vraag je gratis demo</button>
+              <button class="btn btn-ink" type="button" data-go="contact">Plan een gratis kennismaking</button>
               <button class="link-btn" type="button" data-go="prijzen">Bekijk prijzen</button>
             </div>
           </div>
@@ -683,10 +690,10 @@ html[data-theme="dark"] .theme-btn .moon { display: block; } html[data-theme="da
     <div class="wrap who">
       <div class="txt reveal">
         <h2>Hoi, ik ben Efe.</h2>
-        <p>Ik maak websites voor bedrijven. Geen bureau, gewoon één persoon die je kunt mailen en die je zaak echt bekijkt voordat hij begint.</p>
+        <p>Ik maak websites voor bedrijven. Geen bureau, gewoon één persoon die je zaak echt bekijkt voordat hij begint. We leren elkaar eerst kennen in een kort online gesprek, via Google Meet, Zoom of WhatsApp.</p>
       </div>
       <dl class="facts reveal">
-        <div><dt>E-mail</dt><dd><button type="button" class="txtlink" data-go="contact">Stuur een bericht</button></dd></div>
+        <div><dt>Contact</dt><dd><button type="button" class="txtlink" data-go="contact">Plan een kennismaking</button></dd></div>
         <div><dt>KvK</dt><dd>42163908</dd></div>
       </dl>
     </div>
@@ -705,36 +712,39 @@ html[data-theme="dark"] .theme-btn .moon { display: block; } html[data-theme="da
       </div>
       <div class="faq reveal">
         <details><summary>Wat kost een website laten maken?</summary><p>Een landingspagina kost bij mij vanaf €250 eenmalig, plus €25 per maand voor hosting, kleine aanpassingen en de basis voor Google. Wil je meer pagina's, meer details of extra functies, zoals een boekingssysteem? Dan loopt de prijs mee op. Je weet de prijs altijd voordat je ja zegt.</p></details>
-        <details><summary>Heb ik een website nodig als ik al Instagram heb?</summary><p>Met een website vinden mensen je op Google als ze zoeken op bijvoorbeeld "restaurant in de buurt". Instagram doet dat niet. Ze werken goed samen.</p></details>
-        <details><summary>Kom ik bovenaan in Google?</summary><p>Dat kan niemand beloven. Ik zorg dat je goed vindbaar bent en je ziet elke maand hoeveel mensen je vinden. Resultaat zie je meestal na 1 tot 3 maanden.</p></details>
         <details><summary>Zijn er maandelijkse kosten?</summary><p>Ja, €25 per maand. Daarvoor regel ik hosting, je domeinnaam en kleine aanpassingen. De eerste 6 maanden staan vast, daarna kun je per maand opzeggen.</p></details>
-        <details><summary>Staat het domein op mijn naam?</summary><p>Ja. De domeinnaam staat op jouw naam. Ik regel en betaal hem, dat zit in de €25 per maand.</p></details>
         <details><summary>Hoe snel staat mijn site online?</summary><p>Na ons gesprek maak ik eerst gratis een demo, die zie je dus snel. Zeg je ja, dan staat de echte site meestal binnen 1 tot 2 weken online.</p></details>
         <details><summary>Help je ook als de site eenmaal online staat?</summary><p>Ja. Wil je een prijs, foto of openingstijd aanpassen, dan mail je me en ik pas het aan. Dat zit in het onderhoud.</p></details>
-        <details><summary>Moet je langskomen om een site te maken?</summary><p>Hoeft niet. In de buurt kom ik graag langs, maar alles kan ook via e-mail: ik stuur je de demo als link en we regelen de rest per mail.</p></details>
       </div>
     </div>
   </section>
 
   <section class="contact" id="contact">
     <div class="wrap">
-      <h2 style="margin-top:20px">Mail me<span>.</span></h2>
+      <h2 style="margin-top:20px">Even praten<span>.</span></h2>
       <div class="row">
-        <p>Stuur de naam van je bedrijf. Ik maak een gratis demo en laat hem zien wanneer het jou uitkomt.</p>
+        <p>Plan een gratis online kennismaking van 15 minuten via Google Meet, Zoom of WhatsApp. Daarna maak ik een gratis demo van jouw bedrijf.</p>
         <div class="right">
           <p class="alt" style="margin-top:12px">of rechtstreeks naar <span>info@efeweb.nl</span></p>
         </div>
       </div>
       <form class="cform" id="cform" novalidate>
-        <p class="cform-t">Stuur me een bericht.</p>
+        <p class="cform-t">Plan een kennismaking.</p>
         <div class="cform-grid">
           <label>Je naam<input name="name" type="text" autocomplete="name" maxlength="80" required></label>
           <label>Je e-mail<input name="email" type="email" autocomplete="email" inputmode="email" maxlength="120" required></label>
-          <label class="wide">Je bericht<textarea name="message" rows="5" maxlength="2000" required></textarea></label>
+          <fieldset class="wide via"><legend>Hoe wil je praten?</legend>
+            <label><input type="radio" name="via" value="meet" checked> Google Meet</label>
+            <label><input type="radio" name="via" value="zoom"> Zoom</label>
+            <label><input type="radio" name="via" value="whatsapp"> WhatsApp</label>
+            <label><input type="radio" name="via" value="mail"> Alleen mailen</label>
+          </fieldset>
+          <label class="wide tel" hidden>Je telefoonnummer (alleen voor WhatsApp)<input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20"></label>
+          <label class="wide">Naam van je bedrijf en wanneer het je uitkomt<textarea name="message" rows="4" maxlength="2000" required></textarea></label>
           <label class="hp" aria-hidden="true">Laat dit leeg<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
         </div>
         <div class="cform-row">
-          <button class="btn btn-ink" type="submit">Verstuur bericht</button>
+          <button class="btn btn-ink" type="submit">Verstuur</button>
           <p class="cform-s" id="cform-s" role="status" aria-live="polite"></p>
         </div>
       </form>
@@ -833,15 +843,18 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   const f = document.getElementById('cform'); if (!f) return;
   const out = document.getElementById('cform-s'), t0 = Date.now();
   const say = (m, c) => { out.textContent = m; out.className = 'cform-s ' + (c || ''); };
+  const tel = f.querySelector('.tel'), telIn = f.querySelector('[name=phone]');
+  f.addEventListener('change', () => { const w = f.querySelector('[name=via]:checked').value === 'whatsapp'; tel.hidden = !w; telIn.required = w; });
   f.addEventListener('submit', async e => {
     e.preventDefault();
     const d = Object.fromEntries(new FormData(f).entries());
     if (!d.name.trim() || !/^\S+@\S+\.\S{2,}$/.test(d.email.trim()) || d.message.trim().length < 5) return say('Vul je naam, een geldig e-mailadres en een bericht in.', 'err');
+    if (d.via === 'whatsapp' && (d.phone || '').replace(/\D/g, '').length < 9) return say('Vul je telefoonnummer in voor WhatsApp.', 'err');
     const btn = f.querySelector('button[type=submit]'); btn.disabled = true; say('Even versturen...');
     try {
       const r = await fetch('/api/contact', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ...d, elapsed: Date.now() - t0 }) });
       const j = await r.json().catch(() => ({}));
-      if (r.ok && j.ok) { f.reset(); say('Bedankt, je bericht is verstuurd. Ik reageer zo snel mogelijk.', 'ok'); }
+      if (r.ok && j.ok) { f.reset(); tel.hidden = true; telIn.required = false; say('Bedankt! Ik stuur je zo snel mogelijk een voorstel voor een moment.', 'ok'); }
       else say(r.status === 422 ? 'Controleer je naam, e-mailadres en bericht.' : 'Versturen lukt nu niet. Mail me even rechtstreeks op info@efeweb.nl.', 'err');
     } catch (x) { say('Versturen lukt nu niet. Mail me even rechtstreeks op info@efeweb.nl.', 'err'); }
     btn.disabled = false;
@@ -849,10 +862,9 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 })();
 
 (() => {
-  const b = document.querySelector('.theme-btn'), meta = document.querySelector('meta[name=theme-color]'), root = document.documentElement;
-  const apply = t => { root.dataset.theme = t; b && b.setAttribute('aria-checked', t === 'dark'); if (meta) meta.content = t === 'dark' ? '#0e0f11' : '#ffffff'; };
-  apply(root.dataset.theme === 'dark' ? 'dark' : 'light');
-  b && b.addEventListener('click', () => { const t = root.dataset.theme === 'dark' ? 'light' : 'dark'; apply(t); try { localStorage.setItem('theme', t); } catch (e) {} });
+  const meta = document.querySelector('meta[name=theme-color]'), root = document.documentElement, mq = matchMedia('(prefers-color-scheme: dark)');
+  const apply = () => { const t = mq.matches ? 'dark' : 'light'; root.dataset.theme = t; if (meta) meta.content = t === 'dark' ? '#0e0f11' : '#ffffff'; };
+  apply(); mq.addEventListener ? mq.addEventListener('change', apply) : mq.addListener(apply);
 })();
 </script>
 <script>(function(){try{var d=JSON.stringify({u:location.pathname+location.search,r:document.referrer,t:document.title,s:screen.width+'x'+screen.height,l:navigator.language});if(!(navigator.sendBeacon&&navigator.sendBeacon('/api/v',new Blob([d],{type:'text/plain'}))))fetch('/api/v',{method:'POST',body:d,keepalive:true}).catch(function(){})}catch(e){}})();</script>
