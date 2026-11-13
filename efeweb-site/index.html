@@ -425,8 +425,9 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
 .cform .via legend { font: 500 var(--t-sm)/1.2 var(--body); color: var(--muted); margin-bottom: 8px; padding: 0; }
 .cform .via label { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: var(--stone); color: var(--ink); cursor: pointer; font-size: .9375rem; }
 .cform .via input { -webkit-appearance: auto; appearance: auto; accent-color: var(--accent); margin: 0; padding: 0; width: 16px; height: 16px; min-height: 0; border: 0; background: none; flex: none; outline: none; }
-.cform .via input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.cform .via label:has(input:checked) { box-shadow: inset 0 0 0 1.5px var(--ink); }
+.cform .via label:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cform .via label:has(input:checked) { background: var(--accent); color: var(--bg); }
+.cform .via label:has(input:checked) input { accent-color: var(--bg); }
 .cform [hidden] { display: none !important; }
 .txtlink { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; text-decoration: underline; text-underline-offset: 3px; color: inherit; }
 @media (min-width: 640px) { .cform-grid { grid-template-columns: 1fr 1fr; } .cform .wide { grid-column: 1 / -1; } }
