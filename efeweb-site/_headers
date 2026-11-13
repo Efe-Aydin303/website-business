@@ -1,2 +1,29 @@
+# _headers voor efeweb.nl (TESTMODUS). Efe gaf akkoord op 13-11-2026.
+# Samenvoegen met het bestaande _headers-bestand in efeweb-site (de /fonts/*-regel blijft staan).
+#
+# - De gewone headers werken meteen.
+# - De CSP staat op "Report-Only": niets wordt geblokkeerd, alleen gemeld in F12 > Console.
+#   Na een week zonder meldingen: inline <script>-blokken naar een los .js-bestand zetten
+#   (of hun sha256-hash in script-src zetten) en "-Report-Only" weghalen.
+# - JSON-LD (<script type="application/ld+json">) wordt niet door CSP geblokkeerd.
+# - HSTS staat hier. Zet HSTS NIET ook nog aan in het Cloudflare-dashboard, anders staat de header dubbel.
+#   Nog zonder includeSubDomains (oude Plesk-mail/webmail). Later toevoegen als alle subdomeinen https hebben.
+# - Antwoorden van /api/... (contactformulier, teller) krijgen deze headers niet;
+#   die zetten de functies zelf (nosniff + no-store).
+
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
+
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
