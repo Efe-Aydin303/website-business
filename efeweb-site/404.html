@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pagina niet gevonden | Efe Web</title>
+<meta name="description" content="Deze pagina bestaat niet (meer).">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ffffff">
+<script src="/js/thema.js"></script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face { font-family: "Archivo"; src: url(/fonts/archivo-300-500.woff2) format("woff2"); font-weight: 300 500; font-stretch: 112% 125%; font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; src: url(/fonts/hanken-grotesk-400-600.woff2) format("woff2"); font-weight: 400 600; font-display: swap; }
+:root { --void:#ffffff; --line:#e2e2de; --ice:#111214; --glow:#1f3bff; --text:#111214; --muted:#5d6067; --stone:#f1f1ef; color-scheme: light; }
+html[data-theme="dark"] { --void:#0e0f11; --line:#2b2d33; --ice:#f1f1ee; --glow:#7088ff; --text:#f1f1ee; --muted:#a3a6ad; --stone:#1a1b1f; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin:0; background: var(--void); color: var(--text); font: 400 1.0625rem/1.65 "Hanken Grotesk", "Segoe UI", system-ui, sans-serif; min-height: 100svh; }
+.wrap { width: min(100% - 32px, 760px); margin: 0 auto; padding: 40px 0 80px; }
+.logo { font: 500 1rem/1 "Archivo", Arial, sans-serif; font-stretch: 125%; text-decoration: none; display: inline-flex; min-height: 44px; align-items: center; color: var(--text); }
+.logo b { font-weight: 500; color: var(--glow); }
+.tag { display: inline-block; font: 600 .875rem/1 "Hanken Grotesk", sans-serif; color: var(--glow); }
+h1, h2 { font-family: "Archivo", "Arial Narrow", Arial, sans-serif; font-stretch: 118%; font-weight: 300; letter-spacing: -.02em; line-height: 1.05; }
+h1 { font-size: clamp(2.4rem, 7vw, 4.2rem); margin: 18px 0 20px; }
+h2 { font-size: 1.4rem; font-weight: 400; margin: 36px 0 8px; }
+p, li { color: var(--text); }
+a { color: var(--ice); }
+.btn { color: var(--void) !important; }
+a:focus-visible, .btn:focus-visible { outline: 2px solid var(--glow); outline-offset: 3px; }
+.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--ice); color: var(--void); font: 600 .875rem/1 "Hanken Grotesk", sans-serif; text-decoration: none; border-radius: 999px; }
+footer { border-top: 1px solid var(--line); margin-top: 56px; padding-top: 20px; font-size: .875rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main class="wrap" style="min-height:100svh;display:grid;align-content:center">
+  <a class="logo" href="/">efe<b>web</b></a>
+  <div style="position:relative;margin-top:48px;background:var(--stone);border-radius:22px;padding:32px 24px;max-width:520px">
+    <span class="tag">Pagina niet gevonden</span>
+    <h1 style="margin-top:6px">404</h1>
+    <p>Deze pagina bestaat niet (meer). Misschien klopt de link niet, of is hij verhuisd.</p>
+    <p style="margin-top:24px"><a class="btn" href="/">Naar de homepage</a></p>
+  </div>
+  <footer>Efe Web · <a href="/#contact">Mail me</a></footer>
+</main>
+</body>
+</html>
