@@ -109,6 +109,9 @@ p { margin: 0; }
 .intro .lead { color: var(--muted); max-width: 30rem; }
 .intro .lead strong { color: var(--ink); font-weight: 600; }
 .intro .ctas { display: flex; flex-wrap: wrap; gap: 8px; }
+.intro .offer { list-style: none; margin: 0 0 24px; padding: 0; max-width: 34rem; display: grid; gap: 8px; color: var(--muted); font-size: var(--t-sm); line-height: 1.45; }
+.intro .offer li { display: grid; grid-template-columns: 4.6rem 1fr; gap: 10px; padding-top: 8px; border-top: 1px solid var(--line); }
+.intro .offer b { color: var(--ink); font-weight: 600; }
 .story.past .intro { opacity: 0; transform: translateY(-24px); pointer-events: none; }
 @media (min-width: 900px) { .intro .wrap { grid-template-columns: 7fr 5fr; align-items: end; gap: 48px; } }
 
@@ -555,7 +558,8 @@ html[data-theme="dark"] .theme-btn .moon { display: block; } html[data-theme="da
         <div class="wrap">
           <h1><span>Een website voor</span> <span>jouw bedrijf.</span> <span>Eerst gratis zien.</span></h1>
           <div class="side-txt">
-            <p class="lead">Ik maak websites voor bedrijven. Na een kort gesprek bouw ik <strong>gratis een demo van jouw bedrijf</strong>. Bevalt hij? Dan staat je site online vanaf €250. Teksten, foto's en video's regel ik ook, oftewel: jij hebt er weinig werk aan.</p>
+            <p class="lead">Ik maak websites voor ondernemers. Na een kort gesprek maak ik <strong>gratis een demo van jouw site</strong>. Bevalt hij? Dan zet ik hem online. Teksten, foto's en video's regel ik als je wil.</p>
+            <ul class="offer"><li><b>€250</b> Eén pagina met alles erop: diensten, prijzen, openingstijden en contact</li><li><b>€25 p/m</b> Je eigen webadres (jouwzaak.nl), hosting en onderhoud</li><li><b>Meer?</b> Extra pagina's of een webshop kan ook, de prijs hoor je vooraf</li></ul>
             <div class="ctas">
               <button class="btn btn-ink" type="button" data-go="contact">Vraag een gratis demo aan</button>
               <button class="link-btn" type="button" data-go="prijzen">Bekijk prijzen</button>
