@@ -5,7 +5,7 @@ Antwoord altijd in **simpel Nederlands**, kort en duidelijk.
 ## Wat Efe doet
 Efe bouwt websites (en promo video's) voor lokale zaken in en rond Hengelo die nog geen website hebben. Efe loopt binnen met een demo van hún zaak op de telefoon en vraagt of ze interesse hebben. Het is een bijverdienste om te testen of het werkt.
 
-- KvK + zakelijke Rabobank-rekening (sinds 29-09-2026). Facturen via SnelStart.
+- KvK + zakelijke Rabobank-rekening (sinds 29-09-2026). Facturen: niet meer via SnelStart (gestopt 11-11-2026), nieuw programma nog onbekend.
 - Video's worden zelf ge-edit in Premiere Pro 2020.
 - Hosting van sites: gratis via Cloudflare Pages (`zaaknaam.pages.dev`).
 
