@@ -371,9 +371,9 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
   .reveal { opacity: 1; transform: none; }
 }
 /* ============ begin: alleen tekst, telefoon komt pas bij scrollen ============ */
-.intro { bottom: 0; padding-top: 0; display: grid; align-content: center; }
-.intro .wrap { gap: 36px; }
-.intro h1 { font-size: min(clamp(2.8rem, 7vw, 6.2rem), 12svh); letter-spacing: -.02em; }
+.intro { bottom: 0; padding: 104px 0 88px; display: grid; align-content: center; }
+.intro .wrap { gap: 28px; }
+.intro h1 { font-size: min(clamp(2.6rem, 6.4vw, 5.6rem), 10svh); letter-spacing: -.02em; }
 .intro .lead { font-size: var(--t-lg); max-width: 34rem; line-height: 1.5; }
 @media (min-width: 900px) { .intro .wrap { grid-template-columns: 1fr; gap: 40px; } .intro .side-txt { gap: 26px; } }
 .scroll-hint { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); font: 500 var(--t-sm)/1 var(--body); color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 10px; }
@@ -384,10 +384,19 @@ footer a { min-height: 44px; display: inline-flex; align-items: center; }
 .story:not(.past) .panel, .story:not(.past) .dots, .story:not(.past) .main-phone { pointer-events: none; }
 .story:not(.past) .main-phone { opacity: 0; transform: translateY(60svh) scale(var(--fit, 1)); }
 @media (max-width: 899px) {
-  .intro { padding: 72px 0 60px; }
+  .intro { padding: 92px 0 72px; }
   .intro h1 { font-size: clamp(2.5rem, 11vw, 3.4rem); }
   .intro .lead { font-size: var(--t-md); }
   .story:not(.past) .main-phone { transform: translateY(70svh) scale(var(--fit, 1)); }
+}
+@media (max-height: 760px) {
+  .intro { padding: 84px 0 20px; align-content: start; }
+  .intro .wrap, .intro .side-txt { gap: 16px; }
+  .intro h1 { font-size: min(clamp(2.2rem, 6vw, 4.6rem), 9.5svh); }
+  .intro .lead { font-size: var(--t-md); line-height: 1.45; }
+  .intro .offer { margin-bottom: 14px; gap: 4px; }
+  .intro .offer li { padding-top: 4px; }
+  .scroll-hint { display: none; }
 }
 /* ============ ronde 10 nov: foto's, soepelere scroll, zo werkt het ============ */
 .screen .photo { background: #2a2622 center / cover no-repeat; }
