@@ -1,0 +1,15 @@
+Foto's van Unsplash (Unsplash-licentie: gratis, ook commercieel, naamsvermelding niet verplicht).
+Verkleind naar 720px breed (JPG).
+
+bouw.jpg       - https://unsplash.com/photos/6dnuVViEiR8 - fotograaf: @renovationscertified (https://unsplash.com/@renovationscertified)
+restaurant.jpg - https://unsplash.com/photos/_j7dWgwhkPI - fotograaf: @petepxl (https://unsplash.com/@petepxl)
+kapper.jpg     - https://unsplash.com/photos/MRCdF3qUbp0 - fotograaf: @salaheregouane (https://unsplash.com/@salaheregouane)
+bakkerij.jpg   - https://unsplash.com/photos/UVNguozJOPE - fotograaf: @maite_paternain (https://unsplash.com/@maite_paternain)
+
+Thumbnails (img/thumbs/, 240x240 vierkant bijgesneden, JPG):
+thumbs/kap1.jpg  - https://unsplash.com/photos/gI9rvJK61L8 - fotograaf: @giorgiotrovato (https://unsplash.com/@giorgiotrovato)
+thumbs/kap2.jpg  - https://unsplash.com/photos/N15dzf3dAUk - fotograaf: @eusuntvibes (https://unsplash.com/@eusuntvibes)
+thumbs/kap3.jpg  - https://unsplash.com/photos/_Fy7Kq0w6OI - fotograaf: @bgoodpic (https://unsplash.com/@bgoodpic)
+thumbs/rest1.jpg - https://unsplash.com/photos/poI7DelFiVA - fotograaf: @ninjason (https://unsplash.com/@ninjason)
+thumbs/rest2.jpg - https://unsplash.com/photos/yQYtdkKOLnQ - fotograaf: @antonioaaaraujo (https://unsplash.com/@antonioaaaraujo)
+thumbs/rest3.jpg - https://unsplash.com/photos/4OcwZ7SwsJI - fotograaf: @vonsung (https://unsplash.com/@vonsung)

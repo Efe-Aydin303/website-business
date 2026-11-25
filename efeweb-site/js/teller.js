@@ -1,0 +1,1 @@
+(function(){try{var d=JSON.stringify({u:location.pathname+location.search,r:document.referrer,t:document.title,s:screen.width+'x'+screen.height,l:navigator.language});if(!(navigator.sendBeacon&&navigator.sendBeacon('/api/v',new Blob([d],{type:'text/plain'}))))fetch('/api/v',{method:'POST',body:d,keepalive:true}).catch(function(){})}catch(e){}})();
